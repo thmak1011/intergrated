@@ -61,7 +61,7 @@
     <!--== Header Area Start ==-->
     <header id="header-area" class="fixed-top">
         <!--== Header Top Start ==-->
-        <div id="header-top" class="d-none d-xl-block">
+
             
         </div>
         <!--== Header Top End ==-->
@@ -85,52 +85,30 @@
                         <nav class="mainmenu alignright">
                             <ul>
                                 <li class="active"><a href="index.html">Home</a></li>
-                                <li><a href="">Log In</a></li>
-                                <li><a href="services.html">services</a></li>
-                                <li><a href="#">Cars</a>
-                                    <ul>
-                                        <li><a href="car-left-sidebar.html">Car Left Sidebar</a></li>
-                                        <li><a href="car-right-sidebar.html">Car Right Sidebar</a></li>
-                                        <li><a href="car-without-sidebar.html">Car Without Sidebar</a></li>
-                                        <li><a href="car-details.html">Car Details</a></li>
-                                    </ul>
-                                </li>
+
+
                                 <li><a href="index.html">Pages</a>
-                                    <ul>
-                                        <li><a href="package.html">Pricing</a></li>
-                                        <li><a href="driver.html">Driver</a></li>
-                                        <li><a href="faq.html">FAQ</a></li>
-                                        <li><a href="gallery.html">Gallery</a></li>
-                                        <li><a href="help-desk.html">Help Desk</a></li>
-                                        <li><a href="login.html">Log In</a></li>
-                                        <li><a href="register.html">Register</a></li>
-                                        <li><a href="404.html">404</a></li>
-                                    </ul>
+
                                 </li>
-                                <li><a href="#">Blog</a>
-                                    <ul>
-                                        <li><a href="article.html">Blog Page</a></li>
-                                        <li><a href="article-details.html">Blog Details</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="contact.html">Contact</a></li>
-                                <li><button class="login-btn" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button></li>
+
+                                <li><a href="contact.html">Contact Us</a></li>
+                                <li><button class="form-btn" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">LOG IN</button></li>
                                 <div id="id01" class="modal">
 
-                                    <form class="modal-content animate" action="/action_page.php">
+                                    <form class="modal-content  animate" action="/action_page.php">
                                         <div class="imgcontainer">
                                             <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
                                             <img src="" alt="Avatar" class="avatar">
                                         </div>
 
                                         <div class="container">
-                                            <label for="uname"><b>Username</b></label>
+                                            <label for="uname"><b  class="form-text">Username</b></label>
                                             <input type="text" placeholder="Enter Username" name="uname" required>
 
-                                            <label for="psw"><b>Password</b></label>
+                                            <label for="psw"><b  class="form-text">Password</b></label>
                                             <input type="password" placeholder="Enter Password" name="psw" required>
 
-                                            <button type="submit" style="border-radius: 4px;">Log in</button>
+                                            <button class="submit-btn" type="submit" style="border-radius: 4px;">Log in</button>
                                             <label>
                                                 <input type="checkbox" checked="checked" name="remember"> Remember me
                                             </label>
@@ -138,8 +116,11 @@
 
                                         <div class="container" style="background-color:#393D44">
                                             <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+
+
                                             <span class="psw">
-      <a class="forgotpw" href="" >Forgot password?</a>
+                                                 <a  class="form-link" href="" >Sign Up?</a>
+                                                <a class="form-link" href="" >Forgot password?</a>
       </span>
                                         </div>
                                     </form>
