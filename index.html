@@ -115,6 +115,35 @@
                                 </li>
                                 <li><a href="contact.html">Contact</a></li>
                                 <li><button class="login-btn" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button></li>
+                                <div id="id01" class="modal">
+
+                                    <form class="modal-content animate" action="/action_page.php">
+                                        <div class="imgcontainer">
+                                            <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+                                            <img src="" alt="Avatar" class="avatar">
+                                        </div>
+
+                                        <div class="container">
+                                            <label for="uname"><b>Username</b></label>
+                                            <input type="text" placeholder="Enter Username" name="uname" required>
+
+                                            <label for="psw"><b>Password</b></label>
+                                            <input type="password" placeholder="Enter Password" name="psw" required>
+
+                                            <button type="submit" style="border-radius: 4px;">Log in</button>
+                                            <label>
+                                                <input type="checkbox" checked="checked" name="remember"> Remember me
+                                            </label>
+                                        </div>
+
+                                        <div class="container" style="background-color:#393D44">
+                                            <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+                                            <span class="psw">
+      <a class="forgotpw" href="" >Forgot password?</a>
+      </span>
+                                        </div>
+                                    </form>
+                                </div>
                             </ul>
                         </nav>
 
