@@ -1,3 +1,6 @@
+<?php
+include ('server.php');
+?>
 <!DOCTYPE html>
 <html class="no-js" lang="zxx">
 
@@ -154,45 +157,50 @@
 								<div class="name">
 									<div class="row">
 										<div class="col-md-6">
-											<input type="text" placeholder="First Name">
+											<input type="text" name = fname placeholder="First Name">
 										</div>
 										<div class="col-md-6">
-											<input type="text" placeholder="Last Name">
+											<input type="text" name = lname placeholder="Last Name">
 										</div>
 									</div>
 								</div>
 								<div class="username">
-									<input type="email" placeholder="Email">
+									<input type="email"  name = email placeholder="Email">
                                 </div>
                                 <div class="username">
-									<input type="phone" placeholder="Phone Number">
+									<input type="phone" name = phone placeholder="Phone Number">
 								</div>
 								<div class="username">
-									<input type="text" placeholder="Username">
+									<input type="text" name = username placeholder="Username">
 								</div>
 								<div class="password">
-									<input type="password" placeholder="Password">
+									<input type="password" name = pwd placeholder="Password">
                                 </div>
                                 <div class="password">
-									<input type="password" placeholder="Confirm Password">
+									<input type="password" name = pwd2 placeholder="Confirm Password">
                                 </div>
                                 <div class="address">
-                                    <input type="text" placeholder="Home Location">
+                                    <input type="text" name = home placeholder="Home Location">
                                 </div>
                                 <div class="address">
-                                    <input type="text" placeholder="Work Location">
+                                    <input type="text" name = work placeholder="Work Location">
                                 </div>
                                 <div class="driver">
-                                    <input type="text" placeholder="Car Class (Driver Only)">
+                                    <input type="text" name = class placeholder="Car Class (Driver Only)">
                                 </div>
                                 <div class="driver">
-                                    <input type="text" placeholder="Car Model (Driver Only)">
+                                    <input type="text" name = madel placeholder="Car Model (Driver Only)">
                                 </div>
                                 <div class="driver">
-                                    <input type="text" placeholder="Car Plate Number (Driver Only)">
+                                    <input type="text" name = plate placeholder="Car Plate Number (Driver Only)">
                                 </div>
+                                <form action="upload.php" method="post" enctype="multipart/form-data">
+                                    Profile image (Driver only):
+                                    <input type="file" name="fileToUpload" id="fileToUpload">
+                                    <input type="submit" value="Upload Image" name="submit">
+                                </form>
 								<div class="log-btn">
-									<button type="submit"><i class="fa fa-check-square"></i> Sign Up</button>
+									<button type="submit" name="reg_user"><i class="fa fa-check-square"></i> Sign Up</button>
 								</div>
 							</form>
                 		</div>
