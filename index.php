@@ -1,7 +1,10 @@
 ﻿<?php include ('server.php') ?>
+<<<<<<< HEAD:index.php
 <?php if(isset($_COOKIE['login']) && isset($_COOKIE['type'])) {
 		header('location: '.$_COOKIE['type'].'homepage.php');
 }?>
+=======
+>>>>>>> a92df7332af9c0c8975030dc70e17dc4a95c7cbf:index.php
 <!DOCTYPE html>
 <html class="no-js" lang="zxx">
 
@@ -64,12 +67,7 @@
 
     <!--== Header Area Start ==-->
     <header id="header-area" class="fixed-top">
-        <!--== Header Top Start ==-->
-
-            
-        </div>
-        <!--== Header Top End ==-->
-
+       
         <!--== Header Bottom Start ==-->
         <div id="header-bottom">
             <div class="container">
@@ -102,8 +100,17 @@
 								<li><button class="form-btn" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">LOG IN</button></li>
                                 <div id="id01" class="modal">
 
+<<<<<<< HEAD:index.php
                                     <form method = "post" class="modal-content  animate" action="index.php">
 									<?php include('errors.php'); ?>
+=======
+                                    <form class="modal-content  animate" action="index.php">
+									<?php include('errors.php'); ?>
+                                        <div class="imgcontainer">
+                                            <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+                                            <img src="" alt="Avatar" class="avatar">
+                                        </div>
+>>>>>>> a92df7332af9c0c8975030dc70e17dc4a95c7cbf:index.php
 
                                         <div class="container">
                                             <label for="uname"><b  class="form-text">Username</b></label>

@@ -139,7 +139,11 @@
 
     <!--== Login Page Content Start ==-->
     <section id="lgoin-page-wrap" class="section-padding">
+<<<<<<< HEAD
         <form method="post" action="register.php" enctype="multipart/form-data">
+=======
+        <form method="post" action="register.php">
+>>>>>>> a92df7332af9c0c8975030dc70e17dc4a95c7cbf
 		<?php include('errors.php'); ?>
 		<div class="container">
             <div class="row">
@@ -175,6 +179,7 @@
                                 </div>
 								<input type="radio" name="type" value="passager" required> I'm a passager.<br>
                                 <div class="address">
+<<<<<<< HEAD
                                     <input type="text" name = "home" placeholder="Home Location (Passager)">
                                 </div>
                                 <div class="address">
@@ -183,6 +188,17 @@
 								<input type="radio" name="type" value="driver" required> I'm a car driver.<br>
                                 <div class="driver">
                                     <select name = "cclass">
+=======
+                                    <input type="text" name = "home" placeholder="Home Location">
+                                </div>
+                                <div class="address">
+                                    <input type="text" name = "work" placeholder="Work Location">
+                                </div>
+								Car Class (Driver Only):
+                                <div class="driver">
+                                    <select name = "cclass">
+									<option value="">None (Passager)</option>
+>>>>>>> a92df7332af9c0c8975030dc70e17dc4a95c7cbf
 									<option value="4-Passenger Vehicles">4-Passenger Vehicles (Driver)</option>
 									<option value="7-Passenger Vehicles">7-Passenger Vehicles (Driver)</option>
 									</select>
@@ -197,8 +213,13 @@
 
                                 <div class="driver">
                                     Profile image (Driver only):
+<<<<<<< HEAD
                                     <input type="file" name="fileToUpload" value="fileToUpload" id="fileToUpload">
                                 </div>
+=======
+                                    <input type="file" name="fileToUpload" id="fileToUpload">
+                                </form>
+>>>>>>> a92df7332af9c0c8975030dc70e17dc4a95c7cbf
 								<div class="log-btn">
 									<button type="submit-btn" name="reg_user"><i class="fa fa-check-square"></i> Sign Up</button>
 								</div>
