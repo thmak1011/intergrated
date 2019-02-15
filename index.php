@@ -61,12 +61,7 @@
 
     <!--== Header Area Start ==-->
     <header id="header-area" class="fixed-top">
-        <!--== Header Top Start ==-->
-
-            
-        </div>
-        <!--== Header Top End ==-->
-
+       
         <!--== Header Bottom Start ==-->
         <div id="header-bottom">
             <div class="container">

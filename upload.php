@@ -11,7 +11,7 @@ mysql_connect($host, $user, $pass);
 
 mysql_select_db('eie3117');
 
-$upload_image=$_FILES[" myimage "][ "name" ];
+$upload_image=$_FILES["fileToUpload"][ "name" ];
 
 $folder="/xampp/htdocs/images/";
 
@@ -50,8 +50,8 @@ if ($uploadOk == 0) {
     echo "Sorry, your file was not uploaded.";
 // if everything is ok, try to upload file
 } else {
-    if (move_uploaded_file($_FILES[" myimage "][" tmp_name "], "$folder".$_FILES[" myimage "][" name "])) {
-        echo "The file ". basename( $_FILES[" myimage "]["name"]). " has been uploaded.";
+    if (move_uploaded_file($_FILES["fileToUpload"][" tmp_name "], "$folder".$_FILES["fileToUpload"][" name "])) {
+        echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";
     } else {
         echo "Sorry, there was an error uploading your file.";
     }
