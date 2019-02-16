@@ -1,6 +1,7 @@
-<?php
-include ('server.php');
-?>
+<?php include ('server.php') ?>
+<?php if(isset($_COOKIE['login']) && isset($_COOKIE['type'])) {
+		header('location: '.$_COOKIE['type'].'homepage.php');
+}?>
 <!DOCTYPE html>
 <html class="no-js" lang="zxx">
 
@@ -11,7 +12,7 @@ include ('server.php');
     <!--=== Favicon ===-->
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 
-    <title>Cardoor - Car Rental HTML Template</title>
+    <title>PolyUber</title>
 
     <!--=== Bootstrap CSS ===-->
     <link href="assets/css/bootstrap.min.css" rel="stylesheet">
@@ -52,9 +53,7 @@ include ('server.php');
     <!--== Preloader Area End ==-->
 
     <!--== Header Area Start ==-->
-    <header id="header-area" class="fixed-top">
-        
-        
+    <header id="header-area" class="fixed-top">       
 
         <!--== Header Bottom Start ==-->
         <div id="header-bottom">
@@ -62,7 +61,7 @@ include ('server.php');
                 <div class="row">
                     <!--== Logo Start ==-->
                     <div class="col-lg-4">
-                        <a href="index.html" class="logo">
+                        <a href="index.php" class="logo">
                             <img src="assets/img/logo.png" alt="JSOFT">
                         </a>
                     </div>
@@ -74,22 +73,17 @@ include ('server.php');
                     <div class="col-lg-8 d-none d-xl-block">
                         <nav class="mainmenu alignright">
                             <ul>
-                                <li class="active"><a href="index.html">Home</a></li>
+                                <li class="active"><a href="index.php">Home</a></li>
 
 
-                                <li><a href="index.html">Pages</a>
+                                <li><a href="index.php">Pages</a>
 
                                 </li>
 
-                                <li><a href="contact.html">Contact Us</a></li>
                                 <li><button class="form-btn" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">LOG IN</button></li>
                                 <div id="id01" class="modal">
 
-                                    <form class="modal-content  animate" action="/action_page.php">
-                                        <div class="imgcontainer">
-                                            <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-                                            <img src="" alt="Avatar" class="avatar">
-                                        </div>
+                                   <form method = "post" class="modal-content  animate" action="index.php">
 
                                         <div class="container">
                                             <label for="uname"><b  class="form-text">Username</b></label>
@@ -98,7 +92,7 @@ include ('server.php');
                                             <label for="psw"><b  class="form-text">Password</b></label>
                                             <input type="password" placeholder="Enter Password" name="psw" required>
 
-                                            <button class="submit-btn" type="submit" style="border-radius: 4px;">Log in</button>
+                                            <button class="submit-btn" type="submit" name = "login_user" style="border-radius: 4px;">Log in</button>
                                             <label>
                                                 <input type="checkbox" checked="checked" name="remember"> Remember me
                                             </label>
@@ -109,9 +103,9 @@ include ('server.php');
 
 
                                             <span class="psw">
-                                                 <a  class="form-link" href="" >Sign Up?</a>
+                                                 <a  class="form-link" href="register.php" >Sign Up?</a>
                                                 <a class="form-link" href="" >Forgot password?</a>
-      </span>
+										 </span>
                                         </div>
                                     </form>
                                 </div>
@@ -147,62 +141,70 @@ include ('server.php');
 
     <!--== Login Page Content Start ==-->
     <section id="lgoin-page-wrap" class="section-padding">
-        <div class="container">
+        <form method="post" action="register.php" enctype="multipart/form-data">
+		<?php include('errors.php'); ?>
+		<div class="container">
             <div class="row">
                 <div class="col-lg-5 col-md-8 m-auto">
                 	<div class="login-page-content">
                 		<div class="login-form">
                 			<h3>Sign Up</h3>
-							<form action="index.html">
+							
 								<div class="name">
 									<div class="row">
 										<div class="col-md-6">
-											<input type="text" name = fname placeholder="First Name">
+											<input type="text" name = "fname" placeholder="First Name" required>
 										</div>
 										<div class="col-md-6">
-											<input type="text" name = lname placeholder="Last Name">
+											<input type="text" name = "lname" placeholder="Last Name" required>
 										</div>
 									</div>
 								</div>
 								<div class="username">
-									<input type="email"  name = email placeholder="Email">
+									<input type="email"  name = "email" placeholder="Email" required>
                                 </div>
                                 <div class="username">
-									<input type="phone" name = phone placeholder="Phone Number">
+									<input type="phone" name = "phone" placeholder="Phone Number" required>
 								</div>
 								<div class="username">
-									<input type="text" name = username placeholder="Username">
+									<input type="text" name = "uname" placeholder="Username" required>
 								</div>
 								<div class="password">
-									<input type="password" name = pwd placeholder="Password">
+									<input type="password" name = "psw" placeholder="Password" required>
                                 </div>
                                 <div class="password">
-									<input type="password" name = pwd2 placeholder="Confirm Password">
+									<input type="password" name = "psw2" placeholder="Confirm Password" required>
+                                </div>
+								<input type="radio" name="type" value="passager" required> I'm a passager.<br>
+                                <div class="address">
+                                    <input type="text" name = "home" placeholder="Home Location (Passager)">
                                 </div>
                                 <div class="address">
-                                    <input type="text" name = home placeholder="Home Location">
+                                    <input type="text" name = "work" placeholder="Work Location (Passager)">
                                 </div>
-                                <div class="address">
-                                    <input type="text" name = work placeholder="Work Location">
-                                </div>
+								<input type="radio" name="type" value="driver" required> I'm a car driver.<br>
                                 <div class="driver">
-                                    <input type="text" name = class placeholder="Car Class (Driver Only)">
+                                    <select name = "cclass">
+									<option value="4-Passenger Vehicles">4-Passenger Vehicles (Driver)</option>
+									<option value="7-Passenger Vehicles">7-Passenger Vehicles (Driver)</option>
+									</select>
                                 </div>
+                                
                                 <div class="driver">
-                                    <input type="text" name = madel placeholder="Car Model (Driver Only)">
+                                    <input type="text" name = "cmodel" placeholder="Car Model (Driver Only)">
                                 </div>
+								<div class="driver">
+                                    <input type="text" name = "cplate" placeholder="Car Plate Number (Driver Only)">
+                                </div>
+
                                 <div class="driver">
-                                    <input type="text" name = plate placeholder="Car Plate Number (Driver Only)">
-                                </div>
-                                <form action="upload.php" method="post" enctype="multipart/form-data">
                                     Profile image (Driver only):
-                                    <input type="file" name="fileToUpload" id="fileToUpload">
-                                    <input type="submit" value="Upload Image" name="submit">
-                                </form>
+                                    <input type="file" name="fileToUpload" value="fileToUpload" id="fileToUpload">
+                                </div>
 								<div class="log-btn">
-									<button type="submit" name="reg_user"><i class="fa fa-check-square"></i> Sign Up</button>
+									<button type="submit-btn" name="reg_user"><i class="fa fa-check-square"></i> Sign Up</button>
 								</div>
-							</form>
+							
                 		</div>
                 		
                 		
@@ -210,6 +212,7 @@ include ('server.php');
                 </div>
         	</div>
         </div>
+		</form>
     </section>
     <!--== Login Page Content End ==-->
 

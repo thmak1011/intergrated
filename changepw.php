@@ -1,3 +1,8 @@
+<?php include ('server.php') ?>
+<?php if(!isset($_COOKIE['login']) || !isset($_COOKIE['type'])) {
+        header('location: index.php');
+}?>
+
 <!DOCTYPE html>
 <html class="no-js" lang="zxx">
 
@@ -8,7 +13,7 @@
     <!--=== Favicon ===-->
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 
-    <title>Cardoor - Car Rental HTML Template</title>
+    <title>PolyUber</title>
 
     <!--=== Bootstrap CSS ===-->
     <link href="assets/css/bootstrap.min.css" rel="stylesheet">
@@ -49,9 +54,7 @@
     <!--== Preloader Area End ==-->
 
     <!--== Header Area Start ==-->
-    <header id="header-area" class="fixed-top">
-        
-        
+    <header id="header-area" class="fixed-top">       
 
         <!--== Header Bottom Start ==-->
         <div id="header-bottom">
@@ -59,7 +62,7 @@
                 <div class="row">
                     <!--== Logo Start ==-->
                     <div class="col-lg-4">
-                        <a href="index.html" class="logo">
+                        <a href="index.php" class="logo">
                             <img src="assets/img/logo.png" alt="JSOFT">
                         </a>
                     </div>
@@ -71,47 +74,12 @@
                     <div class="col-lg-8 d-none d-xl-block">
                         <nav class="mainmenu alignright">
                             <ul>
-                                <li class="active"><a href="index.html">Home</a></li>
+                                <li class="active"><a href="index.php">Home</a></li>
 
+								<li class="active"><a href="request.php">Start a request</a></li>
 
-                                <li><a href="index.html">Pages</a>
+								<li><a href="logout.php">LOG OUT</a></li>
 
-                                </li>
-
-                                <li><a href="contact.html">Contact Us</a></li>
-                                <li><button class="form-btn" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">LOG IN</button></li>
-                                <div id="id01" class="modal">
-
-                                    <form class="modal-content  animate" action="/action_page.php">
-                                        <div class="imgcontainer">
-                                            <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-                                            <img src="" alt="Avatar" class="avatar">
-                                        </div>
-
-                                        <div class="container">
-                                            <label for="uname"><b  class="form-text">Username</b></label>
-                                            <input type="text" placeholder="Enter Username" name="uname" required>
-
-                                            <label for="psw"><b  class="form-text">Password</b></label>
-                                            <input type="password" placeholder="Enter Password" name="psw" required>
-
-                                            <button class="submit-btn" type="submit" style="border-radius: 4px;">Log in</button>
-                                            <label>
-                                                <input type="checkbox" checked="checked" name="remember"> Remember me
-                                            </label>
-                                        </div>
-
-                                        <div class="container" style="background-color:#393D44">
-                                            <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-
-
-                                            <span class="psw">
-                                                 <a  class="form-link" href="" >Sign Up?</a>
-                                                <a class="form-link" href="" >Forgot password?</a>
-      </span>
-                                        </div>
-                                    </form>
-                                </div>
                             </ul>
                         </nav>
 
@@ -131,7 +99,7 @@
                 <!-- Page Title Start -->
                 <div class="col-lg-12">
                     <div class="section-title  text-center">
-                        <h2>Reset password</h2>
+                        <h2>Change Password</h2>
                         <span class="title-line"><i class="fa fa-car"></i></span>
                         
                     </div>
@@ -144,25 +112,26 @@
 
     <!--== Login Page Content Start ==-->
     <section id="lgoin-page-wrap" class="section-padding">
-        <div class="container">
+        <form method="post" action="changepw.php" enctype="multipart/form-data">
+		<?php include('errors.php'); ?>
+		<div class="container">
             <div class="row">
                 <div class="col-lg-5 col-md-8 m-auto">
                 	<div class="login-page-content">
-                		<div class="login-form">
-                			
-							<form action="index.html">
-								
+                		<div class="login-form">							
 								<div class="password">
-									<input type="password" placeholder="Password">
+									<input type="password" name = "opsw" placeholder="Original Password" required>
+                                </div>
+								<div class="password">
+									<input type="password" name = "psw" placeholder="New Password" required>
                                 </div>
                                 <div class="password">
-									<input type="password" placeholder="Confirm Password">
+									<input type="password" name = "psw2" placeholder="Confirm New Password" required>
                                 </div>
-                               
-								<div class="log-btn">
-									<button type="submit">Update</button>
+								<div class="conf-btn">
+									<button type="submit-btn" name="change_pw"><i class="fa fa-check-square"></i> Confirm </button>
 								</div>
-							</form>
+							
                 		</div>
                 		
                 		
@@ -170,10 +139,9 @@
                 </div>
         	</div>
         </div>
+		</form>
     </section>
-    <!--== Login Page Content End ==-->
-
-    
+    <!--== Login Page Content End ==-->    
 
     <!--== Scroll Top Area Start ==-->
     <div class="scroll-top">
