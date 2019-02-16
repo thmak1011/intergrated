@@ -2,7 +2,10 @@
 <?php if(!isset($_COOKIE['login']) || !isset($_COOKIE['type'])) {
         header('location: index.php');
 }?>
+<<<<<<< HEAD
 
+=======
+>>>>>>> 5c64ccd8cd26d084f03b7e25638ee58e99da728b
 <!DOCTYPE html>
 <html class="no-js" lang="zxx">
 
@@ -76,10 +79,48 @@
                             <ul>
                                 <li class="active"><a href="index.php">Home</a></li>
 
+<<<<<<< HEAD
 								<li class="active"><a href="request.php">Start a request</a></li>
 
 								<li><a href="logout.php">LOG OUT</a></li>
 
+=======
+
+                                <li><a href="index.php">Pages</a>
+
+                                </li>
+
+                                <li><button class="form-btn" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">LOG IN</button></li>
+                                <div id="id01" class="modal">
+
+                                   <form method = "post" class="modal-content  animate" action="index.php">
+									<?php include('errors.php'); ?>
+
+                                        <div class="container">
+                                            <label for="uname"><b  class="form-text">Username</b></label>
+                                            <input type="text" placeholder="Enter Username" name="uname" required>
+
+                                            <label for="psw"><b  class="form-text">Password</b></label>
+                                            <input type="password" placeholder="Enter Password" name="psw" required>
+
+                                            <button class="submit-btn" type="submit" name = "login_user" style="border-radius: 4px;">Log in</button>
+                                            <label>
+                                                <input type="checkbox" checked="checked" name="remember"> Remember me
+                                            </label>
+                                        </div>
+
+                                        <div class="container" style="background-color:#393D44">
+                                            <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+
+
+                                            <span class="psw">
+                                                 <a  class="form-link" href="register.php" >Sign Up?</a>
+                                                <a class="form-link" href="" >Forgot password?</a>
+										 </span>
+                                        </div>
+                                    </form>
+                                </div>
+>>>>>>> 5c64ccd8cd26d084f03b7e25638ee58e99da728b
                             </ul>
                         </nav>
 
@@ -141,7 +182,13 @@
         </div>
 		</form>
     </section>
+<<<<<<< HEAD
     <!--== Login Page Content End ==-->    
+=======
+    <!--== Login Page Content End ==-->
+
+    
+>>>>>>> 5c64ccd8cd26d084f03b7e25638ee58e99da728b
 
     <!--== Scroll Top Area Start ==-->
     <div class="scroll-top">

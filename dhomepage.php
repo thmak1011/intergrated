@@ -1,28 +1,4 @@
-<?php include ('server.php') ?>
-<<<<<<< HEAD
-<?php if(!isset($_COOKIE['login']) || !isset($_COOKIE['type'])) {
-        header('location: index.php');
-}?>
-=======
-<<<<<<< HEAD
-<?php if(!isset($_COOKIE['login']) || !isset($_COOKIE['type'])) {
-        header('location: index.php');
-}?>
-=======
->>>>>>> f69402e33e410a2f3ccf1b18b9029ca3d205c686
->>>>>>> 5c64ccd8cd26d084f03b7e25638ee58e99da728b
 
-<?php if(isset($_COOKIE['login']) && isset($_COOKIE['type'])) {
-		$username = "";
-		$email    = "";
-		$errors = array();
-		$db = mysqli_connect('localhost', 'root', '', 'eie3117');
-		$query = "SELECT * FROM request WHERE PassagerName = ".$_COOKIE['login']." AND Completance = 0"; 
-		$current = mysqli_query($db, $query);
-		$query = "SELECT * FROM request WHERE PassagerName = ".$_COOKIE['login']." AND Completance = 1"; 
-		$history = mysqli_query($db, $query);
-	  }
-?>
 
 <!DOCTYPE html>
 <html class="no-js" lang="zxx">
@@ -98,47 +74,54 @@
                         </a>
                     </div>
                     <!--== Logo End ==-->
+
                     
                     <!--== Main Menu Start ==-->
                     <div class="col-lg-8 d-none d-xl-block">
                         <nav class="mainmenu alignright">
                             <ul>
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> 5c64ccd8cd26d084f03b7e25638ee58e99da728b
-                                <li class="active"><a href="request.php">Start a request</a></li>
-
-                                <li><a href="changepw.php">Change Password</a></li>
-
-								<li><a href="logout.php">LOG OUT</a></li>
-
-<<<<<<< HEAD
-=======
-=======
                                 <li class="active"><a href="index.php">Home</a></li>
 
-                                <li><a href="contact.html">Change Password</a></li>
 
-                                <li><button class="form-btn" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">LOG OUT</button></li>
+                                <li><a href="index.php">Pages</a>
+
+                                </li>
+
+                                <li><a href="contact.html">Contact Us</a></li>
+                                <li><button class="form-btn" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">LOG IN</button></li>
                                 <div id="id01" class="modal">
 
                                     <form class="modal-content  animate" action="index.php">
+									<?php include('errors.php'); ?>
+                                        <div class="imgcontainer">
+                                            <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+                                            <img src="" alt="Avatar" class="avatar">
+                                        </div>
+
                                         <div class="container">
-                                            <label for="uname"><b  class="form-text">Are you sure to log out?</b></label>
-                                            
-                                            <button class="submit-btn" type="submit" name = "logout" style="border-radius: 4px;">Log out</button>
-                                            
+                                            <label for="uname"><b  class="form-text">Username</b></label>
+                                            <input type="text" placeholder="Enter Username" name="uname" required>
+
+                                            <label for="psw"><b  class="form-text">Password</b></label>
+                                            <input type="password" placeholder="Enter Password" name="psw" required>
+
+                                            <button class="submit-btn" type="submit" name = "login_user" style="border-radius: 4px;">Log in</button>
+                                            <label>
+                                                <input type="checkbox" checked="checked" name="remember"> Remember me
+                                            </label>
                                         </div>
 
                                         <div class="container" style="background-color:#393D44">
                                             <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
 
+
+                                            <span class="psw">
+                                                 <a  class="form-link" href="register.php" >Sign Up?</a>
+                                                <a class="form-link" href="" >Forgot password?</a>
+      </span>
                                         </div>
                                     </form>
                                 </div>
->>>>>>> f69402e33e410a2f3ccf1b18b9029ca3d205c686
->>>>>>> 5c64ccd8cd26d084f03b7e25638ee58e99da728b
                             </ul>
                         </nav>
 

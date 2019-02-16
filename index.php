@@ -1,7 +1,22 @@
 ﻿<?php include ('server.php') ?>
+<<<<<<< HEAD:index.php
 <?php if(isset($_COOKIE['login']) && isset($_COOKIE['type'])) {
 		header('location: '.$_COOKIE['type'].'homepage.php');
 }?>
+=======
+<<<<<<< HEAD:index.php
+<?php if(isset($_COOKIE['login']) && isset($_COOKIE['type'])) {
+		header('location: '.$_COOKIE['type'].'homepage.php');
+}?>
+=======
+<<<<<<< HEAD:index.php
+<?php if(isset($_COOKIE['login']) && isset($_COOKIE['type'])) {
+		header('location: '.$_COOKIE['type'].'homepage.php');
+}?>
+=======
+>>>>>>> a92df7332af9c0c8975030dc70e17dc4a95c7cbf:index.php
+>>>>>>> f69402e33e410a2f3ccf1b18b9029ca3d205c686:index.php
+>>>>>>> 5c64ccd8cd26d084f03b7e25638ee58e99da728b:index.php
 <!DOCTYPE html>
 <html class="no-js" lang="zxx">
 
@@ -64,12 +79,7 @@
 
     <!--== Header Area Start ==-->
     <header id="header-area" class="fixed-top">
-        <!--== Header Top Start ==-->
-
-            
-        </div>
-        <!--== Header Top End ==-->
-
+       
         <!--== Header Bottom Start ==-->
         <div id="header-bottom">
             <div class="container">
@@ -92,11 +102,40 @@
                             <ul>
                                 <li class="active"><a href="index.php">Home</a></li>
 
+<<<<<<< HEAD:index.php
 								<li><button class="form-btn" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">LOG IN</button></li>
                                 <div id="id01" class="modal">
 
                                     <form method = "post" class="modal-content  animate" action="index.php">
 									<?php include('errors.php'); ?>
+=======
+
+                                <li><a href="index.php">Pages</a>
+
+                                </li>
+
+                                <li><a href="contact.html">Contact Us</a></li>
+
+								<li><button class="form-btn" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">LOG IN</button></li>
+                                <div id="id01" class="modal">
+
+<<<<<<< HEAD:index.php
+                                    <form method = "post" class="modal-content  animate" action="index.php">
+									<?php include('errors.php'); ?>
+=======
+<<<<<<< HEAD:index.php
+                                    <form method = "post" class="modal-content  animate" action="index.php">
+									<?php include('errors.php'); ?>
+=======
+                                    <form class="modal-content  animate" action="index.php">
+									<?php include('errors.php'); ?>
+                                        <div class="imgcontainer">
+                                            <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+                                            <img src="" alt="Avatar" class="avatar">
+                                        </div>
+>>>>>>> a92df7332af9c0c8975030dc70e17dc4a95c7cbf:index.php
+>>>>>>> f69402e33e410a2f3ccf1b18b9029ca3d205c686:index.php
+>>>>>>> 5c64ccd8cd26d084f03b7e25638ee58e99da728b:index.php
 
                                         <div class="container">
                                             <label for="uname"><b  class="form-text">Username</b></label>
@@ -116,8 +155,13 @@
 
 
                                             <span class="psw">
+<<<<<<< HEAD:index.php
                                                  <a class="form-link" href="register.php" >Sign Up?</a>
 												 <a class="form-link" href="" >Forgot password?</a>
+=======
+                                                 <a  class="form-link" href="register.php" >Sign Up?</a>
+                                                <a class="form-link" href="" >Forgot password?</a>
+>>>>>>> 5c64ccd8cd26d084f03b7e25638ee58e99da728b:index.php
 										 </span>
                                         </div>
                                     </form>
@@ -185,7 +229,16 @@
                                     <button class="book-now-btn" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Book Now</button>
 									<div id="id01" class="modal">
 									<form method = "post" class="modal-content  animate" action="index.php">
+<<<<<<< HEAD:index.php
 								
+=======
+<<<<<<< HEAD:index.php
+								
+=======
+									<?php include('errors.php'); ?>
+
+>>>>>>> f69402e33e410a2f3ccf1b18b9029ca3d205c686:index.php
+>>>>>>> 5c64ccd8cd26d084f03b7e25638ee58e99da728b:index.php
                                         <div class="container">
                                             <label for="uname"><b  class="form-text">Username</b></label>
                                             <input type="text" placeholder="Enter Username" name="uname" required>

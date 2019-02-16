@@ -1,28 +1,7 @@
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> f69402e33e410a2f3ccf1b18b9029ca3d205c686
->>>>>>> 5c64ccd8cd26d084f03b7e25638ee58e99da728b
-﻿<!DOCTYPE html>
-<html class="no-js" lang="zxx">
-
-<head>
-    <meta http-equiv="refresh" content="2;url=index.php">
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-=======
 <!DOCTYPE html>
 <html class="no-js" lang="zxx">
 
 <head>
-    <meta http-equiv="refresh" content="3;url=index.html">
->>>>>>> a92df7332af9c0c8975030dc70e17dc4a95c7cbf
->>>>>>> f69402e33e410a2f3ccf1b18b9029ca3d205c686
->>>>>>> 5c64ccd8cd26d084f03b7e25638ee58e99da728b
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -72,6 +51,7 @@
     <!--== Header Area Start ==-->
     <header id="header-area" class="fixed-top">
         
+        
 
         <!--== Header Bottom Start ==-->
         <div id="header-bottom">
@@ -79,19 +59,7 @@
                 <div class="row">
                     <!--== Logo Start ==-->
                     <div class="col-lg-4">
-<<<<<<< HEAD
-                        <a href="index.php" class="logo">
-=======
-<<<<<<< HEAD
-                        <a href="index.php" class="logo">
-=======
-<<<<<<< HEAD
-                        <a href="index.php" class="logo">
-=======
                         <a href="index.html" class="logo">
->>>>>>> a92df7332af9c0c8975030dc70e17dc4a95c7cbf
->>>>>>> f69402e33e410a2f3ccf1b18b9029ca3d205c686
->>>>>>> 5c64ccd8cd26d084f03b7e25638ee58e99da728b
                             <img src="assets/img/logo.png" alt="JSOFT">
                         </a>
                     </div>
@@ -99,29 +67,14 @@
 
                     <!--== Logo End ==-->
 
-                   
-
                     <!--== Main Menu Start ==-->
                     <div class="col-lg-8 d-none d-xl-block">
                         <nav class="mainmenu alignright">
-<<<<<<< HEAD
-                            
-=======
-<<<<<<< HEAD
-                            
-=======
                             <ul>
-<<<<<<< HEAD
-                                <li class="active"><a href="index.php">Home</a></li>
-
-
-                                <li><a href="index.php">Pages</a>
-=======
                                 <li class="active"><a href="index.html">Home</a></li>
 
 
                                 <li><a href="index.html">Pages</a>
->>>>>>> a92df7332af9c0c8975030dc70e17dc4a95c7cbf
 
                                 </li>
 
@@ -160,8 +113,6 @@
                                     </form>
                                 </div>
                             </ul>
->>>>>>> f69402e33e410a2f3ccf1b18b9029ca3d205c686
->>>>>>> 5c64ccd8cd26d084f03b7e25638ee58e99da728b
                         </nav>
 
                     </div>
@@ -172,69 +123,55 @@
         <!--== Header Bottom End ==-->
     </header>
     <!--== Header Area End ==-->
-    
-<<<<<<< HEAD
-    <!--== email active page Content Start ==-->
-=======
-<<<<<<< HEAD
-    <!--== email active page Content Start ==-->
-=======
-    <!--== 404 Page Page Content Start ==-->
->>>>>>> f69402e33e410a2f3ccf1b18b9029ca3d205c686
->>>>>>> 5c64ccd8cd26d084f03b7e25638ee58e99da728b
-    <section id="page-404-wrap" class="section-padding overlay">
+
+    <!--== Page Title Area Start ==-->
+    <section id="page-title-area" class="section-padding overlay">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12 text-center">
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> 5c64ccd8cd26d084f03b7e25638ee58e99da728b
-                    <div class="email active page">
-                    	<div class="number">
-							
-							<div class="zero">
-								<img src="assets/img/mail.png" alt="JSOFT">
-							</div>
-							
-                    	</div>
-                    	<h3><font color="white">Your account have been activated</font></h3>
-                    	<p>Back to home page after 3 seconds...</p>
-                    	<a href="index.php" class="btn-home"><i class="fa fa-home"></i>Go to Home</a>
-<<<<<<< HEAD
-=======
-=======
-                    <div class="page-404-content">
-                    	<div class="number">
-							<div class="four">4</div>
-							<div class="zero">
-								<img src="assets/img/404.png" alt="JSOFT">
-							</div>
-							<div class="four">4</div>
-                    	</div>
-                    	<h4>Your account have been activated</h4>
-                    	<p>Back to home page after 3 seconds...</p>
-<<<<<<< HEAD
-                    	<a href="index.php" class="btn-404-home"><i class="fa fa-home"></i>Go to Home</a>
-=======
-                    	<a href="index.html" class="btn-404-home"><i class="fa fa-home"></i>Go to Home</a>
->>>>>>> a92df7332af9c0c8975030dc70e17dc4a95c7cbf
->>>>>>> f69402e33e410a2f3ccf1b18b9029ca3d205c686
->>>>>>> 5c64ccd8cd26d084f03b7e25638ee58e99da728b
+                <!-- Page Title Start -->
+                <div class="col-lg-12">
+                    <div class="section-title  text-center">
+                        <h2>Reset password</h2>
+                        <span class="title-line"><i class="fa fa-car"></i></span>
+                        
                     </div>
+                </div>
+                <!-- Page Title End -->
+            </div>
+        </div>
+    </section>
+    <!--== Page Title Area End ==-->
+
+    <!--== Login Page Content Start ==-->
+    <section id="lgoin-page-wrap" class="section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 col-md-8 m-auto">
+                	<div class="login-page-content">
+                		<div class="login-form">
+                			
+							<form action="index.html">
+								
+								<div class="password">
+									<input type="password" placeholder="Password">
+                                </div>
+                                <div class="password">
+									<input type="password" placeholder="Confirm Password">
+                                </div>
+                               
+								<div class="log-btn">
+									<button type="submit">Update</button>
+								</div>
+							</form>
+                		</div>
+                		
+                		
+                	</div>
                 </div>
         	</div>
         </div>
     </section>
-<<<<<<< HEAD
-    <!--== email active page Content End ==-->
-=======
-<<<<<<< HEAD
-    <!--== email active page Content End ==-->
-=======
-    <!--== 404 Page Page Content End ==-->
->>>>>>> f69402e33e410a2f3ccf1b18b9029ca3d205c686
->>>>>>> 5c64ccd8cd26d084f03b7e25638ee58e99da728b
+    <!--== Login Page Content End ==-->
 
     
 
