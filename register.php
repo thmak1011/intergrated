@@ -1,7 +1,10 @@
 <?php include ('server.php') ?>
+<<<<<<< HEAD
 <?php if(isset($_COOKIE['login']) && isset($_COOKIE['type'])) {
 		header('location: '.$_COOKIE['type'].'homepage.php');
 }?>
+=======
+>>>>>>> f69402e33e410a2f3ccf1b18b9029ca3d205c686
 <!DOCTYPE html>
 <html class="no-js" lang="zxx">
 
@@ -83,7 +86,11 @@
                                 <li><button class="form-btn" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">LOG IN</button></li>
                                 <div id="id01" class="modal">
 
+<<<<<<< HEAD
                                    <form method = "post" class="modal-content  animate" action="index.php">
+=======
+                                   <form class="modal-content  animate" action="index.php">
+>>>>>>> f69402e33e410a2f3ccf1b18b9029ca3d205c686
 									<?php include('errors.php'); ?>
 
                                         <div class="container">
@@ -106,7 +113,11 @@
                                             <span class="psw">
                                                  <a  class="form-link" href="register.php" >Sign Up?</a>
                                                 <a class="form-link" href="" >Forgot password?</a>
+<<<<<<< HEAD
 										 </span>
+=======
+										</span>
+>>>>>>> f69402e33e410a2f3ccf1b18b9029ca3d205c686
                                         </div>
                                     </form>
                                 </div>
@@ -142,7 +153,15 @@
 
     <!--== Login Page Content Start ==-->
     <section id="lgoin-page-wrap" class="section-padding">
+<<<<<<< HEAD
         <form method="post" action="register.php" enctype="multipart/form-data">
+=======
+<<<<<<< HEAD
+        <form method="post" action="register.php" enctype="multipart/form-data">
+=======
+        <form method="post" action="register.php">
+>>>>>>> a92df7332af9c0c8975030dc70e17dc4a95c7cbf
+>>>>>>> f69402e33e410a2f3ccf1b18b9029ca3d205c686
 		<?php include('errors.php'); ?>
 		<div class="container">
             <div class="row">
@@ -178,6 +197,10 @@
                                 </div>
 								<input type="radio" name="type" value="passager" required> I'm a passager.<br>
                                 <div class="address">
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> f69402e33e410a2f3ccf1b18b9029ca3d205c686
                                     <input type="text" name = "home" placeholder="Home Location (Passager)">
                                 </div>
                                 <div class="address">
@@ -186,6 +209,7 @@
 								<input type="radio" name="type" value="driver" required> I'm a car driver.<br>
                                 <div class="driver">
                                     <select name = "cclass">
+<<<<<<< HEAD
 									<option value="4-Passenger Vehicles">4-Passenger Vehicles (Driver)</option>
 									<option value="7-Passenger Vehicles">7-Passenger Vehicles (Driver)</option>
 									</select>
@@ -202,6 +226,40 @@
                                     Profile image (Driver only):
                                     <input type="file" name="fileToUpload" value="fileToUpload" id="fileToUpload">
                                 </div>
+=======
+=======
+                                    <input type="text" name = "home" placeholder="Home Location">
+                                </div>
+                                <div class="address">
+                                    <input type="text" name = "work" placeholder="Work Location">
+                                </div>
+								Car Class (Driver Only):
+                                <div class="driver">
+                                    <select name = "cclass">
+									<option value="">None (Passager)</option>
+>>>>>>> a92df7332af9c0c8975030dc70e17dc4a95c7cbf
+									<option value="4-Passenger Vehicles">4-Passenger Vehicles (Driver)</option>
+									<option value="7-Passenger Vehicles">7-Passenger Vehicles (Driver)</option>
+									</select>
+                                </div>
+                                
+                                <div class="driver">
+                                    <input type="text" name = "cmodel" placeholder="Car Model (Driver Only)">
+                                </div>
+								<div class="driver">
+                                    <input type="text" name = "cplate" placeholder="Car Plate Number (Driver Only)">
+                                </div>
+
+                                <div class="driver">
+                                    Profile image (Driver only):
+<<<<<<< HEAD
+                                    <input type="file" name="fileToUpload" value="fileToUpload" id="fileToUpload">
+                                </div>
+=======
+                                    <input type="file" name="fileToUpload" id="fileToUpload">
+                                </form>
+>>>>>>> a92df7332af9c0c8975030dc70e17dc4a95c7cbf
+>>>>>>> f69402e33e410a2f3ccf1b18b9029ca3d205c686
 								<div class="log-btn">
 									<button type="submit-btn" name="reg_user"><i class="fa fa-check-square"></i> Sign Up</button>
 								</div>

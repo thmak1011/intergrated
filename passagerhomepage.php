@@ -1,7 +1,10 @@
 <?php include ('server.php') ?>
+<<<<<<< HEAD
 <?php if(!isset($_COOKIE['login']) || !isset($_COOKIE['type'])) {
         header('location: index.php');
 }?>
+=======
+>>>>>>> f69402e33e410a2f3ccf1b18b9029ca3d205c686
 
 <?php if(isset($_COOKIE['login']) && isset($_COOKIE['type'])) {
 		$username = "";
@@ -94,12 +97,36 @@
                     <div class="col-lg-8 d-none d-xl-block">
                         <nav class="mainmenu alignright">
                             <ul>
+<<<<<<< HEAD
                                 <li class="active"><a href="request.php">Start a request</a></li>
 
                                 <li><a href="changepw.php">Change Password</a></li>
 
 								<li><a href="logout.php">LOG OUT</a></li>
 
+=======
+                                <li class="active"><a href="index.php">Home</a></li>
+
+                                <li><a href="contact.html">Change Password</a></li>
+
+                                <li><button class="form-btn" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">LOG OUT</button></li>
+                                <div id="id01" class="modal">
+
+                                    <form class="modal-content  animate" action="index.php">
+                                        <div class="container">
+                                            <label for="uname"><b  class="form-text">Are you sure to log out?</b></label>
+                                            
+                                            <button class="submit-btn" type="submit" name = "logout" style="border-radius: 4px;">Log out</button>
+                                            
+                                        </div>
+
+                                        <div class="container" style="background-color:#393D44">
+                                            <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+
+                                        </div>
+                                    </form>
+                                </div>
+>>>>>>> f69402e33e410a2f3ccf1b18b9029ca3d205c686
                             </ul>
                         </nav>
 
