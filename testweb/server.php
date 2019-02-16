@@ -269,4 +269,61 @@ if (isset($_POST['reset'])) {
    }
 }
 
+if (isset($_POST['delete_request'])) {
+  $RID = $_POST['delete_request'];
+  $query = "DELETE FROM request WHERE Request_ID = '$RID'"; 
+	$results = mysqli_query($db, $query);
+	if (!$results) {
+			echo "Error: %s\n". mysqli_error($db);
+			exit();
+	}else{header('location: reset.php');}
+}
+
+if (isset($_POST['accept_request'])) {
+  $RID = $_POST['accept_request'];
+  $username = $_COOKIE['login'];
+  $query = "UPDATE request SET DriverName = '$username', Acceptance = 1 WHERE Request_ID = '$RID'"; 
+	$results = mysqli_query($db, $query);
+	if (!$results) {
+			echo "Error: %s\n". mysqli_error($db);
+			exit();
+  }else{header('location: reset.php');}
+}
+
+if (isset($_POST['complete_request'])) {
+  $RID = $_POST['complete_request'];
+  $fee = $_POST['fee'];
+  $tips = $_POST['tips'];
+  $time = $date = date('Y-m-d h:i:s');
+  $query = "UPDATE request SET Complete_time = '$time', Final_Fee = '$fee', Tips = '$tips', Completance = 1 WHERE Request_ID = '$RID'"; 
+	$results = mysqli_query($db, $query);
+	if (!$results) {
+			echo "Error: %s\n". mysqli_error($db);
+			exit();
+  }else{header('location: reset.php');}
+}
+
+if (isset($_POST['request'])){
+  $origin = $_COOKIE['origin'];
+  $destination = $_COOKIE['destination'];
+  $duration = $_COOKIE['duration'];
+  $distance = $_COOKIE['distance'];
+  $time = date('Y-m-d h:i:s');
+  $pickup = $_POST['meeting-time'];
+  $username = $_COOKIE['login'];
+  if ($duration < 2){
+    $suggested_fee = 20.0;
+  }else{
+    $suggested_fee = 20.0 + (ceil($duration) - 2) * 3;
+  };
+  $query = "INSERT INTO request(Request_time, Pickup_time, PassagerName, Start_location, Destination, Suggested_Fee) 
+  VALUE('$time', '$pickup', '$username', '$origin', '$destination', '$suggested_fee')"; 
+	$results = mysqli_query($db, $query);
+  if(!$results){
+      echo "Error: %s\n". mysqli_error($db);
+			exit();
+  }else{
+      header('location: index.php');
+  }
+}
 ?>

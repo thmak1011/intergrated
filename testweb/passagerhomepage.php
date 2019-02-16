@@ -4,20 +4,30 @@
 }?>
 
 <?php if(isset($_COOKIE['login']) && isset($_COOKIE['type'])) {
-		$username = "";
-		$email    = "";
-		$errors = array();
 		$db = mysqli_connect('localhost', 'root', '', 'eie3117');
-		$query = "SELECT * FROM request WHERE PassagerName = ".$_COOKIE['login']." AND Completance = 0"; 
+		$username = $_COOKIE['login'];
+		$query = "SELECT * FROM request WHERE PassagerName = '$username' AND Completance = 0"; 
 		$current = mysqli_query($db, $query);
-		$query = "SELECT * FROM request WHERE PassagerName = ".$_COOKIE['login']." AND Completance = 1"; 
+		if (!$current) {
+			echo "Error: %s\n". mysqli_error($db);
+			exit();
+		}
+		$query = "SELECT * FROM request WHERE PassagerName = '$username'  AND Completance = 1"; 
 		$history = mysqli_query($db, $query);
+		if (!$history) {
+			echo "Error: %s\n". mysqli_error($db);
+			exit();
+		}
 	  }
 ?>
 
 <!DOCTYPE html>
 <html class="no-js" lang="zxx">
-
+<style>
+table, th, td {
+  border: 3px solid black;
+}
+</style>
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -141,51 +151,43 @@
                             <!-- Single Articles Start -->
                             <div class="col-lg-12">
                                 <article class="single-article">
-                                    <div class="row">
-                                        <!-- Articles Thumbnail Start -->
-                                        <div class="col-lg-5">
-                                            <div class="article-thumb">
-                                                
-                                            </div>
-                                        </div>
-                                        <!-- Articles Thumbnail End -->
-            
-                                        <!-- Articles Content Start -->
-                                        <div class="col-lg-7">
-                                            <div class="display-table">
-                                                <div class="display-table-cell">
-                                                    <div class="article-body">
-                                                        <h3><a href="article-details.html">Wliquam sit amet urna eullam</a></h3>
-                                                        <div class="article-meta">
-                                                            <a href="#" class="author">By :: <span>Admin</span></a>
-                                                            <a href="#" class="commnet">Comments :: <span>10</span></a>
-                                                        </div>
-            
-                                                        <div class="article-date">25 <span class="month">jan</span></div>
-            
-                                                        <p>Wlam aiber vestibulum fringilla oremedad ipsum dolor sit amet consectetur adipisicing elit sed doned eiusmod tempored incididunt ut labore et dolore magna aliquaa enimd ad minim veniad.</p>
-            
-                                                        <a href="article-details.html" class="readmore-btn">Read More <i class="fa fa-long-arrow-right"></i></a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- Articles Content End -->
+									<form method = "post" action="index.php" enctype="multipart/form-data">
+									<div id="table">	
+                                        <table>
+										<tr>
+										   <th> Request Time </th>
+										   <th> Start Location </th>
+										   <th> Destination </th>
+										   <th> Suggested Fee </th>
+										   <th> Driver Name </th>
+										   <th> Pickup Time </th>
+										   <th> Acceptance </th>
+										   <th> Cancel </th>
+									    </tr>
+										<?php 
+											while($row = mysqli_fetch_array($current))
+											{
+												echo "<tr>";
+												echo "<td>".$row['Request_time']."&nbsp;</td>";
+												echo "<td>".$row['Start_location']."&nbsp;</td>";
+												echo "<td>".$row['Destination']."&nbsp;</td>";
+												echo "<td>".$row['Suggested_Fee']."&nbsp;</td>";
+												echo "<td>".$row['DriverName']."&nbsp;</td>";
+												echo "<td>".$row['Pickup_time']."&nbsp;</td>";
+												echo "<td>".$row['Acceptance']."&nbsp;</td>";
+												$rid = $row['Request_ID'];
+												echo "<td><button type = \"submit\" name = \"delete_request\" value = '$rid'> Cancel </button></td>";
+											    echo "</tr>";
+											}
+										?>
+										</table>
                                     </div>
+									</form>
                                 </article>
                             </div>
-                            <!-- Single Articles End -->
-                        
-
-                       
                     </div>
-                
-                <!--== Car List Area End ==-->            
         </div>
     </section>
-    <!--== About Us Area End ==-->
-
-    
 
     <!--== Services Area Start ==-->
     <section id="service-area" class="section-padding">
@@ -206,109 +208,40 @@
             
                 <div class="container">
                     <div class="row">
-                        <!-- Single Articles Start -->
                         <div class="col-lg-12">
-                            <article class="single-article">
-                                <div class="row">
-                                    <!-- Articles Thumbnail Start -->
-                                    <div class="col-lg-5">
-                                        <div class="article-thumb">
-                                            
-                                        </div>
-                                    </div>
-                                    <!-- Articles Thumbnail End -->
-        
-                                    <!-- Articles Content Start -->
-                                    <div class="col-lg-7">
-                                        <div class="display-table">
-                                            <div class="display-table-cell">
-                                                <div class="article-body">
-                                                    <h3><a href="article-details.html">Wliquam sit amet urna eullam</a></h3>
-                                                    <div class="article-meta">
-                                                        <a href="#" class="author">By :: <span>Admin</span></a>
-                                                        <a href="#" class="commnet">Comments :: <span>10</span></a>
-                                                    </div>
-        
-                                                    <div class="article-date">25 <span class="month">jan</span></div>
-        
-                                                    <p>Wlam aiber vestibulum fringilla oremedad ipsum dolor sit amet consectetur adipisicing elit sed doned eiusmod tempored incididunt ut labore et dolore magna aliquaa enimd ad minim veniad.</p>
-        
-                                                    <a href="article-details.html" class="readmore-btn">Read More <i class="fa fa-long-arrow-right"></i></a>
+                                <article class="single-article">
+                                                   <div id="table">	
+													   <table>
+														<tr>
+														   <th> Request Time </th>
+														   <th> Start Location </th>
+														   <th> Destination </th>
+														   <th> Suggested Fee </th>
+														   <th> Driver Name </th>
+														   <th> Pickup Time </th>
+														   <th> Complete Time </th>
+														   <th> Final Fee </th>
+														   <th> Tips </th>
+														</tr>
+														<?php 
+															while($row = mysqli_fetch_array($history))
+															{
+																echo "<tr>";
+																echo "<td>".$row['Request_time']."&nbsp;</td>";
+																echo "<td>".$row['Start_location']."&nbsp;</td>";
+																echo "<td>".$row['Destination']."&nbsp;</td>";
+																echo "<td>".$row['Suggested_Fee']."&nbsp;</td>";
+																echo "<td>".$row['DriverName']."&nbsp;</td>";
+																echo "<td>".$row['Pickup_time']."&nbsp;</td>";
+																echo "<td>".$row['Complete_time']."&nbsp;</td>";
+																echo "<td>".$row['Final_Fee']."&nbsp;</td>";
+																echo "<td>".$row['Tips']."&nbsp;</td>";
+																echo "</tr>";
+															}
+														?>
+														</table>
                                                 </div>
                                             </div>
-                                        </div>
-                                    </div>
-                                    <!-- Articles Content End -->
-                                </div>
-                            </article>
-                        </div>
-                        <!-- Single Articles End -->
-        
-                        <!-- Single Articles Start -->
-                        <div class="col-lg-12">
-                            <article class="single-article">
-                                <div class="row">
-                                    <!-- Articles Thumbnail Start -->
-                                    <div class="col-lg-5">
-                                        <div class="article-thumb">
-                                            
-                                        </div>
-                                    </div>
-                                    <!-- Articles Thumbnail End -->
-        
-                                    <!-- Articles Content Start -->
-                                    <div class="col-lg-7">
-                                        <div class="display-table">
-                                            <div class="display-table-cell">
-                                                <div class="article-body">
-                                                    <h3><a href="article-details.html">Wliquam sit amet urna eullam</a></h3>
-                                                    <div class="article-meta">
-                                                        <a href="#" class="author">By :: <span>Admin</span></a>
-                                                        <a href="#" class="commnet">Comments :: <span>10</span></a>
-                                                    </div>
-        
-                                                    <div class="article-date">25 <span class="month">jan</span></div>
-        
-                                                    <p>Wlam aiber vestibulum fringilla oremedad ipsum dolor sit amet consectetur adipisicing elit sed doned eiusmod tempored incididunt ut labore et dolore magna aliquaa enimd ad minim veniad.</p>
-        
-                                                    <a href="article-details.html" class="readmore-btn">Read More <i class="fa fa-long-arrow-right"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- Articles Content End -->
-                                </div>
-                            </article>
-                        </div>
-                        <!-- Single Articles End -->
-        
-                        
-                    </div>
-        
-                    <div class="row">
-                        <!-- Page Pagination Start -->
-                        <div class="col-lg-12">
-                            <div class="page-pagi">
-                                <nav aria-label="Page navigation example">
-                                    <ul class="pagination">
-                                        <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-                                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                                        <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                        <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                        <li class="page-item"><a class="page-link" href="#">4</a></li>
-                                        <li class="page-item"><a class="page-link" href="#">5</a></li>
-                                        <li class="page-item"><a class="page-link" href="#">Next</a></li>
-                                    </ul>
-                                </nav>
-                            </div>
-                        </div>
-                        <!-- Page Pagination End -->
-                    </div>
-                </div>
-            
-            <!--== Car List Area End ==-->
-        
-            
                     
         
             <!--== Scroll Top Area Start ==-->

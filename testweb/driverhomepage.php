@@ -1,8 +1,39 @@
+<?php include ('server.php') ?>
+<?php if(!isset($_COOKIE['login']) || !isset($_COOKIE['type'])) {
+        header('location: index.php');
+}?>
 
+<?php if(isset($_COOKIE['login']) && isset($_COOKIE['type'])) {
+		$db = mysqli_connect('localhost', 'root', '', 'eie3117');
+        $username = $_COOKIE['login'];
+        $query = "SELECT * FROM request WHERE Acceptance = 0 AND Completance = 0"; 
+		$avalible = mysqli_query($db, $query);
+		if (!$avalible) {
+			echo "Error: %s\n". mysqli_error($db);
+			exit();
+		}
+		$query = "SELECT * FROM request WHERE DriverName = '$username' AND Completance = 0"; 
+		$current = mysqli_query($db, $query);
+		if (!$current) {
+			echo "Error: %s\n". mysqli_error($db);
+			exit();
+		}
+		$query = "SELECT * FROM request WHERE DriverName = '$username' AND Completance = 1"; 
+		$history = mysqli_query($db, $query);
+		if (!$history) {
+			echo "Error: %s\n". mysqli_error($db);
+			exit();
+		}
+	  }
+?>
 
 <!DOCTYPE html>
 <html class="no-js" lang="zxx">
-
+<style>
+table, th, td {
+  border: 3px solid black;
+}
+</style>
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -74,54 +105,16 @@
                         </a>
                     </div>
                     <!--== Logo End ==-->
-
                     
                     <!--== Main Menu Start ==-->
                     <div class="col-lg-8 d-none d-xl-block">
                         <nav class="mainmenu alignright">
                             <ul>
-                                <li class="active"><a href="index.php">Home</a></li>
 
+                                <li><a href="changepw.php">Change Password</a></li>
 
-                                <li><a href="index.php">Pages</a>
+								<li><a href="logout.php">LOG OUT</a></li>
 
-                                </li>
-
-                                <li><a href="contact.html">Contact Us</a></li>
-                                <li><button class="form-btn" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">LOG IN</button></li>
-                                <div id="id01" class="modal">
-
-                                    <form class="modal-content  animate" action="index.php">
-									<?php include('errors.php'); ?>
-                                        <div class="imgcontainer">
-                                            <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-                                            <img src="" alt="Avatar" class="avatar">
-                                        </div>
-
-                                        <div class="container">
-                                            <label for="uname"><b  class="form-text">Username</b></label>
-                                            <input type="text" placeholder="Enter Username" name="uname" required>
-
-                                            <label for="psw"><b  class="form-text">Password</b></label>
-                                            <input type="password" placeholder="Enter Password" name="psw" required>
-
-                                            <button class="submit-btn" type="submit" name = "login_user" style="border-radius: 4px;">Log in</button>
-                                            <label>
-                                                <input type="checkbox" checked="checked" name="remember"> Remember me
-                                            </label>
-                                        </div>
-
-                                        <div class="container" style="background-color:#393D44">
-                                            <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-
-
-                                            <span class="psw">
-                                                 <a  class="form-link" href="register.php" >Sign Up?</a>
-                                                <a class="form-link" href="" >Forgot password?</a>
-      </span>
-                                        </div>
-                                    </form>
-                                </div>
                             </ul>
                         </nav>
 
@@ -143,6 +136,57 @@
         </div>
     </section>
     <!--== Page Title Area End ==-->
+    <section id="about-area" class="section-padding">
+        <div class="container">
+            <div class="row">
+                <!-- Section Title Start -->
+                <div class="col-lg-12">
+                    <div class="section-title  text-center">
+                        <h2>Avalible Request</h2>
+                        <span class="title-line"><i class="fa fa-car"></i></span>
+                        
+                    </div>
+                </div>
+                <!-- Section Title End -->
+                
+                    <div class="container">
+                        
+                            <!-- Single Articles Start -->
+                            <div class="col-lg-12">
+                                <article class="single-article">
+									<form method = "post" action="index.php" enctype="multipart/form-data">
+									<div id="table">	
+                                        <table>
+										<tr>
+										   <th> Request Time </th>
+										   <th> Start Location </th>
+										   <th> Destination </th>
+										   <th> Suggested Fee </th>
+										   <th> Requester </th>
+										   <th> Accept </th>
+									    </tr>
+										<?php 
+											while($row = mysqli_fetch_array($avalible))
+											{
+												echo "<tr>";
+												echo "<td>".$row['Request_time']."&nbsp;</td>";
+												echo "<td>".$row['Start_location']."&nbsp;</td>";
+												echo "<td>".$row['Destination']."&nbsp;</td>";
+												echo "<td>".$row['Suggested_Fee']."&nbsp;</td>";
+												echo "<td>".$row['PassagerName']."&nbsp;</td>";
+												$rid = $row['Request_ID'];
+												echo "<td><button type = \"submit\" name = \"accept_request\" value = '$rid'> Accept </button></td>";
+											    echo "</tr>";
+											}
+										?>
+										</table>
+                                    </div>
+									</form>
+                                </article>
+                            </div>
+                    </div>
+        </div>
+    </section>
 
     <!--== About Us Area Start ==-->
     <section id="about-area" class="section-padding">
@@ -163,51 +207,54 @@
                             <!-- Single Articles Start -->
                             <div class="col-lg-12">
                                 <article class="single-article">
-                                    <div class="row">
-                                        <!-- Articles Thumbnail Start -->
-                                        <div class="col-lg-5">
-                                            <div class="article-thumb">
-                                                
-                                            </div>
-                                        </div>
-                                        <!-- Articles Thumbnail End -->
-            
-                                        <!-- Articles Content Start -->
-                                        <div class="col-lg-7">
-                                            <div class="display-table">
-                                                <div class="display-table-cell">
-                                                    <div class="article-body">
-                                                        <h3><a href="article-details.html">Wliquam sit amet urna eullam</a></h3>
-                                                        <div class="article-meta">
-                                                            <a href="#" class="author">By :: <span>Admin</span></a>
-                                                            <a href="#" class="commnet">Comments :: <span>10</span></a>
-                                                        </div>
-            
-                                                        <div class="article-date">25 <span class="month">jan</span></div>
-            
-                                                        <p>Wlam aiber vestibulum fringilla oremedad ipsum dolor sit amet consectetur adipisicing elit sed doned eiusmod tempored incididunt ut labore et dolore magna aliquaa enimd ad minim veniad.</p>
-            
-                                                        <a href="article-details.html" class="readmore-btn">Read More <i class="fa fa-long-arrow-right"></i></a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- Articles Content End -->
+									<form method = "post" action="index.php" enctype="multipart/form-data">
+									<div id="table">	
+                                        <table>
+										<tr>
+										   <th> Request Time </th>
+										   <th> Start Location </th>
+										   <th> Destination </th>
+										   <th> Suggested Fee </th>
+										   <th> Passager Name </th>
+										   <th> Complete </th>
+									    </tr>
+										<?php 
+											while($row = mysqli_fetch_array($current))
+											{
+												echo "<tr>";
+												echo "<td>".$row['Request_time']."&nbsp;</td>";
+												echo "<td>".$row['Start_location']."&nbsp;</td>";
+												echo "<td>".$row['Destination']."&nbsp;</td>";
+												echo "<td>".$row['Suggested_Fee']."&nbsp;</td>";
+												echo "<td>".$row['PassagerName']."&nbsp;</td>";
+                                                $rid = $row['Request_ID'];
+                                                echo "<td><button onclick=\"document.getElementById('id01').style.display='block'\"> Complete </button></td>";
+                                                    echo "<div id=\"id01\" class=\"modal\">";
+                                                    echo "<form method = \"post\" class=\"modal-content  animate\" action=\"index.php\">";
+                                                        include('errors.php');
+                                                        echo "<div class=\"container\" >";
+                                                            echo "<label for=\"final_fee\"><b  class=\"form-text\">Final Fee</b></label>";
+                                                            echo "<input type=\"text\" placeholder=\"Enter Final Fee\" name=\"fee\" required>";
+                                                            echo "<label for=\"tips\"><b  class=\"form-text\">Tips</b></label>";
+                                                            echo "<input type=\"text\" placeholder=\"Enter Tips\" name=\"tips\" required>";
+                                                            echo "<button class=\"submit-btn\" type=\"submit\" name = \"complete_request\" value = '$rid' style=\"border-radius: 4px;\">Complete</button>";
+                                                            echo "</div>";
+                                                        echo "<div class=\"container\" style=\"background-color:#393D44\">";
+                                                            echo "<button type=\"button\" onclick=\"document.getElementById('id01').style.display='none'\" class=\"cancelbtn\">Cancel</button>";
+                                                        echo "</div>";
+                                                    echo "</form>";
+                                                echo "</div>";
+                                                echo "</tr>";
+											}
+										?>
+										</table>
                                     </div>
+									</form>
                                 </article>
                             </div>
-                            <!-- Single Articles End -->
-                        
-
-                       
                     </div>
-                
-                <!--== Car List Area End ==-->            
         </div>
     </section>
-    <!--== About Us Area End ==-->
-
-    
 
     <!--== Services Area Start ==-->
     <section id="service-area" class="section-padding">
@@ -228,109 +275,40 @@
             
                 <div class="container">
                     <div class="row">
-                        <!-- Single Articles Start -->
                         <div class="col-lg-12">
-                            <article class="single-article">
-                                <div class="row">
-                                    <!-- Articles Thumbnail Start -->
-                                    <div class="col-lg-5">
-                                        <div class="article-thumb">
-                                            
-                                        </div>
-                                    </div>
-                                    <!-- Articles Thumbnail End -->
-        
-                                    <!-- Articles Content Start -->
-                                    <div class="col-lg-7">
-                                        <div class="display-table">
-                                            <div class="display-table-cell">
-                                                <div class="article-body">
-                                                    <h3><a href="article-details.html">Wliquam sit amet urna eullam</a></h3>
-                                                    <div class="article-meta">
-                                                        <a href="#" class="author">By :: <span>Admin</span></a>
-                                                        <a href="#" class="commnet">Comments :: <span>10</span></a>
-                                                    </div>
-        
-                                                    <div class="article-date">25 <span class="month">jan</span></div>
-        
-                                                    <p>Wlam aiber vestibulum fringilla oremedad ipsum dolor sit amet consectetur adipisicing elit sed doned eiusmod tempored incididunt ut labore et dolore magna aliquaa enimd ad minim veniad.</p>
-        
-                                                    <a href="article-details.html" class="readmore-btn">Read More <i class="fa fa-long-arrow-right"></i></a>
+                                <article class="single-article">
+                                                   <div id="table">	
+													   <table>
+														<tr>
+														   <th> Request Time </th>
+														   <th> Start Location </th>
+														   <th> Destination </th>
+														   <th> Suggested Fee </th>
+														   <th> Passager Name </th>
+														   <th> Pickup Time </th>
+														   <th> Complete Time </th>
+														   <th> Final Fee </th>
+														   <th> Tips </th>
+														</tr>
+														<?php 
+															while($row = mysqli_fetch_array($history))
+															{
+																echo "<tr>";
+																echo "<td>".$row['Request_time']."&nbsp;</td>";
+																echo "<td>".$row['Start_location']."&nbsp;</td>";
+																echo "<td>".$row['Destination']."&nbsp;</td>";
+																echo "<td>".$row['Suggested_Fee']."&nbsp;</td>";
+																echo "<td>".$row['PassagerName']."&nbsp;</td>";
+																echo "<td>".$row['Pickup_time']."&nbsp;</td>";
+																echo "<td>".$row['Complete_time']."&nbsp;</td>";
+																echo "<td>".$row['Final_Fee']."&nbsp;</td>";
+																echo "<td>".$row['Tips']."&nbsp;</td>";
+																echo "</tr>";
+															}
+														?>
+														</table>
                                                 </div>
                                             </div>
-                                        </div>
-                                    </div>
-                                    <!-- Articles Content End -->
-                                </div>
-                            </article>
-                        </div>
-                        <!-- Single Articles End -->
-        
-                        <!-- Single Articles Start -->
-                        <div class="col-lg-12">
-                            <article class="single-article">
-                                <div class="row">
-                                    <!-- Articles Thumbnail Start -->
-                                    <div class="col-lg-5">
-                                        <div class="article-thumb">
-                                            
-                                        </div>
-                                    </div>
-                                    <!-- Articles Thumbnail End -->
-        
-                                    <!-- Articles Content Start -->
-                                    <div class="col-lg-7">
-                                        <div class="display-table">
-                                            <div class="display-table-cell">
-                                                <div class="article-body">
-                                                    <h3><a href="article-details.html">Wliquam sit amet urna eullam</a></h3>
-                                                    <div class="article-meta">
-                                                        <a href="#" class="author">By :: <span>Admin</span></a>
-                                                        <a href="#" class="commnet">Comments :: <span>10</span></a>
-                                                    </div>
-        
-                                                    <div class="article-date">25 <span class="month">jan</span></div>
-        
-                                                    <p>Wlam aiber vestibulum fringilla oremedad ipsum dolor sit amet consectetur adipisicing elit sed doned eiusmod tempored incididunt ut labore et dolore magna aliquaa enimd ad minim veniad.</p>
-        
-                                                    <a href="article-details.html" class="readmore-btn">Read More <i class="fa fa-long-arrow-right"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- Articles Content End -->
-                                </div>
-                            </article>
-                        </div>
-                        <!-- Single Articles End -->
-        
-                        
-                    </div>
-        
-                    <div class="row">
-                        <!-- Page Pagination Start -->
-                        <div class="col-lg-12">
-                            <div class="page-pagi">
-                                <nav aria-label="Page navigation example">
-                                    <ul class="pagination">
-                                        <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-                                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                                        <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                        <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                        <li class="page-item"><a class="page-link" href="#">4</a></li>
-                                        <li class="page-item"><a class="page-link" href="#">5</a></li>
-                                        <li class="page-item"><a class="page-link" href="#">Next</a></li>
-                                    </ul>
-                                </nav>
-                            </div>
-                        </div>
-                        <!-- Page Pagination End -->
-                    </div>
-                </div>
-            
-            <!--== Car List Area End ==-->
-        
-            
                     
         
             <!--== Scroll Top Area Start ==-->
