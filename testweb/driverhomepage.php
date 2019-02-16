@@ -69,7 +69,7 @@
                 <div class="row">
                     <!--== Logo Start ==-->
                     <div class="col-lg-4">
-                        <a href="index.html" class="logo">
+                        <a href="index.php" class="logo">
                             <img src="assets/img/logo.png" alt="JSOFT">
                         </a>
                     </div>

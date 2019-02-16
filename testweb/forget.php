@@ -1,3 +1,8 @@
+<?php include ('server.php') ?>
+<?php if(isset($_COOKIE['login']) && isset($_COOKIE['type'])) {
+		header('location: '.$_COOKIE['type'].'homepage.php');
+}?>
+
 <!DOCTYPE html>
 <html class="no-js" lang="zxx">
 
@@ -59,7 +64,7 @@
                 <div class="row">
                     <!--== Logo Start ==-->
                     <div class="col-lg-4">
-                        <a href="index.html" class="logo">
+                        <a href="index.php" class="logo">
                             <img src="assets/img/logo.png" alt="JSOFT">
                         </a>
                     </div>
@@ -71,22 +76,12 @@
                     <div class="col-lg-8 d-none d-xl-block">
                         <nav class="mainmenu alignright">
                             <ul>
-                                <li class="active"><a href="index.html">Home</a></li>
+                                <li class="active"><a href="index.php">Home</a></li>
 
-
-                                <li><a href="index.html">Pages</a>
-
-                                </li>
-
-                                <li><a href="contact.html">Contact Us</a></li>
                                 <li><button class="form-btn" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">LOG IN</button></li>
                                 <div id="id01" class="modal">
 
-                                    <form class="modal-content  animate" action="/action_page.php">
-                                        <div class="imgcontainer">
-                                            <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-                                            <img src="" alt="Avatar" class="avatar">
-                                        </div>
+                                   <form method = "post" class="modal-content  animate" action="index.php">
 
                                         <div class="container">
                                             <label for="uname"><b  class="form-text">Username</b></label>
@@ -95,7 +90,7 @@
                                             <label for="psw"><b  class="form-text">Password</b></label>
                                             <input type="password" placeholder="Enter Password" name="psw" required>
 
-                                            <button class="submit-btn" type="submit" style="border-radius: 4px;">Log in</button>
+                                            <button class="submit-btn" type="submit" name = "login_user" style="border-radius: 4px;">Log in</button>
                                             <label>
                                                 <input type="checkbox" checked="checked" name="remember"> Remember me
                                             </label>
@@ -106,9 +101,9 @@
 
 
                                             <span class="psw">
-                                                 <a  class="form-link" href="" >Sign Up?</a>
-                                                <a class="form-link" href="" >Forgot password?</a>
-      </span>
+                                                 <a  class="form-link" href="register.php" >Sign Up?</a>
+                                                <a class="form-link" href="forget.php" >Forgot password?</a>
+										 </span>
                                         </div>
                                     </form>
                                 </div>
@@ -149,15 +144,15 @@
                 <div class="col-lg-5 col-md-8 m-auto">
                 	<div class="login-page-content">
                 		<div class="login-form">
-                			<h3>Please enter your register Email</h3>
-							<form action="index.html">
-								
+                			<h3>Please enter your username.</h3> <br> An email of authorization code will be sent.
+							<form method="post" action="forget.php" enctype="multipart/form-data">
+							<?php include('errors.php'); ?>
 								<div class="username">
-									<input type="email" placeholder="Your login email">
+									<input type="text" name="uname" placeholder="Your username" required>
                                 </div>
                                
 								<div class="log-btn">
-									<button type="submit">Reset Password</button>
+									<button type="submit" name="forget">Continue</button>
 								</div>
 							</form>
                 		</div>

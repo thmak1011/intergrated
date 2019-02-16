@@ -1,10 +1,20 @@
-<?php
-session_start();
+<?php session_start();?>
 
+<script>
+  function popup(int i)
+  {
+  if (i == 1)
+  {alert("Confirmation email sent! Please check for full registration.");}
+  else {alert("Ops! Your email seems to be not existed, please revise the email.");}
+  }
+</script>
+
+<?php
 // initializing variables
 $username = "";
 $email    = "";
 $errors = array(); 
+$auth_code = array("AU82SAER", "2HS7YA92", "28JSNUDA", "8H28SJUB", "1HSHYAGY", "12GYMCNSZ", "27HSABCIAQ", "DH7G2JVC", "9J9JVNAUB", "S74R78UR5TS7RE4M");
 $secret_word = 'Dirty Deeds Done Dirt Cheap';
 
 // connect to the database
@@ -84,7 +94,7 @@ if (isset($_POST['reg_user'])) {
     $mail->AddReplyTo($webmaster_email,"PolyUber");
     $mail->WordWrap = 50;
     $mail->IsHTML(true); // send as HTML
-    $mail->Subject = "Thank you for your registration of PolyUber"; 
+    $mail->Subject = "[PolyUber] Thank you for your registration"; 
     $mail->Body = "To complete the registration, please click <a href = localhost/testweb/emailactivated.html >here</a> to continue.";
     
     if( $mail->Send() ) {
@@ -157,7 +167,7 @@ if (isset($_POST['login_user'])) {
   }
 }
 
-if (isset($_POST['changee_pw'])) {
+if (isset($_POST['change_pw'])) {
     $old_password = mysqli_real_escape_string($db, $_POST['opsw']);
     $password_1 = mysqli_real_escape_string($db, $_POST['psw']);
     $password_2 = mysqli_real_escape_string($db, $_POST['psw2']);
@@ -166,16 +176,17 @@ if (isset($_POST['changee_pw'])) {
     if ($password_1 != $password_2) {
 	  array_push($errors, "The new passwords do not match");
     }
-    if ($old_password = $password_1) {
-	  array_push($errors, "The new password should not equals to the roiginal password.");
+    if ($old_password == $password_1) {
+	  array_push($errors, "The new password should not equals to the original password.");
     }
     if (count($errors) == 0) {
-      $query = "SELECT * FROM user WHERE Username = ".$_COOKIE['login']." AND Password = ".$old_password;
+      $username = $_COOKIE['login'];
+      $query = "SELECT * FROM user WHERE Username = '$username' AND Password = '$old_password'";
       $results = mysqli_query($db, $query);   
   	  if (mysqli_num_rows($results) == 1) {
-          $query = "UPDATE user SET Password = '$password_1' WHERE Username =".$_COOKIE['login']." AND Password = '$old_password'";
+          $query = "UPDATE user SET Password = '$password_1' WHERE Username ='$username' AND Password = '$old_password'";
           $results = mysqli_query($db, $query); 
-          if ($result) { 
+          if ($results) {            
             array_push($errors, "Password updated successfully"); 
           }else{ 
             array_push($errors, "Error updating record: " . $db->error);
@@ -183,4 +194,79 @@ if (isset($_POST['changee_pw'])) {
       }
     }
 }
+
+if (isset($_POST['forget'])) {
+   $username = mysqli_real_escape_string($db, $_POST['uname']);
+   if (empty($username)) { array_push($errors, "Username is required"); }
+   if (count($errors) == 0) {
+      $query = "SELECT * FROM user WHERE Username = '$username'";
+      $results = mysqli_query($db, $query);
+      if (mysqli_num_rows($results) == 1) {
+         $email = $results->fetch_object()->Email;
+   
+         require("../phpMailer/class.phpmailer.php");
+         $mail = new PHPMailer();
+         $mail->IsSMTP();
+         $mail->SMTPAuth = true; // turn on SMTP authentication
+    
+         $mail->Username = "eie3117t5a@gmail.com";
+         $mail->Password = "EIE3117T5A";
+         $mail->FromName = "PolyUber";
+         $webmaster_email = "eie3117t5a@gmail.com"; 
+      
+         $mail->From = $webmaster_email;
+         $mail->AddAddress($email,$username);
+         $mail->AddReplyTo($webmaster_email,"PolyUber");
+         $mail->WordWrap = 50;
+         $mail->IsHTML(true); // send as HTML
+         $mail->Subject = "[PolyUber] Authorization code"; 
+         $mail->Body = "Your authorization code is ".$auth_code[rand(0,9)].". Please enter this code to reset your password.";
+      
+         if( $mail->Send() ) {
+            $_SESSION['username'] = $username;
+            header('location: reset.php');
+         }else{
+            array_push($errors, "Authorization code cannot be sent!".$mail->ErrorInfo);
+         }
+      }
+   }
+}
+
+if (isset($_POST['reset'])) {
+   $aucode = $_POST['aucode'];
+   $password_1 = mysqli_real_escape_string($db, $_POST['psw']);
+   $password_2 = mysqli_real_escape_string($db, $_POST['psw2']);
+   $authorize = false;
+   
+   $username = $_SESSION['username'];
+   $query = "SELECT * FROM user WHERE Username = '$username'";
+   $results = mysqli_query($db, $query);
+   $old_password = $results->fetch_object()->Password;
+            
+   if (empty($aucode)) { array_push($errors, "Authorization code is required"); }
+   if (empty($password_1)) { array_push($errors, "New password is required"); }
+   if ($password_1 != $password_2) { array_push($errors, "The new passwords do not match"); }
+   if ($old_password == $password_1) { array_push($errors, "The new password should not equals to the original password."); }
+   for ($cnt = 0; $cnt <= 9; $cnt++){
+         if($aucode == $auth_code[$cnt]){ $authorize = true; }     
+   }
+   if (!authorize) { array_push($errors, "Your authorization code is invalid"); }
+   
+   if (count($errors) == 0){    
+      $query = "UPDATE user SET Password = '$password_1' WHERE Username ='$username'";
+      $results = mysqli_query($db, $query);
+      if ($results) {            
+            array_push($errors, "Password updated successfully");
+            $query = "SELECT * FROM user WHERE Username = '$username'";
+            $results = mysqli_query($db, $query);
+            $type = $results->fetch_object()->Type;
+            setcookie('login',$username);
+            setcookie('type',$type);
+            header('location: '.$type.'homepage.php');
+          }else{ 
+            array_push($errors, "Error updating record: " . $db->error);
+          };
+   }
+}
+
 ?>

@@ -84,7 +84,7 @@
                 <div class="row">
                     <!--== Logo Start ==-->
                     <div class="col-lg-4">
-                        <a href="index.html" class="logo">
+                        <a href="index.php" class="logo">
                             <img src="assets/img/logo.png" alt="JSOFT">
                         </a>
                     </div>
@@ -94,7 +94,7 @@
                     <div class="col-lg-8 d-none d-xl-block">
                         <nav class="mainmenu alignright">
                             <ul>
-                                <li class="active"><a href="request.php">Start a request</a></li>
+                                <li class="active"><a href="request.php">Start a Request</a></li>
 
                                 <li><a href="changepw.php">Change Password</a></li>
 

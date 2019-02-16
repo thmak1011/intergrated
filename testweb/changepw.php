@@ -76,7 +76,7 @@
                             <ul>
                                 <li class="active"><a href="index.php">Home</a></li>
 
-								<li class="active"><a href="request.php">Start a request</a></li>
+								<li class="active"><a href="request.php">Start a Request</a></li>
 
 								<li><a href="logout.php">LOG OUT</a></li>
 

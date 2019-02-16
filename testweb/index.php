@@ -90,7 +90,6 @@
                     <div class="col-lg-8 d-none d-xl-block">
                         <nav class="mainmenu alignright">
                             <ul>
-                                <li class="active"><a href="index.php">Home</a></li>
 
 								<li><button class="form-btn" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">LOG IN</button></li>
                                 <div id="id01" class="modal">
@@ -117,7 +116,7 @@
 
                                             <span class="psw">
                                                  <a class="form-link" href="register.php" >Sign Up?</a>
-												 <a class="form-link" href="" >Forgot password?</a>
+												 <a class="form-link" href="forget.php" >Forgot password?</a>
 										 </span>
                                         </div>
                                     </form>
@@ -144,28 +143,12 @@
                     <div class="col-lg-5">
                         <div class="book-a-car">
                             <form action="index.php">
-                                <!--== Pick Up Location ==-->
-                                <div class="pickup-location book-item">
-                                    <h4>PICK-UP LOCATION:</h4>
-                                    <select class="custom-select">
-                                      <option selected>Select</option>
-                                      <option value="1">Dhaka</option>
-                                      <option value="2">Comilla</option>
-                                      <option value="3">Barishal</option>
-                                      <option value="3">Rangpur</option>
-                                    </select>
-                                </div>
-                                <!--== Pick Up Location ==-->
 
                                 <!--== Pick Up Date ==-->
                                 <div class="pick-up-date book-item">
                                     <h4>PICK-UP DATE:</h4>
                                     <input id="startDate" placeholder="Pick Up Date" />
 
-                                    <div class="return-car">
-                                        <h4>Return DATE:</h4>
-                                        <input id="endDate" placeholder="Return Date" />
-                                    </div>
                                 </div>
                                 <!--== Pick Up Location ==-->
 

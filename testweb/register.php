@@ -75,9 +75,6 @@
                             <ul>
                                 <li class="active"><a href="index.php">Home</a></li>
 
-
-                                <li><a href="index.php">Pages</a>
-
                                 </li>
 
                                 <li><button class="form-btn" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">LOG IN</button></li>
@@ -104,7 +101,7 @@
 
                                             <span class="psw">
                                                  <a  class="form-link" href="register.php" >Sign Up?</a>
-                                                <a class="form-link" href="" >Forgot password?</a>
+                                                <a class="form-link" href="forget.php" >Forgot password?</a>
 										 </span>
                                         </div>
                                     </form>
