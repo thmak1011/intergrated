@@ -124,6 +124,15 @@
     <input id="destination-input" class="controls" type="text"
            placeholder="Enter a destination location">
 
+    <div id="toll_selector" class="controls">
+
+        <label class="switch"  >
+            <input type="checkbox" id="toll-selector" checked>
+            <span class="slider round"></span>
+            <p id="toll_selector_p">Avoid Toll</p>
+        </label>
+    </div>
+
     <div id="quotation_box" class="box_controls">
 
         <span onclick="document.getElementById('quotation_box').style.display='none'" class="close">&times;</span>

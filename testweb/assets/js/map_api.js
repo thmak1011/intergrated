@@ -1,5 +1,6 @@
 var myLatLng;
 var quotation_box = document.getElementById('quotation_box');
+var tollSelector = document.getElementById('toll_selector');
 function initMap(position) {
     var map = new google.maps.Map(document.getElementById('map'), {
         mapTypeControl: false,
@@ -30,6 +31,7 @@ function AutocompleteDirectionsHandler(map) {
     this.originPlaceId = null;
     this.destinationPlaceId = null;
     quotation_box.style.display="none";
+    this.toll = true;
     //this.travelMode = 'DRIVING';
     //this.placeService= new google.maps.places.PlacesService;
     this.directionsService = new google.maps.DirectionsService;
@@ -52,15 +54,35 @@ function AutocompleteDirectionsHandler(map) {
     // Specify just the place data fields that you need.
     destinationAutocomplete.setFields(['place_id']);
 
+    this.setupClickListener('toll-selector');
+
     this.setupPlaceChangedListener(originAutocomplete, 'ORIG');
     this.setupPlaceChangedListener(destinationAutocomplete, 'DEST');
 
     this.map.controls[google.maps.ControlPosition.TOP_LEFT].push(originInput);
     this.map.controls[google.maps.ControlPosition.TOP_LEFT].push(destinationInput);
+    this.map.controls[google.maps.ControlPosition.TOP_LEFT].push(tollSelector);
     this.map.controls[google.maps.ControlPosition.LEFT_CENTER].push(quotation_box);
 
 }
 
+AutocompleteDirectionsHandler.prototype.setupClickListener = function(
+    id) {
+    var checkBox = document.getElementById(id);
+    var me = this;
+
+    checkBox.addEventListener('click', function() {
+        if (this.checked==true) {
+            me.toll = true;
+            console.log('toll change to true');}
+
+        else{
+            me.toll = false;
+            console.log('toll change to false');
+        }
+        me.route();
+    });
+};
 
 
 AutocompleteDirectionsHandler.prototype.setupPlaceChangedListener = function(
@@ -97,7 +119,8 @@ AutocompleteDirectionsHandler.prototype.route = function() {
         {
             origin: {'placeId': this.originPlaceId},
             destination: {'placeId': this.destinationPlaceId},
-            travelMode: "DRIVING"
+            travelMode: "DRIVING",
+            avoidTolls: this.toll
         },
         function(response, status) {
             if (status === 'OK') {
