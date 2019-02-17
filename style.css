@@ -190,6 +190,7 @@
 #header-area .mainmenu ul li.active a,
 #header-area .mainmenu ul li:hover a {
 	color: #ffd000;
+
 }
 
 header.fixTotop #header-top {
@@ -225,11 +226,11 @@ header.fixTotop #header-bottom {
 .mainmenu ul li a {
 	display: block;
 	font-weight: 700;
-	margin-left: 25px;
-	padding: 15px 0;
 	text-transform: uppercase;
 	-webkit-transition: all 0.4s ease 0s;
 	transition: all 0.4s ease 0s;
+	margin-left: 25px;
+	padding: 15px 0;
 }
 
 .mainmenu ul li ul {
@@ -3212,16 +3213,38 @@ body,
 input[type=text], input[type=password] {
 	width: 100%;
 	padding: 12px 20px;
-	margin: 8px 0;
+	margin: 0 0 10px;
 	display: inline-block;
 	border: 1px solid #ccc;
 	box-sizing: border-box;
 }
 
+b.form-text{
+	color: #0b0b0b;
+}
+
+
 /* Set a style for all buttons */
-.login-btn {
+.form-btn {
 	background-color: transparent;
+	font-weight: 700;
 	color: #fefefe;
+	border: none;
+	cursor: pointer;
+	width: 100%;
+	-webkit-transition: all 0.4s ease 0s;
+	transition: all 0.4s ease 0s;
+	margin-left: 25px;
+	padding: 15px 0;
+}
+
+.form-btn:hover {
+	opacity: 0.8;
+	color: #ffd000;
+}
+.submit-btn {
+	background-color: #000;
+	color: #ffd000;
 	padding: 14px 20px;
 	margin: 8px 0;
 	border: none;
@@ -3229,10 +3252,26 @@ input[type=text], input[type=password] {
 	width: 100%;
 }
 
-.login-btn {
+.submit-btn:hover {
 	opacity: 0.8;
-	color: #ffd000;
+
 }
+
+
+a.form-link:link {
+	color: #8e8e8e;
+	text-decoration:none;
+	padding-left: 20px;
+}
+a.form-link:hover {
+	color: #8e8e8e;
+	text-decoration:underline;
+	padding-left: 20px;
+}
+
+
+
+
 
 /* Extra styles for the cancel button */
 .cancelbtn {
@@ -3241,6 +3280,10 @@ input[type=text], input[type=password] {
 	background-color: #f4372f;
 	border-radius: 4px;
 	color: #fefefe;
+}
+.cancelbtn:hover{
+
+	opacity: 0.8;
 }
 
 /* Center the image and position the close button */
@@ -3329,13 +3372,9 @@ span.psw {
 	.cancelbtn {
 		width: 100%;
 	}
-	a.forgotpw:link {
-		color: #8e8e8e;
-		text-decoration:none;
-	}
-	a.forgotpw:hover {
-		color: #8e8e8e;
-		text-decoration:underline;
-	}
 
+}
+
+#table{
+    position: center;
 }
