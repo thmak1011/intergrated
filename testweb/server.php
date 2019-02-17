@@ -552,6 +552,16 @@ if (isset($_POST['request'])){
       echo "Error: %s\n". mysqli_error($db);
 			exit();
   }else{
+      unset($_COOKIE['origin']);
+      unset($_COOKIE['destination']);
+      unset($_COOKIE['duration']);
+      unset($_COOKIE['distance']);
+      unset($_COOKIE['meeting-time']);
+      setcookie('origin',null,-1);
+      setcookie('destination',null,-1);
+      setcookie('duration',null,-1);
+      setcookie('distance',null,-1);
+      setcookie('meeting-time',null,-1);
       header('location: index.php');
   }
 }

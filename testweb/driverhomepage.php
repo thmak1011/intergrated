@@ -175,7 +175,7 @@ table, th, td {
                                                 echo "<td>".$row['Destination']."&nbsp;</td>";
                                                 echo "<td>".$row['Pickup_time']."&nbsp;</td>";
 												echo "<td>".$row['Suggested_Fee']."&nbsp;</td>";
-												echo "<td>".$row['PassagerName']."&nbsp;</td>";
+                                                echo "<td>".$row['PassagerName']."&nbsp;</td>";                                              
 												$rid = $row['Request_ID'];
 												echo "<td><button type = \"submit\" name = \"accept_request\" value = '$rid'> Accept </button></td>";
 											    echo "</tr>";
@@ -219,6 +219,7 @@ table, th, td {
                                            <th> Pickup Time </th>
 										   <th> Estimated Fare </th>
 										   <th> Requester </th>
+                                           <th> Phone No </th>
 										   <th> Complete </th>
                                            <th> Cancel </th>
 									    </tr>
@@ -231,7 +232,19 @@ table, th, td {
                                                 echo "<td>".$row['Destination']."&nbsp;</td>";
                                                 echo "<td>".$row['Pickup_time']."&nbsp;</td>";
 												echo "<td>".$row['Suggested_Fee']."&nbsp;</td>";
-												echo "<td>".$row['PassagerName']."&nbsp;</td>";
+                                                echo "<td>".$row['PassagerName']."&nbsp;</td>";
+                                                $username = $row['PassagerName'];
+                                                if (!empty($username)){
+                                                    $query = "SELECT * FROM user WHERE Username = '$username'"; 
+		                                            $results = mysqli_query($db, $query);
+	                                            if (!$results) {
+	                                            	echo "Error: %s\n". mysqli_error($db);
+		                                        	exit();
+                                                    };
+                                                    $results = mysqli_query($db, $query);
+                                                    $phone = $results->fetch_object()->Phone_No;
+                                                }else{$phone = "";};            
+                                                echo "<td>".$phone."&nbsp;</td>";
                                                 $rid = $row['Request_ID'];
                                                 echo "<td><button type = \"submit\" name = \"completing\" value = '$rid'> Complete </button></td>";                                
                                                 echo "<td><button type = \"submit\" name = \"delete_request\" value = '$rid'> Cancel </button></td>";

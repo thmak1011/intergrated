@@ -160,6 +160,7 @@ table, th, td {
 										   <th> Destination </th>
 										   <th> Estimated Fare </th>
 										   <th> Accepter </th>
+                                           <th> Phone </th>
 										   <th> Pickup Time </th>
 										   <th> Acceptance </th>
 										   <th> Cancel </th>
@@ -172,7 +173,19 @@ table, th, td {
 												echo "<td>".$row['Start_location']."&nbsp;</td>";
 												echo "<td>".$row['Destination']."&nbsp;</td>";
 												echo "<td>".$row['Suggested_Fee']."&nbsp;</td>";
-												echo "<td>".$row['DriverName']."&nbsp;</td>";
+                                                echo "<td>".$row['DriverName']."&nbsp;</td>";
+                                                $username = $row['DriverName'];
+                                                if (!empty($username)){
+                                                    $query = "SELECT * FROM user WHERE Username = '$username'"; 
+		                                            $results = mysqli_query($db, $query);
+	                                            if (!$results) {
+	                                            	echo "Error: %s\n". mysqli_error($db);
+		                                        	exit();
+                                                    };
+                                                    $results = mysqli_query($db, $query);
+                                                    $phone = $results->fetch_object()->Phone_No;
+                                                }else{$phone = "";};
+                                                echo "<td>".$phone."&nbsp;</td>";
 												echo "<td>".$row['Pickup_time']."&nbsp;</td>";
 												echo "<td>".$row['Acceptance']."&nbsp;</td>";
 												$rid = $row['Request_ID'];
