@@ -108,6 +108,7 @@ AutocompleteDirectionsHandler.prototype.route = function() {
                 //showBlock();
                 me.directionsDisplay.addListener('directions_changed', function() {
                     computeTotalDistance(me.directionsDisplay.getDirections());
+
                     //showBlock();
                 });
             } else {

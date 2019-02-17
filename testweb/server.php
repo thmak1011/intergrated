@@ -271,12 +271,136 @@ if (isset($_POST['reset'])) {
 
 if (isset($_POST['delete_request'])) {
   $RID = $_POST['delete_request'];
-  $query = "DELETE FROM request WHERE Request_ID = '$RID'"; 
-	$results = mysqli_query($db, $query);
-	if (!$results) {
-			echo "Error: %s\n". mysqli_error($db);
-			exit();
-	}else{header('location: reset.php');}
+  $query = "SELECT * FROM request WHERE Request_ID = $RID";
+  $results = mysqli_query($db, $query);
+  if (!$results) {
+    echo "Error: %s\n". mysqli_error($db);
+    exit();
+  }else{
+        $req_time = $results->fetch_object()->Request_time;
+        $results = mysqli_query($db, $query);
+        $start = $results->fetch_object()->Start_location;
+        $results = mysqli_query($db, $query);
+        $des = $results->fetch_object()->Destination;
+        $results = mysqli_query($db, $query);
+        $fee = $results->fetch_object()->Suggested_Fee;
+        $results = mysqli_query($db, $query);
+        $pickup = $results->fetch_object()->Pickup_time;
+        $results = mysqli_query($db, $query);
+        $accepted = $results->fetch_object()->Acceptance;
+        $results = mysqli_query($db, $query);
+        $passager = $results->fetch_object()->PassagerName;
+        
+        $canceller = $_COOKIE['login'];
+
+        $query = "SELECT * FROM user WHERE Username = '$passager'";
+        $results = mysqli_query($db, $query);
+        $pemail = $results->fetch_object()->Email;
+
+        require("../phpMailer/class.phpmailer.php");
+        $mail = new PHPMailer();
+        $mail->IsSMTP();
+        $mail->SMTPAuth = true; // turn on SMTP authentication
+    
+        $mail->Username = "eie3117t5a@gmail.com";
+        $mail->Password = "EIE3117T5A";
+        $mail->FromName = "PolyUber";
+        $webmaster_email = "eie3117t5a@gmail.com"; 
+        $mail->From = $webmaster_email;
+        $mail->AddAddress($pemail,$passager);
+
+        $mail->AddReplyTo($webmaster_email,"PolyUber");
+        $mail->WordWrap = 50;
+        $mail->IsHTML(true); // send as HTML
+        $mail->Subject = "[PolyUber] Your request has been cancelled";        
+
+        if($accepted){
+          //extra_charge();
+          $query = "SELECT * FROM request WHERE Request_ID = $RID";
+          $results = mysqli_query($db, $query);
+          $driver = $results->fetch_object()->DriverName;
+          $query = "SELECT * FROM user WHERE Username = '$driver'";
+          $results = mysqli_query($db, $query);
+          $demail = $results->fetch_object()->Email;
+          $mail->AddAddress($demail,$driver);
+
+          $mail->Body = 
+          "The following request is cancelled due to '$canceller' cancellation: 
+          <br> 
+          <div id=\"table\" boarder=\"1\">	
+													   <table>
+														<tr>
+														   <th> Request Time </th>
+														   <th> Start Location </th>
+														   <th> Destination </th>
+                               <th> Estimated Fare </th>
+                               <th> Requester </th>
+														   <th> Accepter </th>
+														   <th> Pickup Time </th>
+                            </tr>
+                            <tr>
+														   <td> '$req_time' </td>
+														   <td> '$start' </td>
+														   <td> '$des' </td>
+                               <td> '$fee' </td>
+                               <td> '$passager' </td>
+														   <td> '$driver' </td>
+														   <td> '$pickup' </td>
+                            </tr>
+                            </table>
+          ";
+          if(!$mail->Send()){
+            echo "Error: %s\n". $mail->ErrorInfo;
+            exit();
+          }
+
+          $query = "UPDATE request SET Completance = 1 WHERE Request_ID = '$RID'"; 
+          $results = mysqli_query($db, $query);
+          if (!$results) {
+              echo "Error: %s\n". mysqli_error($db);
+              exit();
+          }else{
+            header('location: index.php');
+          }
+        }else{
+          $mail->Body = 
+          "The following request is cancelled due to your cancellation: 
+          <br> 
+          <div id=\"table\" boarder=\"1\">	
+													   <table>
+														<tr>
+														   <th> Request Time </th>
+														   <th> Start Location </th>
+														   <th> Destination </th>
+                               <th> Estimated Fare </th>
+                               <th> Requester </th>
+														   <th> Pickup Time </th>
+                            </tr>
+                            <tr>
+														   <td> '$req_time' </td>
+														   <td> '$start' </td>
+														   <td> '$des' </td>
+                               <td> '$fee' </td>
+                               <td> '$passager' </td>
+														   <td> '$pickup' </td>
+                            </tr>
+                            </table>     
+          ";
+          if(!$mail->Send()){
+            echo "Error: %s\n". $mail->ErrorInfo;
+            exit();
+          }
+
+          $query = "UPDATE request SET Completance = 1 WHERE Request_ID = '$RID'"; 
+	        $results = mysqli_query($db, $query);
+	        if (!$results) {
+		        	echo "Error: %s\n". mysqli_error($db);
+			        exit();
+	        }else{
+            header('location: index.php');
+          }
+        }       
+  }
 }
 
 if (isset($_POST['accept_request'])) {
@@ -290,17 +414,122 @@ if (isset($_POST['accept_request'])) {
   }else{header('location: reset.php');}
 }
 
+if (isset($_POST['completing'])) {
+  $RID = $_POST['completing'];
+  $_SESSION['RID'] = $RID;
+  header('location: completeR.php');
+}
+
 if (isset($_POST['complete_request'])) {
   $RID = $_POST['complete_request'];
   $fee = $_POST['fee'];
   $tips = $_POST['tips'];
+
+  if (empty($fee)) { array_push($errors, "Total charge is required"); }
+  if (empty($tips)) { array_push($errors, "Tips is required, enter 0 if there are no tips"); }
+
+  if (count($errors) == 0){ 
   $time = $date = date('Y-m-d h:i:s');
   $query = "UPDATE request SET Complete_time = '$time', Final_Fee = '$fee', Tips = '$tips', Completance = 1 WHERE Request_ID = '$RID'"; 
 	$results = mysqli_query($db, $query);
 	if (!$results) {
 			echo "Error: %s\n". mysqli_error($db);
 			exit();
-  }else{header('location: reset.php');}
+  }else{
+    $query = "SELECT * FROM request WHERE Request_ID = $RID";
+    $results = mysqli_query($db, $query);
+    if (!$results) {
+      echo "Error: %s\n". mysqli_error($db);
+    exit();
+     }else{
+        $req_time = $results->fetch_object()->Request_time;
+        $results = mysqli_query($db, $query);
+        $start = $results->fetch_object()->Start_location;
+        $results = mysqli_query($db, $query);
+        $des = $results->fetch_object()->Destination;
+        $results = mysqli_query($db, $query);
+        $fee = $results->fetch_object()->Suggested_Fee;
+        $results = mysqli_query($db, $query);
+        $pickup = $results->fetch_object()->Pickup_time;
+        $results = mysqli_query($db, $query);
+        $completetime = $results->fetch_object()->Complete_time;
+        $results = mysqli_query($db, $query);
+        $charge = $results->fetch_object()->Final_Fee;
+        $results = mysqli_query($db, $query);
+        $tips = $results->fetch_object()->Tips;
+        $results = mysqli_query($db, $query);
+        $passager = $results->fetch_object()->PassagerName;
+        
+        $canceller = $_COOKIE['login'];
+
+        $query = "SELECT * FROM user WHERE Username = '$passager'";
+        $results = mysqli_query($db, $query);
+        $pemail = $results->fetch_object()->Email;
+
+        require("../phpMailer/class.phpmailer.php");
+        $mail = new PHPMailer();
+        $mail->IsSMTP();
+        $mail->SMTPAuth = true; // turn on SMTP authentication
+    
+        $mail->Username = "eie3117t5a@gmail.com";
+        $mail->Password = "EIE3117T5A";
+        $mail->FromName = "PolyUber";
+        $webmaster_email = "eie3117t5a@gmail.com"; 
+        $mail->From = $webmaster_email;
+        $mail->AddAddress($pemail,$passager);
+
+        $mail->AddReplyTo($webmaster_email,"PolyUber");
+        $mail->WordWrap = 50;
+        $mail->IsHTML(true); // send as HTML
+        $mail->Subject = "[PolyUber] Request has been completed";        
+
+          //extra_charge();
+          $query = "SELECT * FROM request WHERE Request_ID = $RID";
+          $results = mysqli_query($db, $query);
+          $driver = $results->fetch_object()->DriverName;
+          $query = "SELECT * FROM user WHERE Username = '$driver'";
+          $results = mysqli_query($db, $query);
+          $demail = $results->fetch_object()->Email;
+          $mail->AddAddress($demail,$driver);
+
+          $mail->Body = 
+          "The request has been completed, thank you for choosing PolyUber. 
+          <br> 
+          <div id=\"table\" boarder=\"1\">	
+													   <table>
+														<tr>
+														   <th> Request Time </th>
+														   <th> Start Location </th>
+														   <th> Destination </th>
+                               <th> Estimated Fare </th>
+                               <th> Requester </th>
+														   <th> Accepter </th>
+                               <th> Pickup Time </th>
+                               <th> Complete Time </th>
+														   <th> Total Charge </th>
+														   <th> Tips </th>
+                            </tr>
+                            <tr>
+														   <td> '$req_time' </td>
+														   <td> '$start' </td>
+														   <td> '$des' </td>
+                               <td> '$fee' </td>
+                               <td> '$passager' </td>
+														   <td> '$driver' </td>
+                               <td> '$pickup' </td>
+                               <td> '$completetime' </td>
+														   <td> '$charge' </td>
+                               <td> '$tips' </td>
+                            </tr>
+                            </table>
+          ";
+          if(!$mail->Send()){
+            echo "Error: %s\n". $mail->ErrorInfo;
+            exit();
+          }
+        }       
+  }
+    header('location: index.php');}
 }
 
 if (isset($_POST['request'])){

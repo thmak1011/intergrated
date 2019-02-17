@@ -158,8 +158,8 @@ table, th, td {
 										   <th> Request Time </th>
 										   <th> Start Location </th>
 										   <th> Destination </th>
-										   <th> Suggested Fee </th>
-										   <th> Driver Name </th>
+										   <th> Estimated Fare </th>
+										   <th> Accepter </th>
 										   <th> Pickup Time </th>
 										   <th> Acceptance </th>
 										   <th> Cancel </th>
@@ -216,11 +216,11 @@ table, th, td {
 														   <th> Request Time </th>
 														   <th> Start Location </th>
 														   <th> Destination </th>
-														   <th> Suggested Fee </th>
-														   <th> Driver Name </th>
+														   <th> Estimated Fare </th>
+														   <th> Accepter </th>
 														   <th> Pickup Time </th>
 														   <th> Complete Time </th>
-														   <th> Final Fee </th>
+														   <th> Total Charge </th>
 														   <th> Tips </th>
 														</tr>
 														<?php 

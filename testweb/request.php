@@ -67,7 +67,7 @@
             <div class="row">
                 <!--== Logo Start ==-->
                 <div class="col-lg-4">
-                    <a href="index.html" class="logo">
+                    <a href="index.php" class="logo">
                         <img src="assets/img/logo.png" alt="JSOFT">
                     </a>
                 </div>
@@ -79,47 +79,13 @@
                 <div class="col-lg-8 d-none d-xl-block">
                     <nav class="mainmenu alignright">
                         <ul>
-                            <li class="active"><a href="index.html">Home</a></li>
+                            <li class="active"><a href="index.php">Home</a></li>
 
+                            <li><a href="changepw.php">Change Password</a></li>
 
-                            <li><a href="index.html">Pages</a>
+<li><a href="logout.php">LOG OUT</a></li>
 
-                            </li>
-
-                            <li><a href="contact.html">Contact Us</a></li>
-                            <li><button class="form-btn" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">LOG IN</button></li>
-                            <div id="id01" class="modal">
-
-                                <form class="modal-content  animate" action="/action_page.php">
-                                    <div class="imgcontainer">
-                                        <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-                                        <img src="" alt="Avatar" class="avatar">
-                                    </div>
-
-                                    <div class="container">
-                                        <label for="uname"><b  class="form-text">Username</b></label>
-                                        <input type="text" placeholder="Enter Username" name="uname" required>
-
-                                        <label for="psw"><b  class="form-text">Password</b></label>
-                                        <input type="password" placeholder="Enter Password" name="psw" required>
-
-                                        <button class="submit-btn" type="submit" style="border-radius: 4px;">Log in</button>
-                                        <label>
-                                            <input type="checkbox" checked="checked" name="remember"> Remember me
-                                        </label>
-                                    </div>
-
-                                    <div class="container" style="background-color:#393D44">
-                                        <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-
-
-                                        <span class="psw">
-                                                 <a  class="form-link" href="" >Sign Up?</a>
-                                                <a class="form-link" href="" >Forgot password?</a>
-      </span>
-                                    </div>
-                                </form>
-                            </div>
+                            
                         </ul>
                     </nav>
 
@@ -136,7 +102,7 @@
 <section id="page-title-area" class="section-padding overlay">
     <div class="container">
         <div class="row">
-            <!-- Page Title Start -->
+          <!--   Page Title Start-->
             <div class="col-lg-12">
                 <div class="section-title  text-center">
 
@@ -144,7 +110,7 @@
 
                 </div>
             </div>
-            <!-- Page Title End -->
+             <!--Page Title End-->
         </div>
     </div>
 </section>
@@ -162,20 +128,33 @@
 
         <span onclick="document.getElementById('quotation_box').style.display='none'" class="close">&times;</span>
         <div id="request_container">
-            <a id ="Origin" herf="test.html"></a>
+        <form method = "post" action="request.php">
+            Starting location:
+            <p id = "Origin"></p>
 
             <!--<a id ="Origin_Lat" herf="test.html"></a>-->
             <!--<a id ="Origin_Lng" herf="test.html"></a>-->
-
-            <a id ="Destination" herf="test.html"></a>
+            <br>
+            Destination:
+            <p id ="Destination"></p>
 
             <!--<a id ="Destination_Lat" herf="test.html"></a>-->
             <!--<a id ="Destination_Lng" herf="test.html"></a>-->
             <br>
-            <a id ="Duration" herf="test.html"></a>
+            Duration:
+            <p id ="Duration"></p>
             <br>
-            <a id ="Distance" herf="test.html"></a>
-            <button id="submit_btn">Request Now</button>
+            Destination:
+            <p id ="Distance"></p>
+            <br>
+            <label for="meeting-time">Pickup time:</label>
+            
+            <input type="datetime-local" id="meeting-time"
+                 name="meeting-time" value="2019-02-18T19:30"
+                 min="2019-02-18T00:00" max="2019-12-31T00:00">
+
+            <button id="submit_btn" name="request">Request Now</button>
+        </form>
         </div>
 
 

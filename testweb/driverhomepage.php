@@ -161,7 +161,8 @@ table, th, td {
 										   <th> Request Time </th>
 										   <th> Start Location </th>
 										   <th> Destination </th>
-										   <th> Suggested Fee </th>
+                                           <th> Pickup Time </th>
+										   <th> Estimated Fare </th>
 										   <th> Requester </th>
 										   <th> Accept </th>
 									    </tr>
@@ -171,7 +172,8 @@ table, th, td {
 												echo "<tr>";
 												echo "<td>".$row['Request_time']."&nbsp;</td>";
 												echo "<td>".$row['Start_location']."&nbsp;</td>";
-												echo "<td>".$row['Destination']."&nbsp;</td>";
+                                                echo "<td>".$row['Destination']."&nbsp;</td>";
+                                                echo "<td>".$row['Pickup_time']."&nbsp;</td>";
 												echo "<td>".$row['Suggested_Fee']."&nbsp;</td>";
 												echo "<td>".$row['PassagerName']."&nbsp;</td>";
 												$rid = $row['Request_ID'];
@@ -207,16 +209,18 @@ table, th, td {
                             <!-- Single Articles Start -->
                             <div class="col-lg-12">
                                 <article class="single-article">
-									<form method = "post" action="index.php" enctype="multipart/form-data">
+									<form method = "post" enctype="multipart/form-data">
 									<div id="table">	
                                         <table>
 										<tr>
 										   <th> Request Time </th>
 										   <th> Start Location </th>
 										   <th> Destination </th>
-										   <th> Suggested Fee </th>
-										   <th> Passager Name </th>
+                                           <th> Pickup Time </th>
+										   <th> Estimated Fare </th>
+										   <th> Requester </th>
 										   <th> Complete </th>
+                                           <th> Cancel </th>
 									    </tr>
 										<?php 
 											while($row = mysqli_fetch_array($current))
@@ -224,26 +228,13 @@ table, th, td {
 												echo "<tr>";
 												echo "<td>".$row['Request_time']."&nbsp;</td>";
 												echo "<td>".$row['Start_location']."&nbsp;</td>";
-												echo "<td>".$row['Destination']."&nbsp;</td>";
+                                                echo "<td>".$row['Destination']."&nbsp;</td>";
+                                                echo "<td>".$row['Pickup_time']."&nbsp;</td>";
 												echo "<td>".$row['Suggested_Fee']."&nbsp;</td>";
 												echo "<td>".$row['PassagerName']."&nbsp;</td>";
                                                 $rid = $row['Request_ID'];
-                                                echo "<td><button onclick=\"document.getElementById('id01').style.display='block'\"> Complete </button></td>";
-                                                    echo "<div id=\"id01\" class=\"modal\">";
-                                                    echo "<form method = \"post\" class=\"modal-content  animate\" action=\"index.php\">";
-                                                        include('errors.php');
-                                                        echo "<div class=\"container\" >";
-                                                            echo "<label for=\"final_fee\"><b  class=\"form-text\">Final Fee</b></label>";
-                                                            echo "<input type=\"text\" placeholder=\"Enter Final Fee\" name=\"fee\" required>";
-                                                            echo "<label for=\"tips\"><b  class=\"form-text\">Tips</b></label>";
-                                                            echo "<input type=\"text\" placeholder=\"Enter Tips\" name=\"tips\" required>";
-                                                            echo "<button class=\"submit-btn\" type=\"submit\" name = \"complete_request\" value = '$rid' style=\"border-radius: 4px;\">Complete</button>";
-                                                            echo "</div>";
-                                                        echo "<div class=\"container\" style=\"background-color:#393D44\">";
-                                                            echo "<button type=\"button\" onclick=\"document.getElementById('id01').style.display='none'\" class=\"cancelbtn\">Cancel</button>";
-                                                        echo "</div>";
-                                                    echo "</form>";
-                                                echo "</div>";
+                                                echo "<td><button type = \"submit\" name = \"completing\" value = '$rid'> Complete </button></td>";                                
+                                                echo "<td><button type = \"submit\" name = \"delete_request\" value = '$rid'> Cancel </button></td>";
                                                 echo "</tr>";
 											}
 										?>
@@ -283,11 +274,11 @@ table, th, td {
 														   <th> Request Time </th>
 														   <th> Start Location </th>
 														   <th> Destination </th>
-														   <th> Suggested Fee </th>
-														   <th> Passager Name </th>
+														   <th> Estimated Fare </th>
+														   <th> Requester </th>
 														   <th> Pickup Time </th>
 														   <th> Complete Time </th>
-														   <th> Final Fee </th>
+														   <th> Total Charge </th>
 														   <th> Tips </th>
 														</tr>
 														<?php 
