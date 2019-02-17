@@ -1,14 +1,5 @@
 <?php session_start();?>
 
-<script>
-  function popup(int i)
-  {
-  if (i == 1)
-  {alert("Confirmation email sent! Please check for full registration.");}
-  else {alert("Ops! Your email seems to be not existed, please revise the email.");}
-  }
-</script>
-
 <?php
 // initializing variables
 $username = "";
@@ -95,10 +86,9 @@ if (isset($_POST['reg_user'])) {
     $mail->WordWrap = 50;
     $mail->IsHTML(true); // send as HTML
     $mail->Subject = "[PolyUber] Thank you for your registration"; 
-    $mail->Body = "To complete the registration, please click <a href = localhost/testweb/emailactivated.html >here</a> to continue.";
+    $mail->Body = "Your validation code is ".$auth_code[rand(0,9)].". Please enter this code to continue.";
     
     if( $mail->Send() ) {
-            echo "<script>popup(1)</script>";
    
             if($type == "passager") { 
                 $query = "INSERT INTO user (Username, Fullname, Phone_No, Email, Password, Type) 
@@ -111,7 +101,7 @@ if (isset($_POST['reg_user'])) {
                     setcookie('login', $username);
                     setcookie('type', $type);
             
-                header('location: '.$type.'homepage.php');}
+                header('location: emailact.php');}
     
             if($type == "driver") {
                 $query = "INSERT INTO user (Username, Fullname, Phone_No, Email, Password, Type) 
@@ -124,13 +114,26 @@ if (isset($_POST['reg_user'])) {
                     setcookie('login', $username);
                     setcookie('type', $type);
             
-                header('location: '.$type.'homepage.php');}
+                header('location: emailact.php');}
          }else {
             array_push($errors, "Confirm email cannot be sent!".$mail->ErrorInfo);
          } 	
    }
 }
 
+if (isset($_POST['validate'])){
+  $aucode = mysqli_real_escape_string($db, $_POST['aucode']);
+  $authorize = false;
+  if (empty($aucode)) { array_push($errors, "Validation code is required"); }
+  for ($cnt = 0; $cnt <= 9; $cnt++){
+    if($aucode == $auth_code[$cnt]){ $authorize = true; }     
+  }
+  if (!$authorize) { array_push($errors, "Your validation code is incorrect"); }
+
+  if (count($errors) == 0){    
+      header('location: index.php');
+  } 
+}
 
 if (isset($_POST['login_user'])) {
   $username = mysqli_real_escape_string($db, $_POST['uname']);
@@ -233,7 +236,7 @@ if (isset($_POST['forget'])) {
 }
 
 if (isset($_POST['reset'])) {
-   $aucode = $_POST['aucode'];
+   $aucode = mysqli_real_escape_string($db, $_POST['aucode']);
    $password_1 = mysqli_real_escape_string($db, $_POST['psw']);
    $password_2 = mysqli_real_escape_string($db, $_POST['psw2']);
    $authorize = false;
@@ -250,7 +253,7 @@ if (isset($_POST['reset'])) {
    for ($cnt = 0; $cnt <= 9; $cnt++){
          if($aucode == $auth_code[$cnt]){ $authorize = true; }     
    }
-   if (!authorize) { array_push($errors, "Your authorization code is invalid"); }
+   if (!$authorize) { array_push($errors, "Your authorization code is invalid"); }
    
    if (count($errors) == 0){    
       $query = "UPDATE user SET Password = '$password_1' WHERE Username ='$username'";

@@ -1,8 +1,8 @@
-﻿<!DOCTYPE html>
+<?php include('server.php'); ?>
+<!DOCTYPE html>
 <html class="no-js" lang="zxx">
 
 <head>
-    <meta http-equiv="refresh" content="2;url=index.php">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -52,6 +52,7 @@
     <!--== Header Area Start ==-->
     <header id="header-area" class="fixed-top">
         
+        
 
         <!--== Header Bottom Start ==-->
         <div id="header-bottom">
@@ -67,14 +68,43 @@
 
                     <!--== Logo End ==-->
 
-                   
-
                     <!--== Main Menu Start ==-->
                     <div class="col-lg-8 d-none d-xl-block">
                         <nav class="mainmenu alignright">
-                            
-                        </nav>
+                            <ul>
+                                <li class="active"><a href="index.php">Home</a></li>
 
+                                <li><button class="form-btn" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">LOG IN</button></li>
+                                <div id="id01" class="modal">
+
+                                   <form method = "post" class="modal-content  animate" action="index.php">
+
+                                        <div class="container">
+                                            <label for="uname"><b  class="form-text">Username</b></label>
+                                            <input type="text" placeholder="Enter Username" name="uname" required>
+
+                                            <label for="psw"><b  class="form-text">Password</b></label>
+                                            <input type="password" placeholder="Enter Password" name="psw" required>
+
+                                            <button class="submit-btn" type="submit" name = "login_user" style="border-radius: 4px;">Log in</button>
+                                            <label>
+                                                <input type="checkbox" checked="checked" name="remember"> Remember me
+                                            </label>
+                                        </div>
+
+                                        <div class="container" style="background-color:#393D44">
+                                            <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+
+
+                                            <span class="psw">
+                                                 <a  class="form-link" href="register.php" >Sign Up?</a>
+                                                <a class="form-link" href="forget.php" >Forgot password?</a>
+										 </span>
+                                        </div>
+                                    </form>
+                                </div>
+                            </ul>
+                        </nav>
                     </div>
                     <!--== Main Menu End ==-->
                 </div>
@@ -83,29 +113,50 @@
         <!--== Header Bottom End ==-->
     </header>
     <!--== Header Area End ==-->
-    
-    <!--== email active page Content Start ==-->
-    <section id="page-404-wrap" class="section-padding overlay">
+
+    <!--== Page Title Area Start ==-->
+    <section id="page-title-area" class="section-padding overlay">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12 text-center">
-                    <div class="email active page">
-                    	<div class="number">
-							
-							<div class="zero">
-								<img src="assets/img/mail.png" alt="JSOFT">
-							</div>
-							
-                    	</div>
-                    	<h3><font color="white">Your account have been activated</font></h3>
-                    	<p>Back to home page after 3 seconds...</p>
-                    	<a href="index.php" class="btn-home"><i class="fa fa-home"></i>Go to Home</a>
+                <!-- Page Title Start -->
+                <div class="col-lg-12">
+                    <div class="section-title  text-center">
+                        <h2>Email validation</h2>
+                        <span class="title-line"><i class="fa fa-car"></i></span>
+                        
                     </div>
+                </div>
+                <!-- Page Title End -->
+            </div>
+        </div>
+    </section>
+    <!--== Page Title Area End ==-->
+
+    <!--== Login Page Content Start ==-->
+    <section id="lgoin-page-wrap" class="section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 col-md-8 m-auto">
+                	<div class="login-page-content">
+                		<div class="login-form">
+                            <?php include('errors.php'); ?>
+							<form method = "post" action="emailact.php">
+								<h3>Please confirm your email validation.</h3> <br>
+								We have sent you an email of validation. Please enter the given code.
+								<div class="auth_code">
+									<input type="text" name = "aucode" placeholder="Authorization Code">
+                                </div>  
+								<div class="log-btn">
+									<button type="submit" name = "validate">validate</button>
+								</div>
+							</form>
+                		</div>                		
+                	</div>
                 </div>
         	</div>
         </div>
     </section>
-    <!--== email active page Content End ==-->
+    <!--== Login Page Content End ==-->
 
     
 

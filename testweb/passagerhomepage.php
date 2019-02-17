@@ -5,7 +5,14 @@
 
 <?php if(isset($_COOKIE['login']) && isset($_COOKIE['type'])) {
 		$db = mysqli_connect('localhost', 'root', '', 'eie3117');
-		$username = $_COOKIE['login'];
+        $username = $_COOKIE['login'];
+        $query = "SELECT * FROM user WHERE Username = '$username'"; 
+        $fname = mysqli_query($db, $query);
+        if (!$fname) {
+			echo "Error: %s\n". mysqli_error($db);
+			exit();
+        }
+        $fullname = $fname->fetch_object()->Fullname;
 		$query = "SELECT * FROM request WHERE PassagerName = '$username' AND Completance = 0"; 
 		$current = mysqli_query($db, $query);
 		if (!$current) {
@@ -126,7 +133,13 @@ table, th, td {
     <section id="page-title-area" class="section-padding overlay">
         <div class="container">
             <div class="row">
-                
+                <!-- Page Title Start -->
+                <div class="col-lg-12">
+                    <div class="section-title  text-center">
+                        <h2>Welcome, <?php echo $fullname?>!</h2>
+                    </div>
+                </div>
+                <!-- Page Title End -->
             </div>
         </div>
     </section>
