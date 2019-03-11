@@ -138,25 +138,25 @@
         <span onclick="document.getElementById('quotation_box').style.display='none'" class="close">&times;</span>
         <div id="request_container">
         <form method = "post" action="request.php">
-            Starting location:
+            <h5>Starting location:</h5>
             <p id = "Origin"></p>
 
             <!--<a id ="Origin_Lat" herf="test.html"></a>-->
             <!--<a id ="Origin_Lng" herf="test.html"></a>-->
             <br>
-            Destination:
+            <h5> Destination:</h5>
             <p id ="Destination"></p>
 
             <!--<a id ="Destination_Lat" herf="test.html"></a>-->
             <!--<a id ="Destination_Lng" herf="test.html"></a>-->
             <br>
-            Duration:
+                <h5> Duration:</h5>
             <p id ="Duration"></p>
             <br>
-            Destination:
-            <p id ="Distance"></p>
+            <h5> Fare:</h5>
+            <p id ="Fare"></p>
             <br>
-            <label for="meeting-time">Pickup time:</label>
+                        <h5> <label for="meeting-time">Pickup time:</label></h5>
             
             <input type="datetime-local" id="meeting-time"
                  name="meeting-time" value="2019-02-18T19:30"

@@ -113,6 +113,8 @@ table, th, td {
                             <ul>
                                 <li class="active"><a href="request.php">Start a Request</a></li>
 
+                                <li><a href="passageracc.php">Account Setting</a></li>
+
                                 <li><a href="changepw.php">Change Password</a></li>
 
 								<li><a href="logout.php">LOG OUT</a></li>
@@ -164,7 +166,7 @@ table, th, td {
                             <!-- Single Articles Start -->
                             <div class="col-lg-12">
                                 <article class="single-article">
-									<form method = "post" action="index.php" enctype="multipart/form-data">
+									<form method = "post" enctype="multipart/form-data">
 									<div id="table">	
                                         <table>
 										<tr>
@@ -236,6 +238,7 @@ table, th, td {
                     <div class="row">
                         <div class="col-lg-12">
                                 <article class="single-article">
+                                    <form method = "post" enctype="multipart/form-data">
                                                    <div id="table">	
 													   <table>
 														<tr>
@@ -248,6 +251,7 @@ table, th, td {
 														   <th> Complete Time </th>
 														   <th> Total Charge </th>
 														   <th> Tips </th>
+                                                           <th> Dispute </th>
 														</tr>
 														<?php 
 															while($row = mysqli_fetch_array($history))
@@ -261,12 +265,15 @@ table, th, td {
 																echo "<td>".$row['Pickup_time']."&nbsp;</td>";
 																echo "<td>".$row['Complete_time']."&nbsp;</td>";
 																echo "<td>".$row['Final_Fee']."&nbsp;</td>";
-																echo "<td>".$row['Tips']."&nbsp;</td>";
+                                                                echo "<td>".$row['Tips']."&nbsp;</td>";
+                                                                $rid = $row['Request_ID'];
+                                                                echo "<td><button type = \"submit\" name = \"disputing\" value = '$rid'> Dispute </button></td>";
 																echo "</tr>";
 															}
 														?>
 														</table>
                                                 </div>
+                                                </form>
                                             </div>
                     
         

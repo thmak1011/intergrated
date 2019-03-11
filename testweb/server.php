@@ -5,7 +5,7 @@
 $username = "";
 $email    = "";
 $errors = array(); 
-$auth_code = array("AU82SAER", "2HS7YA92", "28JSNUDA", "8H28SJUB", "1HSHYAGY", "12GYMCNSZ", "27HSABCIAQ", "DH7G2JVC", "9J9JVNAUB", "S74R78UR5TS7RE4M");
+$auth_code = array("AU82SAER", "2HS7YA92", "28JSNUDA", "8H28SJUB", "1HSHYAGY", "12GYMCNSZ", "27HSABCIAQ", "DH7G2JVC", "9J9JVNAUB", "S74R78UR5T");
 $secret_word = 'Dirty Deeds Done Dirt Cheap';
 
 // connect to the database
@@ -91,8 +91,9 @@ if (isset($_POST['reg_user'])) {
     if( $mail->Send() ) {
    
             if($type == "passager") { 
+                $hashpsw = md5($password_1.$secret_word.$username);
                 $query = "INSERT INTO user (Username, Fullname, Phone_No, Email, Password, Type) 
-  			                  VALUES('$username', '$fullname', '$phone', '$email', '$password_1', '$type');";
+  			                  VALUES('$username', '$fullname', '$phone', '$email', '$hashpsw', '$type');";
                 mysqli_query($db, $query); 
                 $query = "INSERT INTO passager (Username, Home_Location, Work_Location) 
   			                  VALUES('$username', '$home', '$work');";
@@ -104,8 +105,9 @@ if (isset($_POST['reg_user'])) {
                 header('location: emailact.php');}
     
             if($type == "driver") {
+                $hashpsw = md5($password_1.$secret_word.$username);
                 $query = "INSERT INTO user (Username, Fullname, Phone_No, Email, Password, Type) 
-  			                  VALUES('$username', '$fullname', '$phone', '$email', '$password_1', '$type');";
+  			                  VALUES('$username', '$fullname', '$phone', '$email', '$hashpsw', '$type');";
                 mysqli_query($db, $query); 
                 $query = "INSERT INTO driver (Username, Car_class, Car_model, Car_plate_No, Image) 
   			                  VALUES('$username', '$cclass', '$cmodel', '$cplate', '$image');";
@@ -147,7 +149,8 @@ if (isset($_POST['login_user'])) {
   }
 
   if (count($errors) == 0) {
-  	$query = "SELECT * FROM user WHERE Username ='$username' AND Password = '$password'";
+    $hashpsw = md5($password.$secret_word.$username);
+  	$query = "SELECT * FROM user WHERE Username ='$username' AND Password = '$hashpsw'";
   	$results = mysqli_query($db, $query);   
   	if (mysqli_num_rows($results) == 1) {
     $pdtype = $results->fetch_object()->Type;
@@ -184,10 +187,12 @@ if (isset($_POST['change_pw'])) {
     }
     if (count($errors) == 0) {
       $username = $_COOKIE['login'];
-      $query = "SELECT * FROM user WHERE Username = '$username' AND Password = '$old_password'";
+      $hasholdpsw = md5($old_password.$secret_word.$username);
+      $query = "SELECT * FROM user WHERE Username = '$username' AND Password = '$hasholdpsw'";
       $results = mysqli_query($db, $query);   
   	  if (mysqli_num_rows($results) == 1) {
-          $query = "UPDATE user SET Password = '$password_1' WHERE Username ='$username' AND Password = '$old_password'";
+          $hashpsw = md5($password_1.$secret_word.$username);
+          $query = "UPDATE user SET Password = '$hashpsw' WHERE Username ='$username' AND Password = '$hasholdpsw'";
           $results = mysqli_query($db, $query); 
           if ($results) {            
             array_push($errors, "Password updated successfully"); 
@@ -256,7 +261,8 @@ if (isset($_POST['reset'])) {
    if (!$authorize) { array_push($errors, "Your authorization code is invalid"); }
    
    if (count($errors) == 0){    
-      $query = "UPDATE user SET Password = '$password_1' WHERE Username ='$username'";
+      $hashpsw = md5($password_1.$secret_word.$username);
+      $query = "UPDATE user SET Password = '$hashpsw' WHERE Username ='$username'";
       $results = mysqli_query($db, $query);
       if ($results) {            
             array_push($errors, "Password updated successfully");
@@ -429,7 +435,7 @@ if (isset($_POST['complete_request'])) {
   $tips = $_POST['tips'];
 
   if (empty($fee)) { array_push($errors, "Total charge is required"); }
-  if (empty($tips)) { array_push($errors, "Tips is required, enter 0 if there are no tips"); }
+  //if (empty($tips)) { array_push($errors, "Tips is required, enter 0 if there are no tips"); }
 
   if (count($errors) == 0){ 
   $time = $date = date('Y-m-d h:i:s');
@@ -539,15 +545,16 @@ if (isset($_POST['request'])){
   $origin = $_COOKIE['origin'];
   $destination = $_COOKIE['destination'];
   $duration = $_COOKIE['duration'];
-  $distance = $_COOKIE['distance'];
   $time = date('Y-m-d h:i:s');
   $pickup = $_POST['meeting-time'];
+  $total = $_COOKIE['distance'];
   $username = $_COOKIE['login'];
-  if ($duration < 2){
-    $suggested_fee = 20.0;
-  }else{
-    $suggested_fee = 20.0 + (ceil($duration) - 2) * 3;
-  };
+  if($total<=2){
+    $suggested_fee=30;
+  }
+  else
+  {$suggested_fee=30+($total-2)*5.5;}
+  $suggested_fee = round($suggested_fee,2);
   $query = "INSERT INTO request(Request_time, Pickup_time, PassagerName, Start_location, Destination, Suggested_Fee) 
   VALUE('$time', '$pickup', '$username', '$origin', '$destination', '$suggested_fee')"; 
 	$results = mysqli_query($db, $query);
@@ -566,6 +573,313 @@ if (isset($_POST['request'])){
       setcookie('distance',null,-1);
       setcookie('meeting-time',null,-1);
       header('location: index.php');
+  }
+}
+
+if (isset($_POST['disputing'])){
+  $RID = $_POST['disputing'];
+  $_SESSION['RID'] = $RID;
+  header('location: dispute.php');
+}
+
+if (isset($_POST['dispute'])){
+  $RID = $_POST['dispute'];
+  $reason = $_POST['reason'];
+  $revert = $_POST['revert'];
+  $query = "SELECT * FROM request WHERE Request_ID = $RID";
+  $results = mysqli_query($db, $query);
+  if (!$results) {
+    echo "Error: %s\n". mysqli_error($db);
+    exit();
+  }else{
+        $req_time = $results->fetch_object()->Request_time;
+        $results = mysqli_query($db, $query);
+        $com_time = $results->fetch_object()->Complete_time;
+        $results = mysqli_query($db, $query);
+        $start = $results->fetch_object()->Start_location;
+        $results = mysqli_query($db, $query);
+        $des = $results->fetch_object()->Destination;
+        $results = mysqli_query($db, $query);
+        $fee = $results->fetch_object()->Suggested_Fee;
+        $results = mysqli_query($db, $query);
+        $actual_fee = $results->fetch_object()->Final_Fee;
+        $results = mysqli_query($db, $query);
+        $tips = $results->fetch_object()->Tips;
+        $results = mysqli_query($db, $query);
+        $pickup = $results->fetch_object()->Pickup_time;
+        $results = mysqli_query($db, $query);
+        $passager = $results->fetch_object()->PassagerName;
+        $results = mysqli_query($db, $query);
+        $driver = $results->fetch_object()->DriverName;
+
+        require("../phpMailer/class.phpmailer.php");
+
+        $mail = new PHPMailer();
+        $mail->IsSMTP();
+        $mail->SMTPAuth = true; // turn on SMTP authentication
+    
+        $mail->Username = "eie3117t5a@gmail.com";
+        $mail->Password = "EIE3117T5A";
+        $mail->FromName = "PolyUber";
+        $webmaster_email = "eie3117t5a@gmail.com"; 
+        $mail->From = $webmaster_email;
+        
+        $query = "SELECT * FROM user WHERE Username = '$driver'";
+          $results = mysqli_query($db, $query);
+          $demail = $results->fetch_object()->Email;
+          $mail->AddAddress($demail,$driver);
+
+        $mail->AddReplyTo($webmaster_email,"PolyUber");
+        $mail->WordWrap = 50;
+        $mail->IsHTML(true); // send as HTML
+        $mail->Subject = "[PolyUber] A past request is put to dispute";        
+          
+          $mail->Body = 
+          "The following request is put to dispute due to '$passager' objection: 
+          <br> 
+          <div id=\"table\" boarder=\"1\">	
+													   <table>
+														<tr>
+                               <th> Request Time </th>
+                               <th> Complete Time </th>
+														   <th> Start Location </th>
+														   <th> Destination </th>
+                               <th> Estimated Fare </th>
+                               <th> Actual Fare </th>
+                               <th> Tips </th>
+                               <th> Requester </th>
+														   <th> Accepter </th>
+                            </tr>
+                            <tr>
+                               <td> '$req_time' </td>
+                               <td> '$com_time' </td>
+														   <td> '$start' </td>
+														   <td> '$des' </td>
+                               <td> '$fee' </td>
+                               <td> '$actual_fee' </th>
+                               <td> '$tips' </th>
+                               <td> '$passager' </td>
+														   <td> '$driver' </td>
+                            </tr>
+                            </table>
+          <br>
+          The reason of dispute is the following:
+          <br>
+          '$reason'
+          <br>
+          <br>
+          '$passager' would like to have $'$revert' been reverted. If you accept the dispute amount, please go to the homepage and click the \"Accept Dispute Amount\" button to continue;
+          Else if you do not accept the dispute and wish to escalate to arbitration, you can again go to the homepage and click the \"Reject Dispute Amount & Escalate To Arbitration\" button.
+          ";
+          if(!$mail->Send()){
+            echo "Error: %s\n". $mail->ErrorInfo;
+            exit();
+          }
+          $query = "UPDATE request SET Dispute = 1, Dispute_value = '$revert' WHERE Request_ID = '$RID'"; 
+          $results = mysqli_query($db, $query);
+            header('location: index.php');
+          
+        }       
+  }
+
+  if (isset($_POST['accept_dispute'])){
+    $RID = $_POST['accept_dispute'];
+
+    $query = "SELECT * FROM request WHERE Request_ID = $RID";
+  $results = mysqli_query($db, $query);
+  if (!$results) {
+    echo "Error: %s\n". mysqli_error($db);
+    exit();
+  }else{
+        $req_time = $results->fetch_object()->Request_time;
+        $results = mysqli_query($db, $query);
+        $com_time = $results->fetch_object()->Complete_time;
+        $results = mysqli_query($db, $query);
+        $start = $results->fetch_object()->Start_location;
+        $results = mysqli_query($db, $query);
+        $des = $results->fetch_object()->Destination;
+        $results = mysqli_query($db, $query);
+        $fee = $results->fetch_object()->Suggested_Fee;
+        $results = mysqli_query($db, $query);
+        $actual_fee = $results->fetch_object()->Final_Fee;
+        $results = mysqli_query($db, $query);
+        $tips = $results->fetch_object()->Tips;
+        $results = mysqli_query($db, $query);
+        $pickup = $results->fetch_object()->Pickup_time;
+        $results = mysqli_query($db, $query);
+        $passager = $results->fetch_object()->PassagerName;
+        $results = mysqli_query($db, $query);
+        $driver = $results->fetch_object()->DriverName;
+        $results = mysqli_query($db, $query);
+        $dispute_value = $results->fetch_object()->Dispute_value;
+
+        require("../phpMailer/class.phpmailer.php");
+
+        $mail = new PHPMailer();
+        $mail->IsSMTP();
+        $mail->SMTPAuth = true; // turn on SMTP authentication
+    
+        $mail->Username = "eie3117t5a@gmail.com";
+        $mail->Password = "EIE3117T5A";
+        $mail->FromName = "PolyUber";
+        $webmaster_email = "eie3117t5a@gmail.com"; 
+        $mail->From = $webmaster_email;
+        
+        $query = "SELECT * FROM user WHERE Username = '$passager'";
+          $results = mysqli_query($db, $query);
+          $pemail = $results->fetch_object()->Email;
+          $mail->AddAddress($pemail,$passager);
+
+        $mail->AddReplyTo($webmaster_email,"PolyUber");
+        $mail->WordWrap = 50;
+        $mail->IsHTML(true); // send as HTML
+        $mail->Subject = "[PolyUber] Your dispute amount is accepted";        
+          
+          $mail->Body = 
+          "This email is to inform you that your dispute of the following request has been accepted by '$driver': 
+          <br> 
+          <div id=\"table\" boarder=\"1\">	
+													   <table>
+														<tr>
+                               <th> Request Time </th>
+                               <th> Complete Time </th>
+														   <th> Start Location </th>
+														   <th> Destination </th>
+                               <th> Estimated Fare </th>
+                               <th> Actual Fare </th>
+                               <th> Tips </th>
+                               <th> Requester </th>
+														   <th> Accepter </th>
+                            </tr>
+                            <tr>
+                               <td> '$req_time' </td>
+                               <td> '$com_time' </td>
+														   <td> '$start' </td>
+														   <td> '$des' </td>
+                               <td> '$fee' </td>
+                               <td> '$actual_fee' </th>
+                               <td> '$tips' </th>
+                               <td> '$passager' </td>
+														   <td> '$driver' </td>
+                            </tr>
+                            </table>
+          <br>
+          The dispute amount $'$dispute_value' has been transferred into your BitCoin wallet.
+          ";
+          if(!$mail->Send()){
+            echo "Error: %s\n". $mail->ErrorInfo;
+            exit();
+          }
+
+          $query = "UPDATE request SET Final_Fee = (Final_Fee - Dispute_value), Dispute = 0 WHERE Request_ID = '$RID'";
+    $results = mysqli_query($db, $query);
+    if (!$results) {
+      echo "Error: %s\n". mysqli_error($db);
+      exit();
+    }
+    header('location: index.php');
+  }
+
+  if (isset($_POST['reject_dispute'])){
+    $RID = $_POST['reject_dispute'];
+    $query = "SELECT * FROM request WHERE Request_ID = $RID";
+  $results = mysqli_query($db, $query);
+  if (!$results) {
+    echo "Error: %s\n". mysqli_error($db);
+    exit();
+  }else{
+        $req_time = $results->fetch_object()->Request_time;
+        $results = mysqli_query($db, $query);
+        $com_time = $results->fetch_object()->Complete_time;
+        $results = mysqli_query($db, $query);
+        $start = $results->fetch_object()->Start_location;
+        $results = mysqli_query($db, $query);
+        $des = $results->fetch_object()->Destination;
+        $results = mysqli_query($db, $query);
+        $fee = $results->fetch_object()->Suggested_Fee;
+        $results = mysqli_query($db, $query);
+        $actual_fee = $results->fetch_object()->Final_Fee;
+        $results = mysqli_query($db, $query);
+        $tips = $results->fetch_object()->Tips;
+        $results = mysqli_query($db, $query);
+        $pickup = $results->fetch_object()->Pickup_time;
+        $results = mysqli_query($db, $query);
+        $passager = $results->fetch_object()->PassagerName;
+        $results = mysqli_query($db, $query);
+        $driver = $results->fetch_object()->DriverName;
+        $results = mysqli_query($db, $query);
+        $dispute_value = $results->fetch_object()->Dispute_value;
+
+        require("../phpMailer/class.phpmailer.php");
+
+        $mail = new PHPMailer();
+        $mail->IsSMTP();
+        $mail->SMTPAuth = true; // turn on SMTP authentication
+    
+        $mail->Username = "eie3117t5a@gmail.com";
+        $mail->Password = "EIE3117T5A";
+        $mail->FromName = "PolyUber";
+        $webmaster_email = "eie3117t5a@gmail.com"; 
+        $mail->From = $webmaster_email;
+        
+        $query = "SELECT * FROM user WHERE Username = '$passager'";
+          $results = mysqli_query($db, $query);
+          $pemail = $results->fetch_object()->Email;
+          $mail->AddAddress($pemail,$passager);
+
+          $query = "SELECT * FROM user WHERE Username = '$driver'";
+          $results = mysqli_query($db, $query);
+          $demail = $results->fetch_object()->Email;
+          $mail->AddAddress($demail,$driver);
+
+        $mail->AddReplyTo($webmaster_email,"PolyUber");
+        $mail->WordWrap = 50;
+        $mail->IsHTML(true); // send as HTML
+        $mail->Subject = "[PolyUber] Your dispute is escalated to arbitration level";        
+          
+          $mail->Body = 
+          "This email is to inform you that your dispute of the following request has been escalated to arbitration by '$driver': 
+          <br> 
+          <div id=\"table\" boarder=\"1\">	
+													   <table>
+														<tr>
+                               <th> Request Time </th>
+                               <th> Complete Time </th>
+														   <th> Start Location </th>
+														   <th> Destination </th>
+                               <th> Estimated Fare </th>
+                               <th> Actual Fare </th>
+                               <th> Tips </th>
+                               <th> Requester </th>
+														   <th> Accepter </th>
+                            </tr>
+                            <tr>
+                               <td> '$req_time' </td>
+                               <td> '$com_time' </td>
+														   <td> '$start' </td>
+														   <td> '$des' </td>
+                               <td> '$fee' </td>
+                               <td> '$actual_fee' </th>
+                               <td> '$tips' </th>
+                               <td> '$passager' </td>
+														   <td> '$driver' </td>
+                            </tr>
+                            </table>
+          <br>
+          A third party will handle your dispute in upcoming days. Meanwhile please wait patiently for further notification.
+          ";
+          if(!$mail->Send()){
+            echo "Error: %s\n". $mail->ErrorInfo;
+            exit();
+          }
+    $query = "UPDATE request SET Dispute = 0 WHERE Request_ID = '$RID'";
+    $results = mysqli_query($db, $query);
+    if (!$results) {
+      echo "Error: %s\n". mysqli_error($db);
+      exit();
+    }
+    header('location: index.php');
+  }
   }
 }
 ?>

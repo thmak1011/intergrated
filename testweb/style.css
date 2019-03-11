@@ -3378,3 +3378,19 @@ span.psw {
 #table{
     position: center;
 }
+
+table.box{
+    width: 750px;
+    height: 300px;
+    border: 1px solid rgb(0, 0, 0);
+    margin: auto;
+  }
+  table.box td{
+    vertical-align: middle;
+    text-align: center;
+  }
+  .content{
+    width: 200px;
+
+    text-align: center;
+  }

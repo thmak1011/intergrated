@@ -1,8 +1,43 @@
 <?php include ('server.php') ?>
+
 <?php if(!isset($_COOKIE['login']) || !isset($_COOKIE['type'])) {
         header('location: index.php');
-}?>
+}
+?>
 
+
+<?php if(isset($_COOKIE['login']) && isset($_COOKIE['type'])) {
+  $db = mysqli_connect('localhost', 'root', '', 'eie3117');
+      $username = $_COOKIE['login'];
+
+      $query = "SELECT * FROM user WHERE Username = '$username'"; 
+      $result = mysqli_query($db, $query);
+      if (!$result) {
+    echo "Error: %s\n". mysqli_error($db);
+    exit();
+      }
+      $fullname = $result->fetch_object()->Fullname;
+      $result = mysqli_query($db, $query);
+      $email = $result->fetch_object()->Email;
+      $result = mysqli_query($db, $query);
+      $phone = $result->fetch_object()->Phone_No;
+      $result = mysqli_query($db, $query);
+      $username = $result->fetch_object()->Username;
+
+      $query2 = "SELECT Home_Location, Work_Location FROM user, passager WHERE user.Username = passager.Username";
+      $passager = mysqli_query($db, $query2);
+      if (!$passager) {
+        echo "Error: %s\n". mysqli_error($db);
+        exit();
+      }
+      $home = $passager->fetch_object()->Home_Location;
+      $passager = mysqli_query($db, $query2);
+      $work = $passager->fetch_object()->Work_Location;
+      
+
+
+  }
+?>
 <!DOCTYPE html>
 <html class="no-js" lang="zxx">
 
@@ -34,7 +69,17 @@
     <!--=== Responsive CSS ===-->
     <link href="assets/css/responsive.css" rel="stylesheet">
 
+    <script>
+        // Get the modal
+        var modal = document.getElementById('id01');
 
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
     <!--[if lt IE 9]>
         <script src="//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
         <script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
@@ -54,8 +99,8 @@
     <!--== Preloader Area End ==-->
 
     <!--== Header Area Start ==-->
-    <header id="header-area" class="fixed-top">       
-
+    <header id="header-area" class="fixed-top">
+        
         <!--== Header Bottom Start ==-->
         <div id="header-bottom">
             <div class="container">
@@ -66,17 +111,17 @@
                             <img src="assets/img/logo.png" alt="JSOFT">
                         </a>
                     </div>
-
-
                     <!--== Logo End ==-->
-
+                    
                     <!--== Main Menu Start ==-->
                     <div class="col-lg-8 d-none d-xl-block">
                         <nav class="mainmenu alignright">
                             <ul>
-                                <li class="active"><a href="index.php">Home</a></li>
+                                <li class="active"><a href="request.php">Start a Request</a></li>
 
-								<li class="active"><a href="request.php">Start a Request</a></li>
+                                <li><a href="passageracc.php">Account Setting</a></li>
+
+                                <li><a href="changepw.php">Change Password</a></li>
 
 								<li><a href="logout.php">LOG OUT</a></li>
 
@@ -99,7 +144,7 @@
                 <!-- Page Title Start -->
                 <div class="col-lg-12">
                     <div class="section-title  text-center">
-                        <h2>Complete Request</h2>
+                        <h2>Persoanl Page</h2>
                         <span class="title-line"><i class="fa fa-car"></i></span>
                         
                     </div>
@@ -110,38 +155,120 @@
     </section>
     <!--== Page Title Area End ==-->
 
-    <!--== Login Page Content Start ==-->
-    <section id="lgoin-page-wrap" class="section-padding">
-        <form method="post" action="completeR.php" enctype="multipart/form-data">
-		<?php include('errors.php'); ?>
-		<div class="container">
-            <div class="row">
-                <div class="col-lg-5 col-md-8 m-auto">
-                	<div class="login-page-content">
-                		<div class="login-form">							
-								<div class="fee">
-                                Total Charge
-									<input type="number" step = "5.5" min = "30" name = "fee" value = "30" required>
-                                </div>
-                                <div class="tips">
-                                Tips (if any)
-									<input type="number" min = "0" name = "tips" value = "0">
-                                </div>
-                                <?php $rid = $_SESSION['RID']; ?>
-								<div class="conf-btn">
-									<button type="submit-btn" name="complete_request" value = '<?php echo $rid?>'><i class="fa fa-check-square"></i> Complete </button>
-								</div>
-							
-                		</div>
-                		
-                		
-                	</div>
-                </div>
-        	</div>
+    <!--== About Page Content Start ==-->
+    <section id="about-area" class="section-padding">
+        <div class="container">
+           
+
+            <table class="box">
+                <tr>
+                  <td>
+                    <div class="content">
+                      <div class="txt">
+                        Full Name:
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="content">
+                      <div class="txt">
+                        <?php echo $fullname?>
+                      </div>
+                    </div>
+                  </td>
+                  <tr>
+                  <td>
+                    <div class="content">
+                      <div class="txt">
+                        Email:
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="content">
+                      <div class="txt">
+                        <?php echo $email?>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="content">
+                      <div class="txt">
+                        Phone Number:
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="content">
+                      <div class="txt">
+                        <?php echo $phone?>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="content">
+                      <div class="txt">
+                        Username:
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="content">
+                      <div class="txt">
+                        <?php echo $username?>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="content">
+                      <div class="txt">
+                        Home Location
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="content">
+                      <div class="txt">
+                        <?php echo $home?>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="content">
+                      <div class="txt">
+                        Work Location:
+                      </div>
+                    </div>
+                  </td>
+                    <td>
+                    <div class="content">
+                      <div class="txt">
+                        <?php echo $work?>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                
+              </table>
+
+            
         </div>
-		</form>
     </section>
-    <!--== Login Page Content End ==-->    
+    <!--== About Page Content End ==-->
+    
+    
+
+    
+
+    
 
     <!--== Scroll Top Area Start ==-->
     <div class="scroll-top">

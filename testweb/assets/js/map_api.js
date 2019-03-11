@@ -1,6 +1,8 @@
 var myLatLng;
 var quotation_box = document.getElementById('quotation_box');
 var tollSelector = document.getElementById('toll_selector');
+
+
 function initMap(position) {
     var map = new google.maps.Map(document.getElementById('map'), {
         mapTypeControl: false,
@@ -20,6 +22,28 @@ function initMap(position) {
     });
 
     new AutocompleteDirectionsHandler(map);
+}
+
+var image={
+    url: "https://i.ibb.co/VTQ394X/iconfinder-BT-c3top-905662-2.png",
+};
+
+var driver_latlng = [
+    ['driver1',22.304298, 114.185242, 4],
+    ['driver2', 22.296916, 114.177472, 5],
+    ['driver3', 22.310681, 114.179505, 3],
+    ['driver4', 22.303336, 114.174545, 2],
+    ['driver5', 22.308422, 114.182829, 1]
+];
+
+function setMarkers(map) {
+    for (var i=0;i<driver_latlng.length;i++) {
+        var driver_pos=driver_latlng[i];
+        var marker = new google.maps.Marker({
+            position: {lat: driver_pos[1], lng: driver_pos[2]},
+            map: map,
+            icon: image});
+    }
 
 }
 
@@ -71,6 +95,7 @@ AutocompleteDirectionsHandler.prototype.setupClickListener = function(
     var checkBox = document.getElementById(id);
     var me = this;
 
+
     checkBox.addEventListener('click', function() {
         if (this.checked==true) {
             me.toll = true;
@@ -89,6 +114,7 @@ AutocompleteDirectionsHandler.prototype.setupPlaceChangedListener = function(
     autocomplete, mode) {
     var me = this;
     autocomplete.bindTo('bounds', this.map);
+
 
     autocomplete.addListener('place_changed', function() {
 
@@ -114,6 +140,7 @@ AutocompleteDirectionsHandler.prototype.route = function() {
         return;
     }
     var me = this;
+    setMarkers(me.map);
 
     this.directionsService.route(
         {
@@ -154,6 +181,7 @@ function getLocation() {
 }
 function computeTotalDistance(result) {
     var total = 0;
+    var fare=0;
     var ori = result.routes[0].legs[0].start_address;
     var oriLat=result.routes[0].legs[0].start_location.lat();
     var oriLNg=result.routes[0].legs[0].start_location.lng();
@@ -167,6 +195,12 @@ function computeTotalDistance(result) {
         total += myroute.legs[i].distance.value;
     }
     total = total / 1000;
+    if(total<=2){
+        fare=30;
+    }
+    else
+    fare=30+(total-2)*5.5;
+
     console.log('Distance '+ total + ' km');
     console.log('Duration ' + duration );
     document.getElementById("Origin").innerHTML=ori;
@@ -176,7 +210,7 @@ function computeTotalDistance(result) {
     // document.getElementById("Destination_Lat").innerHTML=desLat;
     // document.getElementById("Destination_Lng").innerHTML=desLNg;
     document.getElementById("Duration").innerHTML=duration;
-    document.getElementById("Distance").innerHTML=distance;
+    document.getElementById("Fare").innerHTML=fare.toFixed(2);
         document.cookie = 'origin=' + ori;
         document.cookie = 'destination=' + des;
         document.cookie = 'duration=' + duration;

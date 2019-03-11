@@ -117,6 +117,7 @@ table, th, td {
                     <div class="col-lg-8 d-none d-xl-block">
                         <nav class="mainmenu alignright">
                             <ul>
+                                <li><a href="driveracc.php">Account Setting</a></li>
 
                                 <li><a href="changepw.php">Change Password</a></li>
 
@@ -295,6 +296,7 @@ table, th, td {
                     <div class="row">
                         <div class="col-lg-12">
                                 <article class="single-article">
+                                <form method = "post" enctype="multipart/form-data">
                                                    <div id="table">	
 													   <table>
 														<tr>
@@ -306,7 +308,9 @@ table, th, td {
 														   <th> Pickup Time </th>
 														   <th> Complete Time </th>
 														   <th> Total Charge </th>
-														   <th> Tips </th>
+                                                           <th> Tips </th>
+                                                           <th> </th>
+                                                           <th> </th>
 														</tr>
 														<?php 
 															while($row = mysqli_fetch_array($history))
@@ -320,12 +324,19 @@ table, th, td {
 																echo "<td>".$row['Pickup_time']."&nbsp;</td>";
 																echo "<td>".$row['Complete_time']."&nbsp;</td>";
 																echo "<td>".$row['Final_Fee']."&nbsp;</td>";
-																echo "<td>".$row['Tips']."&nbsp;</td>";
+                                                                echo "<td>".$row['Tips']."&nbsp;</td>";
+                                                                $rid = $row['Request_ID'];
+                                                                $dispute = $row['Dispute'];
+                                                                if ($dispute){
+                                                                echo "<td><button type = \"submit\" name = \"accept_dispute\" value = '$rid'> Accept Dispute Amount </button></td>";
+                                                                echo "<td><button type = \"submit\" name = \"reject_dispute\" value = '$rid'> Reject Dispute Amount & Escalate to arbitration </button></td>";
+                                                                }
 																echo "</tr>";
 															}
 														?>
 														</table>
                                                 </div>
+                                                        </form>
                                             </div>
                     
         

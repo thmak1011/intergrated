@@ -75,7 +75,7 @@ html, body {
     border-radius : 3px;
     border : 2px solid #fff;
     marginBottom :22px;
-    height: 450px;
+    height: auto;
     margin-left: 12px;
     padding: 5px 11px 0px 11px;
 }
@@ -89,7 +89,11 @@ html, body {
     width: 385px;
 }
 
-#quotation_box a{
+#quotation_box h5{
+    margin-top: 10px;
+}
+
+#quotation_box p{
     width: 100%;
     padding: 5px;
     text-align: center;
