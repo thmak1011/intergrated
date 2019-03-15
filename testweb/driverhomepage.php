@@ -19,13 +19,19 @@
 			echo "Error: %s\n". mysqli_error($db);
 			exit();
 		}
-		$query = "SELECT * FROM request WHERE DriverName = '$username' AND Completance = 0"; 
+		$query = "SELECT * FROM request WHERE DriverName = '$username' AND Completance = 0 AND Paid = 0"; 
 		$current = mysqli_query($db, $query);
 		if (!$current) {
 			echo "Error: %s\n". mysqli_error($db);
 			exit();
+        }
+        $query = "SELECT * FROM request WHERE DriverName = '$username' AND Completance = 1 AND Paid = 0"; 
+		$unpaid = mysqli_query($db, $query);
+		if (!$unpaid) {
+			echo "Error: %s\n". mysqli_error($db);
+			exit();
 		}
-		$query = "SELECT * FROM request WHERE DriverName = '$username' AND Completance = 1"; 
+		$query = "SELECT * FROM request WHERE DriverName = '$username' AND Completance = 1 AND Paid = 1"; 
 		$history = mysqli_query($db, $query);
 		if (!$history) {
 			echo "Error: %s\n". mysqli_error($db);
@@ -312,7 +318,21 @@ table, th, td {
                                                            <th> </th>
                                                            <th> </th>
 														</tr>
-														<?php 
+                                                        <?php 
+                                                            while($row = mysqli_fetch_array($unpaid))
+															{
+																echo "<tr>";
+																echo "<td>".$row['Request_time']."&nbsp;</td>";
+																echo "<td>".$row['Start_location']."&nbsp;</td>";
+																echo "<td>".$row['Destination']."&nbsp;</td>";
+																echo "<td>".$row['Suggested_Fee']."&nbsp;</td>";
+																echo "<td>".$row['PassagerName']."&nbsp;</td>";
+																echo "<td>".$row['Pickup_time']."&nbsp;</td>";
+																echo "<td>".$row['Complete_time']."&nbsp;</td>";
+																echo "<td> Unpaid &nbsp;</td>";
+                                                                echo "<td> Unpaid &nbsp;</td>";
+																echo "</tr>";
+															}
 															while($row = mysqli_fetch_array($history))
 															{
 																echo "<tr>";

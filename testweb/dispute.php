@@ -78,6 +78,10 @@
 
 								<li class="active"><a href="request.php">Start a Request</a></li>
 
+                                <li><a href="passageracc.php">Account Setting</a></li>
+
+                                <li><a href="changepw.php">Change Password</a></li>
+
 								<li><a href="logout.php">LOG OUT</a></li>
 
                             </ul>
@@ -99,7 +103,7 @@
                 <!-- Page Title Start -->
                 <div class="col-lg-12">
                     <div class="section-title  text-center">
-                        <h2>Change Password</h2>
+                        <h2>Dispute</h2>
                         <span class="title-line"><i class="fa fa-car"></i></span>
                         
                     </div>
@@ -112,7 +116,7 @@
 
     <!--== Login Page Content Start ==-->
     <section id="lgoin-page-wrap" class="section-padding">
-        <form method="post" action="changepw.php" enctype="multipart/form-data">
+        <form method="post" enctype="multipart/form-data">
 		<?php include('errors.php'); ?>
 		<div class="container">
             <div class="row">

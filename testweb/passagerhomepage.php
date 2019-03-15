@@ -18,8 +18,14 @@
 		if (!$current) {
 			echo "Error: %s\n". mysqli_error($db);
 			exit();
+        }
+        $query = "SELECT * FROM request WHERE PassagerName = '$username'  AND Completance = 1 AND Paid = 0"; 
+		$unpaid = mysqli_query($db, $query);
+		if (!$unpaid) {
+			echo "Error: %s\n". mysqli_error($db);
+			exit();
 		}
-		$query = "SELECT * FROM request WHERE PassagerName = '$username'  AND Completance = 1"; 
+		$query = "SELECT * FROM request WHERE PassagerName = '$username'  AND Completance = 1 AND Paid = 1"; 
 		$history = mysqli_query($db, $query);
 		if (!$history) {
 			echo "Error: %s\n". mysqli_error($db);
@@ -217,6 +223,63 @@ table, th, td {
         </div>
     </section>
 
+<!--== Services Area Start ==-->
+<section id="service-area" class="section-padding">
+        <div class="container">
+            <div class="row">
+                <!-- Section Title Start -->
+                <div class="col-lg-12">
+                    <div class="section-title  text-center">
+                        <h2>Unpaid Request</h2>
+                        <span class="title-line"><i class="fa fa-car"></i></span>
+                    </div>
+                </div>
+                <!-- Section Title End -->
+            </div>
+
+           
+			<!--== Car List Area Start ==-->
+            
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                                <article class="single-article">
+                                    <form method = "post" enctype="multipart/form-data">
+                                                   <div id="table">	
+													   <table>
+														<tr>
+														   <th> Request Time </th>
+														   <th> Start Location </th>
+														   <th> Destination </th>
+														   <th> Estimated Fare </th>
+														   <th> Accepter </th>
+														   <th> Pickup Time </th>
+														   <th> Complete Time </th>
+														   <th> Total Charge </th>
+                                                           <th></th>
+														</tr>
+														<?php 
+															while($row = mysqli_fetch_array($unpaid))
+															{
+																echo "<tr>";
+																echo "<td>".$row['Request_time']."&nbsp;</td>";
+																echo "<td>".$row['Start_location']."&nbsp;</td>";
+																echo "<td>".$row['Destination']."&nbsp;</td>";
+																echo "<td>".$row['Suggested_Fee']."&nbsp;</td>";
+																echo "<td>".$row['DriverName']."&nbsp;</td>";
+																echo "<td>".$row['Pickup_time']."&nbsp;</td>";
+                                                                echo "<td>".$row['Complete_time']."&nbsp;</td>";
+                                                                echo "<td>".$row['Final_Fee']."&nbsp;</td>";
+                                                                $rid = $row['Request_ID'];
+                                                                echo "<td><button type = \"submit\" name = \"paying\" value = '$rid'> Pay </button></td>";
+																echo "</tr>";
+															}
+														?>
+														</table>
+                                                </div>
+                                                </form>
+                                            </div>
+
     <!--== Services Area Start ==-->
     <section id="service-area" class="section-padding">
         <div class="container">
@@ -251,7 +314,7 @@ table, th, td {
 														   <th> Complete Time </th>
 														   <th> Total Charge </th>
 														   <th> Tips </th>
-                                                           <th> Dispute </th>
+                                                           <th></th>
 														</tr>
 														<?php 
 															while($row = mysqli_fetch_array($history))

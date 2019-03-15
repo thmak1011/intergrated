@@ -271,6 +271,31 @@
                     </div>
                   </td>
                 </tr>
+                <tr>
+                  <td>
+                    <div class="content">
+                      <div class="txt">
+                        Bitcoin wallet:
+                      </div>
+                    </div>
+                  </td>
+                    <td>
+                    <div class="content">
+                      <div class="txt">
+                      <?php if(is_null($wallet_addr)){
+                        echo "<form method=\"post\" enctype=\"multipart/form-data\">";
+                        echo "<input type= \"text\" name = \"address\" placeholder=\"Wallet address\" required>";
+                        echo "<button type = \"submit\" name = \"set_wallet\"> Set your BitCoin wallet </button>";
+                        echo "</form>";
+                      }else{
+                        $wallet = new Wallet;
+                        $wallet->setMasterAddr($wallet_addr);
+                        echo $wallet->getMasterBalance();
+                      }?>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
               </table>
 
             

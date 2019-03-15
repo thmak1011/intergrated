@@ -432,113 +432,15 @@ if (isset($_POST['completing'])) {
 if (isset($_POST['complete_request'])) {
   $RID = $_POST['complete_request'];
   $fee = $_POST['fee'];
-  $tips = $_POST['tips'];
 
   if (empty($fee)) { array_push($errors, "Total charge is required"); }
-  //if (empty($tips)) { array_push($errors, "Tips is required, enter 0 if there are no tips"); }
 
   if (count($errors) == 0){ 
   $time = $date = date('Y-m-d h:i:s');
-  $query = "UPDATE request SET Complete_time = '$time', Final_Fee = '$fee', Tips = '$tips', Completance = 1 WHERE Request_ID = '$RID'"; 
+  $query = "UPDATE request SET Complete_time = '$time', Final_Fee = '$fee', Completance = 1 WHERE Request_ID = '$RID'"; 
 	$results = mysqli_query($db, $query);
-	if (!$results) {
-			echo "Error: %s\n". mysqli_error($db);
-			exit();
-  }else{
-    $query = "SELECT * FROM request WHERE Request_ID = $RID";
-    $results = mysqli_query($db, $query);
-    if (!$results) {
-      echo "Error: %s\n". mysqli_error($db);
-    exit();
-     }else{
-        $req_time = $results->fetch_object()->Request_time;
-        $results = mysqli_query($db, $query);
-        $start = $results->fetch_object()->Start_location;
-        $results = mysqli_query($db, $query);
-        $des = $results->fetch_object()->Destination;
-        $results = mysqli_query($db, $query);
-        $fee = $results->fetch_object()->Suggested_Fee;
-        $results = mysqli_query($db, $query);
-        $pickup = $results->fetch_object()->Pickup_time;
-        $results = mysqli_query($db, $query);
-        $completetime = $results->fetch_object()->Complete_time;
-        $results = mysqli_query($db, $query);
-        $charge = $results->fetch_object()->Final_Fee;
-        $results = mysqli_query($db, $query);
-        $tips = $results->fetch_object()->Tips;
-        $results = mysqli_query($db, $query);
-        $passager = $results->fetch_object()->PassagerName;
-        
-        $canceller = $_COOKIE['login'];
-
-        $query = "SELECT * FROM user WHERE Username = '$passager'";
-        $results = mysqli_query($db, $query);
-        $pemail = $results->fetch_object()->Email;
-
-        require("../phpMailer/class.phpmailer.php");
-        $mail = new PHPMailer();
-        $mail->IsSMTP();
-        $mail->SMTPAuth = true; // turn on SMTP authentication
-    
-        $mail->Username = "eie3117t5a@gmail.com";
-        $mail->Password = "EIE3117T5A";
-        $mail->FromName = "PolyUber";
-        $webmaster_email = "eie3117t5a@gmail.com"; 
-        $mail->From = $webmaster_email;
-        $mail->AddAddress($pemail,$passager);
-
-        $mail->AddReplyTo($webmaster_email,"PolyUber");
-        $mail->WordWrap = 50;
-        $mail->IsHTML(true); // send as HTML
-        $mail->Subject = "[PolyUber] Request has been completed";        
-
-          //extra_charge();
-          $query = "SELECT * FROM request WHERE Request_ID = $RID";
-          $results = mysqli_query($db, $query);
-          $driver = $results->fetch_object()->DriverName;
-          $query = "SELECT * FROM user WHERE Username = '$driver'";
-          $results = mysqli_query($db, $query);
-          $demail = $results->fetch_object()->Email;
-          $mail->AddAddress($demail,$driver);
-
-          $mail->Body = 
-          "The request has been completed, thank you for choosing PolyUber. 
-          <br> 
-          <div id=\"table\" boarder=\"1\">	
-													   <table>
-														<tr>
-														   <th> Request Time </th>
-														   <th> Start Location </th>
-														   <th> Destination </th>
-                               <th> Estimated Fare </th>
-                               <th> Requester </th>
-														   <th> Accepter </th>
-                               <th> Pickup Time </th>
-                               <th> Complete Time </th>
-														   <th> Total Charge </th>
-														   <th> Tips </th>
-                            </tr>
-                            <tr>
-														   <td> '$req_time' </td>
-														   <td> '$start' </td>
-														   <td> '$des' </td>
-                               <td> '$fee' </td>
-                               <td> '$passager' </td>
-														   <td> '$driver' </td>
-                               <td> '$pickup' </td>
-                               <td> '$completetime' </td>
-														   <td> '$charge' </td>
-                               <td> '$tips' </td>
-                            </tr>
-                            </table>
-          ";
-          if(!$mail->Send()){
-            echo "Error: %s\n". $mail->ErrorInfo;
-            exit();
-          }
-        }       
-  }
-    header('location: index.php');}
+	
+  header('location: index.php');}
 }
 
 if (isset($_POST['request'])){
@@ -684,6 +586,53 @@ if (isset($_POST['dispute'])){
 
   if (isset($_POST['accept_dispute'])){
     $RID = $_POST['accept_dispute'];
+    $query = "SELECT * FROM request WHERE Request_ID = '$RID'"; 
+        $results = mysqli_query($db, $query);
+        if (!$results) {
+			echo "Error: %s\n". mysqli_error($db);
+			exit();
+        }
+    $dispute = $results->fetch_object()->Dispute_value;
+    $_SESSION['RID'] = $RID;
+    $_SESSION['dispute'] = $dispute;
+    header('location: payment.php');
+  }
+
+  if (isset($_POST['pay_dispute'])){
+    $key = $_POST['key'];
+    $dispute = $_SESSION['dispute'];
+    $username = $_COOKIE['login'];
+  $query = "SELECT * FROM user WHERE Username = '$username'"; 
+  $results = mysqli_query($db, $query);
+  if (!$results) {
+    echo "Error: %s\n". mysqli_error($db);
+  exit();}
+  $wallet_addr = $results->fetch_object()->Wallet_addr;
+  if (is_null($wallet_addr)){
+    header('location: passageracc.php');
+  }
+  $query = "SELECT * FROM request WHERE Request_ID = $RID";
+  $results = mysqli_query($db, $query);
+  if (!$results) {
+    echo "Error: %s\n". mysqli_error($db);
+  exit();}
+  $passager = $results->fetch_object()->PassagerName;
+  $query = "SELECT * FROM user WHERE Username = '$passager'"; 
+  $results = mysqli_query($db, $query);
+  if (!$results) {
+    echo "Error: %s\n". mysqli_error($db);
+  exit();}
+  $passager_addr = $results->fetch_object()->Wallet_addr;
+  $passager_wallet = new Wallet;
+  $driver_wallet = new Wallet;
+  $driver_wallet->sendPayment($passager_addr, $key, $dispute);
+  $query = "UPDATE request SET Dispute = 0 WHERE Request_ID = '$RID'";
+    $results = mysqli_query($db, $query);
+    if (!$results) {
+      echo "Error: %s\n". mysqli_error($db);
+      exit();
+    }
+  //...update wallet address
 
     $query = "SELECT * FROM request WHERE Request_ID = $RID";
   $results = mysqli_query($db, $query);
@@ -881,5 +830,166 @@ if (isset($_POST['dispute'])){
     header('location: index.php');
   }
   }
+}
+
+if(isset($_POST['set_wallet'])){
+  $addr = $_POST['address'];
+  $username = $_COOKIE['login'];
+  $query = "UPDATE user SET Wallet_addr = '$addr' WHERE Username = '$username'";
+  $results = mysqli_query($db, $query);
+  if(!$results) {
+    echo "Error: %s\n". mysqli_error($db);
+    exit();
+  }
+  echo $addr;
+  echo $username;
+  header('location: '.$_COOKIE['type'].'acc.php');
+}
+
+if(isset($_POST['paying'])){
+  $RID = $_POST['paying'];
+  $query = "SELECT * FROM request WHERE Request_ID = '$RID'"; 
+        $results = mysqli_query($db, $query);
+        if (!$results) {
+			echo "Error: %s\n". mysqli_error($db);
+			exit();
+        }
+  $fee = $results->fetch_object()->Final_Fee;
+  $_SESSION['RID'] = $RID;
+  $_SESSION['fee'] = $fee;
+  header('location: payment.php');
+}
+
+if(isset($_POST['payment'])){
+  $RID = $_POST['payment'];
+  $key = $_POST['key'];
+  $fee = $_SESSION['fee'];
+  $tips = $_POST['tips'];
+  $username = $_COOKIE['login'];
+  $query = "SELECT * FROM user WHERE Username = '$username'"; 
+  $results = mysqli_query($db, $query);
+  if (!$results) {
+    echo "Error: %s\n". mysqli_error($db);
+  exit();}
+  $wallet_addr = $results->fetch_object()->Wallet_addr;
+  if (is_null($wallet_addr)){
+    header('location: passageracc.php');
+  }
+  $query = "SELECT * FROM request WHERE Request_ID = $RID";
+  $results = mysqli_query($db, $query);
+  if (!$results) {
+    echo "Error: %s\n". mysqli_error($db);
+  exit();}
+  $driver = $results->fetch_object()->DriverName;
+  $query = "SELECT * FROM user WHERE Username = '$driver'"; 
+  $results = mysqli_query($db, $query);
+  if (!$results) {
+    echo "Error: %s\n". mysqli_error($db);
+  exit();}
+  $driver_addr = $results->fetch_object()->Wallet_addr;
+  $passager_wallet = new Wallet;
+  $driver_wallet = new Wallet;
+  $total = $fee + $tips;
+  $passager_wallet->sendPayment($driver_addr, $key, $total);
+  $query = "UPDATE request SET Paid = 1, Tips = '$tips' WHERE Request_ID = '$RID'";
+    $results = mysqli_query($db, $query);
+    if (!$results) {
+      echo "Error: %s\n". mysqli_error($db);
+      exit();
+    }
+  //...update wallet address
+  $query = "SELECT * FROM request WHERE Request_ID = $RID";
+  $results = mysqli_query($db, $query);
+  if (!$results) {
+    echo "Error: %s\n". mysqli_error($db);
+  exit();
+   }else{
+      $req_time = $results->fetch_object()->Request_time;
+      $results = mysqli_query($db, $query);
+      $start = $results->fetch_object()->Start_location;
+      $results = mysqli_query($db, $query);
+      $des = $results->fetch_object()->Destination;
+      $results = mysqli_query($db, $query);
+      $fee = $results->fetch_object()->Suggested_Fee;
+      $results = mysqli_query($db, $query);
+      $pickup = $results->fetch_object()->Pickup_time;
+      $results = mysqli_query($db, $query);
+      $completetime = $results->fetch_object()->Complete_time;
+      $results = mysqli_query($db, $query);
+      $charge = $results->fetch_object()->Final_Fee;
+      $results = mysqli_query($db, $query);
+      $tips = $results->fetch_object()->Tips;
+      $results = mysqli_query($db, $query);
+      $passager = $results->fetch_object()->PassagerName;
+      
+      $canceller = $_COOKIE['login'];
+
+      $query = "SELECT * FROM user WHERE Username = '$passager'";
+      $results = mysqli_query($db, $query);
+      $pemail = $results->fetch_object()->Email;
+
+      require("../phpMailer/class.phpmailer.php");
+      $mail = new PHPMailer();
+      $mail->IsSMTP();
+      $mail->SMTPAuth = true; // turn on SMTP authentication
+  
+      $mail->Username = "eie3117t5a@gmail.com";
+      $mail->Password = "EIE3117T5A";
+      $mail->FromName = "PolyUber";
+      $webmaster_email = "eie3117t5a@gmail.com"; 
+      $mail->From = $webmaster_email;
+      $mail->AddAddress($pemail,$passager);
+
+      $mail->AddReplyTo($webmaster_email,"PolyUber");
+      $mail->WordWrap = 50;
+      $mail->IsHTML(true); // send as HTML
+      $mail->Subject = "[PolyUber] Request has been completed";        
+
+        //extra_charge();
+        $query = "SELECT * FROM request WHERE Request_ID = $RID";
+        $results = mysqli_query($db, $query);
+        $driver = $results->fetch_object()->DriverName;
+        $query = "SELECT * FROM user WHERE Username = '$driver'";
+        $results = mysqli_query($db, $query);
+        $demail = $results->fetch_object()->Email;
+        $mail->AddAddress($demail,$driver);
+
+        $mail->Body = 
+        "The request has been completed, thank you for choosing PolyUber. 
+        <br> 
+        <div id=\"table\" boarder=\"1\">	
+                           <table>
+                          <tr>
+                             <th> Request Time </th>
+                             <th> Start Location </th>
+                             <th> Destination </th>
+                             <th> Estimated Fare </th>
+                             <th> Requester </th>
+                             <th> Accepter </th>
+                             <th> Pickup Time </th>
+                             <th> Complete Time </th>
+                             <th> Total Charge </th>
+                             <th> Tips </th>
+                          </tr>
+                          <tr>
+                             <td> '$req_time' </td>
+                             <td> '$start' </td>
+                             <td> '$des' </td>
+                             <td> '$fee' </td>
+                             <td> '$passager' </td>
+                             <td> '$driver' </td>
+                             <td> '$pickup' </td>
+                             <td> '$completetime' </td>
+                             <td> '$charge' </td>
+                             <td> '$tips' </td>
+                          </tr>
+                          </table>
+        ";
+        if(!$mail->Send()){
+          echo "Error: %s\n". $mail->ErrorInfo;
+          exit();
+        }
+      }    
+  header("location: index.php");
 }
 ?>

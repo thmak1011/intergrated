@@ -78,6 +78,10 @@
 
 								<li class="active"><a href="request.php">Start a Request</a></li>
 
+                                <li><a href="passageracc.php">Account Setting</a></li>
+
+                                <li><a href="changepw.php">Change Password</a></li>
+
 								<li><a href="logout.php">LOG OUT</a></li>
 
                             </ul>
@@ -99,7 +103,7 @@
                 <!-- Page Title Start -->
                 <div class="col-lg-12">
                     <div class="section-title  text-center">
-                        <h2>Complete Request</h2>
+                        <h2>Payment</h2>
                         <span class="title-line"><i class="fa fa-car"></i></span>
                         
                     </div>
@@ -112,20 +116,26 @@
 
     <!--== Login Page Content Start ==-->
     <section id="lgoin-page-wrap" class="section-padding">
-        <form method="post" action="completeR.php" enctype="multipart/form-data">
+        <form method="post" enctype="multipart/form-data">
 		<?php include('errors.php'); ?>
 		<div class="container">
             <div class="row">
                 <div class="col-lg-5 col-md-8 m-auto">
                 	<div class="login-page-content">
-                		<div class="login-form">							
-								<div class="fee">
-                                Total Charge
-									<input type="number" step = "5.5" min = "30" name = "fee" value = "30" required>
+                		<div class="login-form">
+                                <?php $fee = $_SESSION['fee'];?>
+                                <h3><b>Your ride fare is <?php echo $fee?>. </b></h3> <br>
+								Please enter your private key to continue your payment.							
+								<div class="key">
+									<input type="text" name = "key" placeholder="Private key" required>
+                                </div>
+								<div class="tips">
+                                Tips(if any):
+                                    <input type="number" min = "0" name = "tips">
                                 </div>
                                 <?php $rid = $_SESSION['RID']; ?>
 								<div class="conf-btn">
-									<button type="submit-btn" name="complete_request" value = '<?php echo $rid?>'><i class="fa fa-check-square"></i> Complete </button>
+									<button type="submit-btn" name="payment" value='<?php echo $rid?>'><i class="fa fa-check-square"></i> Confirm </button>
 								</div>
 							
                 		</div>

@@ -1,4 +1,5 @@
 <?php include ('server.php') ?>
+<?php include ('api.php') ?>
 
 <?php if(!isset($_COOKIE['login']) || !isset($_COOKIE['type'])) {
         header('location: index.php');
@@ -23,6 +24,8 @@
       $phone = $result->fetch_object()->Phone_No;
       $result = mysqli_query($db, $query);
       $username = $result->fetch_object()->Username;
+      $result = mysqli_query($db, $query);
+      $wallet_addr = $result->fetch_object()->Wallet_addr;
 
       $query2 = "SELECT Home_Location, Work_Location FROM user, passager WHERE user.Username = passager.Username";
       $passager = mysqli_query($db, $query2);
@@ -123,7 +126,7 @@
 
                                 <li><a href="changepw.php">Change Password</a></li>
 
-								<li><a href="logout.php">LOG OUT</a></li>
+								                <li><a href="logout.php">LOG OUT</a></li>
 
                             </ul>
                         </nav>
@@ -252,6 +255,31 @@
                     <div class="content">
                       <div class="txt">
                         <?php echo $work?>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="content">
+                      <div class="txt">
+                        Bitcoin wallet:
+                      </div>
+                    </div>
+                  </td>
+                    <td>
+                    <div class="content">
+                      <div class="txt">
+                      <?php if(is_null($wallet_addr)){
+                        echo "<form method=\"post\" enctype=\"multipart/form-data\">";
+                        echo "<input type= \"text\" name = \"address\" placeholder=\"Wallet address\" required>";
+                        echo "<button type = \"submit\" name = \"set_wallet\"> Set your BitCoin wallet </button>";
+                        echo "</form>";
+                      }else{
+                        $wallet = new Wallet;
+                        $wallet->setMasterAddr($wallet_addr);
+                        echo $wallet->getMasterBalance();
+                      }?>
                       </div>
                     </div>
                   </td>
