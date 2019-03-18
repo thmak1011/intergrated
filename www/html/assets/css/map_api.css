@@ -1,0 +1,208 @@
+#map {
+    height: 100%;
+    width: 100%;
+}
+/* Optional: Makes the sample page fill the window. */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+.controls {
+    margin-top: 10px;
+    border: 1px solid transparent;
+    border-radius: 2px 0 0 2px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    height: 32px;
+    outline: none;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+#request_container{
+    margin: 6% 2% 2% 2% ;
+    padding: 10px;
+    width: auto;
+    height: auto;
+    position: center ;
+
+}
+
+#submit_btn{
+    background-color: black;
+    color: #ffd000;
+    border: none;
+    border-radius: 3px;
+    padding: 15px;
+    margin-top: 30px;
+    width: 100%;
+    font-size: 15px;
+    font-weight: 600;
+}
+#submit_btn:hover{
+    background-color: #ffd000;
+    color: black;
+    opacity: 0.8;
+}
+
+#origin-input,
+#destination-input {
+    background-color: #fff;
+    font-family: Roboto;
+    font-size: 15px;
+    font-weight: 300;
+    margin-top: 10px;
+    margin-left: 12px;
+    padding: 0 11px 0 13px;
+    text-overflow: ellipsis;
+    width: 200px;
+}
+
+#origin-input:focus,
+#destination-input:focus {
+    border-color: #4d90fe;
+}
+
+
+#map_below{
+    height: 100%;
+    weight: 100%;
+}
+
+.box_controls{
+    text-align: center;
+    box-shadow :0 2px 6px rgba(0,0,0,.3);
+    border-radius : 3px;
+    border : 2px solid #fff;
+    marginBottom :22px;
+    height: auto;
+    margin-left: 12px;
+    padding: 5px 11px 0px 11px;
+}
+
+#quotation_box{
+    background-color: rgba(255, 255, 255, 0.8);
+    font-weight: 300;
+    font-color :rgb(25,25,25);
+    font-family :Roboto,Arial;
+    font-size :20px;
+    width: 385px;
+}
+
+#quotation_box h5{
+    margin-top: 10px;
+}
+
+#quotation_box p{
+    width: 100%;
+    padding: 5px;
+    text-align: center;
+    margin-top: 5%;
+    background-color: white;
+    border:1px solid #ffd000;
+    display: inline-block;
+    box-sizing: border-box;
+}
+
+.close {
+    position: absolute;
+    right: 25px;
+    top: 0;
+    color: #000;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: red;
+    cursor: pointer;
+}
+
+#toll_selector{
+    background-color: #fff;
+    margin-left: 12px;
+    width: 140px;
+
+
+}
+
+#toll_selector_p{
+    font-family: Roboto;
+    font-size: 15px;
+    font-weight: 100;
+    margin: 7px 0 10px 65px;
+    width: 80px;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 30px;
+    margin: 0px;
+    letter-spacing: 0px;
+    border-radius: 2px 0 0 2px;
+
+}
+
+#text_switch{
+    margin-left: 60px;
+    width: 300px;
+
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    top: 2px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+    font-family: Roboto;
+    font-size: 15px;
+    font-weight: 300;
+}
+
+input:checked + .slider {
+    background-color: #2196F3;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;}
