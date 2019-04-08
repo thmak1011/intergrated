@@ -111,10 +111,11 @@ if (isset($_POST['reg_user'])) {
   			                  VALUES('$username', '$fullname', '$phone', '$email', '$hashpsw', '$type');";
                 mysqli_query($db, $query); 
                 //$imagetmp = addslashes(file_get_contents($_FILES['fileToUpload']['tmp_name']));
-                $folder="/xampp/htdocs/images/";
+                $folder="images/";
                 move_uploaded_file($image = $_FILES['fileToUpload']['tmp_name'], "$folder".$image = $_FILES['fileToUpload']['name']);
+                $path = $folder.$image;
                 $query = "INSERT INTO driver (Username, Car_class, Car_model, Car_plate_No, ImagePath, Image) 
-  			                  VALUES('$username', '$cclass', '$cmodel', '$cplate', '$folder', '$image');";
+  			                  VALUES('$username', '$cclass', '$cmodel', '$cplate', '$path', '$image');";
               	mysqli_query($db, $query);
 	  
                     setcookie('login', $username);

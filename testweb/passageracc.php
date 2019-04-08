@@ -28,7 +28,7 @@
       $result = mysqli_query($db, $query);
       $wallet_addr = $result->fetch_object()->Wallet_addr;
 
-      $query2 = "SELECT Home_Location, Work_Location FROM user, passager WHERE user.Username = passager.Username";
+      $query2 = "SELECT Home_Location, Work_Location FROM passager WHERE Username = '$username'";
       $passager = mysqli_query($db, $query2);
       if (!$passager) {
         echo "Error: %s\n". mysqli_error($db);

@@ -167,7 +167,7 @@
                   <td>
                     <div class="content">
                       <div class="txt">
-                        <?php echo "img src=".$image_path."/".$image_name." width=100 height=100"?>
+                        <?php echo "<img src='$image_path' width=100 height=100>"?>
                         Full Name:
                       </div>
                     </div>
