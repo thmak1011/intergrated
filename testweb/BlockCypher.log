@@ -1,0 +1,1715 @@
+[17-03-2019 05:05:18] BlockCypher\Core\BlockCypherHttpConnection: INFO	: GET https://api.blockcypher.com/v1/btc/test3/addrs/mqh49RvTAiJ61SorTZVtANfRA4B4viRH8B/balance?token=
+[17-03-2019 05:05:19] BlockCypher\Core\BlockCypherHttpConnection: INFO	: Invalid or no certificate authority found - Retrying using bundled CA certs file
+[17-03-2019 05:05:20] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: Request Headers 	: GET /v1/btc/test3/addrs/mqh49RvTAiJ61SorTZVtANfRA4B4viRH8B/balance?token= HTTP/1.1, Host: api.blockcypher.com, Accept: */*, Content-Type: application/json, User-Agent: BlockCypherSDK/BlockCypher-PHP-SDK 1.5.0 (lang=PHP;v=5.5.34;bit=32;os=Windows_NT_6.2;machine=i586;openssl=1.0.1s;curl=7.47.1), , 
+[17-03-2019 05:05:20] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: No Request Payload
+--------------------------------------------------------------------------------------------------------------------------------
+
+[17-03-2019 05:05:20] BlockCypher\Core\BlockCypherHttpConnection: INFO	: Response Status 	: 200
+[17-03-2019 05:05:20] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: Response Headers	: HTTP/1.1 200 OK, Server: nginx/1.10.3 (Ubuntu), Date: Sun, 17 Mar 2019 16:05:22 GMT, Content-Type: application/json, Content-Length: 218, Connection: keep-alive, Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Access-Control-Allow-Methods: GET, POST, PUT, DELETE, Access-Control-Allow-Origin: *, X-Ratelimit-Remaining: 99, , 
+[17-03-2019 05:05:20] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: Response Data 	: {
+  "address": "mqh49RvTAiJ61SorTZVtANfRA4B4viRH8B",
+  "total_received": 0,
+  "total_sent": 0,
+  "balance": 0,
+  "unconfirmed_balance": 0,
+  "final_balance": 0,
+  "n_tx": 0,
+  "unconfirmed_n_tx": 0,
+  "final_n_tx": 0
+}
+
+================================================================================================================================
+
+[17-03-2019 05:07:04] BlockCypher\Core\BlockCypherHttpConnection: INFO	: GET https://api.blockcypher.com/v1/btc/test3/addrs/mqh49RvTAiJ61SorTZVtANfRA4B4viRH8B/balance?token=
+[17-03-2019 05:07:04] BlockCypher\Core\BlockCypherHttpConnection: INFO	: Invalid or no certificate authority found - Retrying using bundled CA certs file
+[17-03-2019 05:07:05] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: Request Headers 	: GET /v1/btc/test3/addrs/mqh49RvTAiJ61SorTZVtANfRA4B4viRH8B/balance?token= HTTP/1.1, Host: api.blockcypher.com, Accept: */*, Content-Type: application/json, User-Agent: BlockCypherSDK/BlockCypher-PHP-SDK 1.5.0 (lang=PHP;v=5.5.34;bit=32;os=Windows_NT_6.2;machine=i586;openssl=1.0.1s;curl=7.47.1), , 
+[17-03-2019 05:07:05] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: No Request Payload
+--------------------------------------------------------------------------------------------------------------------------------
+
+[17-03-2019 05:07:05] BlockCypher\Core\BlockCypherHttpConnection: INFO	: Response Status 	: 200
+[17-03-2019 05:07:05] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: Response Headers	: HTTP/1.1 200 OK, Server: nginx/1.10.3 (Ubuntu), Date: Sun, 17 Mar 2019 16:07:07 GMT, Content-Type: application/json, Content-Length: 218, Connection: keep-alive, Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Access-Control-Allow-Methods: GET, POST, PUT, DELETE, Access-Control-Allow-Origin: *, X-Ratelimit-Remaining: 98, , 
+[17-03-2019 05:07:05] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: Response Data 	: {
+  "address": "mqh49RvTAiJ61SorTZVtANfRA4B4viRH8B",
+  "total_received": 0,
+  "total_sent": 0,
+  "balance": 0,
+  "unconfirmed_balance": 0,
+  "final_balance": 0,
+  "n_tx": 0,
+  "unconfirmed_n_tx": 0,
+  "final_n_tx": 0
+}
+
+================================================================================================================================
+
+[17-03-2019 05:10:30] BlockCypher\Core\BlockCypherHttpConnection: INFO	: GET https://api.blockcypher.com/v1/btc/test3/addrs/mqh49RvTAiJ61SorTZVtANfRA4B4viRH8B/balance?token=
+[17-03-2019 05:10:30] BlockCypher\Core\BlockCypherHttpConnection: INFO	: Invalid or no certificate authority found - Retrying using bundled CA certs file
+[17-03-2019 05:10:32] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: Request Headers 	: GET /v1/btc/test3/addrs/mqh49RvTAiJ61SorTZVtANfRA4B4viRH8B/balance?token= HTTP/1.1, Host: api.blockcypher.com, Accept: */*, Content-Type: application/json, User-Agent: BlockCypherSDK/BlockCypher-PHP-SDK 1.5.0 (lang=PHP;v=5.5.34;bit=32;os=Windows_NT_6.2;machine=i586;openssl=1.0.1s;curl=7.47.1), , 
+[17-03-2019 05:10:32] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: No Request Payload
+--------------------------------------------------------------------------------------------------------------------------------
+
+[17-03-2019 05:10:32] BlockCypher\Core\BlockCypherHttpConnection: INFO	: Response Status 	: 200
+[17-03-2019 05:10:32] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: Response Headers	: HTTP/1.1 200 OK, Server: nginx/1.10.3 (Ubuntu), Date: Sun, 17 Mar 2019 16:10:33 GMT, Content-Type: application/json, Content-Length: 218, Connection: keep-alive, Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Access-Control-Allow-Methods: GET, POST, PUT, DELETE, Access-Control-Allow-Origin: *, X-Ratelimit-Remaining: 97, , 
+[17-03-2019 05:10:32] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: Response Data 	: {
+  "address": "mqh49RvTAiJ61SorTZVtANfRA4B4viRH8B",
+  "total_received": 0,
+  "total_sent": 0,
+  "balance": 0,
+  "unconfirmed_balance": 0,
+  "final_balance": 0,
+  "n_tx": 0,
+  "unconfirmed_n_tx": 0,
+  "final_n_tx": 0
+}
+
+================================================================================================================================
+
+[17-03-2019 05:10:35] BlockCypher\Core\BlockCypherHttpConnection: INFO	: GET https://api.blockcypher.com/v1/btc/test3/addrs/mqh49RvTAiJ61SorTZVtANfRA4B4viRH8B/balance?token=
+[17-03-2019 05:10:36] BlockCypher\Core\BlockCypherHttpConnection: INFO	: Invalid or no certificate authority found - Retrying using bundled CA certs file
+[17-03-2019 05:10:37] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: Request Headers 	: GET /v1/btc/test3/addrs/mqh49RvTAiJ61SorTZVtANfRA4B4viRH8B/balance?token= HTTP/1.1, Host: api.blockcypher.com, Accept: */*, Content-Type: application/json, User-Agent: BlockCypherSDK/BlockCypher-PHP-SDK 1.5.0 (lang=PHP;v=5.5.34;bit=32;os=Windows_NT_6.2;machine=i586;openssl=1.0.1s;curl=7.47.1), , 
+[17-03-2019 05:10:37] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: No Request Payload
+--------------------------------------------------------------------------------------------------------------------------------
+
+[17-03-2019 05:10:37] BlockCypher\Core\BlockCypherHttpConnection: INFO	: Response Status 	: 200
+[17-03-2019 05:10:37] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: Response Headers	: HTTP/1.1 200 OK, Server: nginx/1.10.3 (Ubuntu), Date: Sun, 17 Mar 2019 16:10:39 GMT, Content-Type: application/json, Content-Length: 218, Connection: keep-alive, Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Access-Control-Allow-Methods: GET, POST, PUT, DELETE, Access-Control-Allow-Origin: *, X-Ratelimit-Remaining: 97, , 
+[17-03-2019 05:10:37] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: Response Data 	: {
+  "address": "mqh49RvTAiJ61SorTZVtANfRA4B4viRH8B",
+  "total_received": 0,
+  "total_sent": 0,
+  "balance": 0,
+  "unconfirmed_balance": 0,
+  "final_balance": 0,
+  "n_tx": 0,
+  "unconfirmed_n_tx": 0,
+  "final_n_tx": 0
+}
+
+================================================================================================================================
+
+[17-03-2019 05:13:27] BlockCypher\Core\BlockCypherHttpConnection: INFO	: GET https://api.blockcypher.com/v1/btc/test3/addrs/mqh49RvTAiJ61SorTZVtANfRA4B4viRH8B/balance?token=
+[17-03-2019 05:13:27] BlockCypher\Core\BlockCypherHttpConnection: INFO	: Invalid or no certificate authority found - Retrying using bundled CA certs file
+[17-03-2019 05:13:28] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: Request Headers 	: GET /v1/btc/test3/addrs/mqh49RvTAiJ61SorTZVtANfRA4B4viRH8B/balance?token= HTTP/1.1, Host: api.blockcypher.com, Accept: */*, Content-Type: application/json, User-Agent: BlockCypherSDK/BlockCypher-PHP-SDK 1.5.0 (lang=PHP;v=5.5.34;bit=32;os=Windows_NT_6.2;machine=i586;openssl=1.0.1s;curl=7.47.1), , 
+[17-03-2019 05:13:28] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: No Request Payload
+--------------------------------------------------------------------------------------------------------------------------------
+
+[17-03-2019 05:13:28] BlockCypher\Core\BlockCypherHttpConnection: INFO	: Response Status 	: 200
+[17-03-2019 05:13:28] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: Response Headers	: HTTP/1.1 200 OK, Server: nginx/1.10.3 (Ubuntu), Date: Sun, 17 Mar 2019 16:13:30 GMT, Content-Type: application/json, Content-Length: 218, Connection: keep-alive, Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Access-Control-Allow-Methods: GET, POST, PUT, DELETE, Access-Control-Allow-Origin: *, X-Ratelimit-Remaining: 95, , 
+[17-03-2019 05:13:28] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: Response Data 	: {
+  "address": "mqh49RvTAiJ61SorTZVtANfRA4B4viRH8B",
+  "total_received": 0,
+  "total_sent": 0,
+  "balance": 0,
+  "unconfirmed_balance": 0,
+  "final_balance": 0,
+  "n_tx": 0,
+  "unconfirmed_n_tx": 0,
+  "final_n_tx": 0
+}
+
+================================================================================================================================
+
+[17-03-2019 05:14:39] BlockCypher\Core\BlockCypherHttpConnection: INFO	: GET https://api.blockcypher.com/v1/btc/test3/addrs/mqh49RvTAiJ61SorTZVtANfRA4B4viRH8B/balance?token=
+[17-03-2019 05:14:39] BlockCypher\Core\BlockCypherHttpConnection: INFO	: Invalid or no certificate authority found - Retrying using bundled CA certs file
+[17-03-2019 05:14:40] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: Request Headers 	: GET /v1/btc/test3/addrs/mqh49RvTAiJ61SorTZVtANfRA4B4viRH8B/balance?token= HTTP/1.1, Host: api.blockcypher.com, Accept: */*, Content-Type: application/json, User-Agent: BlockCypherSDK/BlockCypher-PHP-SDK 1.5.0 (lang=PHP;v=5.5.34;bit=32;os=Windows_NT_6.2;machine=i586;openssl=1.0.1s;curl=7.47.1), , 
+[17-03-2019 05:14:40] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: No Request Payload
+--------------------------------------------------------------------------------------------------------------------------------
+
+[17-03-2019 05:14:40] BlockCypher\Core\BlockCypherHttpConnection: INFO	: Response Status 	: 200
+[17-03-2019 05:14:40] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: Response Headers	: HTTP/1.1 200 OK, Server: nginx/1.10.3 (Ubuntu), Date: Sun, 17 Mar 2019 16:14:42 GMT, Content-Type: application/json, Content-Length: 218, Connection: keep-alive, Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Access-Control-Allow-Methods: GET, POST, PUT, DELETE, Access-Control-Allow-Origin: *, X-Ratelimit-Remaining: 94, , 
+[17-03-2019 05:14:40] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: Response Data 	: {
+  "address": "mqh49RvTAiJ61SorTZVtANfRA4B4viRH8B",
+  "total_received": 0,
+  "total_sent": 0,
+  "balance": 0,
+  "unconfirmed_balance": 0,
+  "final_balance": 0,
+  "n_tx": 0,
+  "unconfirmed_n_tx": 0,
+  "final_n_tx": 0
+}
+
+================================================================================================================================
+
+[17-03-2019 05:14:43] BlockCypher\Core\BlockCypherHttpConnection: INFO	: GET https://api.blockcypher.com/v1/btc/test3/addrs/mqh49RvTAiJ61SorTZVtANfRA4B4viRH8B/balance?token=
+[17-03-2019 05:14:43] BlockCypher\Core\BlockCypherHttpConnection: INFO	: Invalid or no certificate authority found - Retrying using bundled CA certs file
+[17-03-2019 05:14:44] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: Request Headers 	: GET /v1/btc/test3/addrs/mqh49RvTAiJ61SorTZVtANfRA4B4viRH8B/balance?token= HTTP/1.1, Host: api.blockcypher.com, Accept: */*, Content-Type: application/json, User-Agent: BlockCypherSDK/BlockCypher-PHP-SDK 1.5.0 (lang=PHP;v=5.5.34;bit=32;os=Windows_NT_6.2;machine=i586;openssl=1.0.1s;curl=7.47.1), , 
+[17-03-2019 05:14:44] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: No Request Payload
+--------------------------------------------------------------------------------------------------------------------------------
+
+[17-03-2019 05:14:44] BlockCypher\Core\BlockCypherHttpConnection: INFO	: Response Status 	: 200
+[17-03-2019 05:14:44] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: Response Headers	: HTTP/1.1 200 OK, Server: nginx/1.10.3 (Ubuntu), Date: Sun, 17 Mar 2019 16:14:46 GMT, Content-Type: application/json, Content-Length: 218, Connection: keep-alive, Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Access-Control-Allow-Methods: GET, POST, PUT, DELETE, Access-Control-Allow-Origin: *, X-Ratelimit-Remaining: 97, , 
+[17-03-2019 05:14:44] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: Response Data 	: {
+  "address": "mqh49RvTAiJ61SorTZVtANfRA4B4viRH8B",
+  "total_received": 0,
+  "total_sent": 0,
+  "balance": 0,
+  "unconfirmed_balance": 0,
+  "final_balance": 0,
+  "n_tx": 0,
+  "unconfirmed_n_tx": 0,
+  "final_n_tx": 0
+}
+
+================================================================================================================================
+
+[17-03-2019 05:39:24] BlockCypher\Core\BlockCypherHttpConnection: INFO	: GET https://api.blockcypher.com/v1/btc/test3/addrs/mqh49RvTAiJ61SorTZVtANfRA4B4viRH8B/balance?token=
+[17-03-2019 05:39:24] BlockCypher\Core\BlockCypherHttpConnection: INFO	: Invalid or no certificate authority found - Retrying using bundled CA certs file
+[17-03-2019 05:39:25] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: Request Headers 	: GET /v1/btc/test3/addrs/mqh49RvTAiJ61SorTZVtANfRA4B4viRH8B/balance?token= HTTP/1.1, Host: api.blockcypher.com, Accept: */*, Content-Type: application/json, User-Agent: BlockCypherSDK/BlockCypher-PHP-SDK 1.5.0 (lang=PHP;v=5.5.34;bit=32;os=Windows_NT_6.2;machine=i586;openssl=1.0.1s;curl=7.47.1), , 
+[17-03-2019 05:39:25] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: No Request Payload
+--------------------------------------------------------------------------------------------------------------------------------
+
+[17-03-2019 05:39:25] BlockCypher\Core\BlockCypherHttpConnection: INFO	: Response Status 	: 200
+[17-03-2019 05:39:25] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: Response Headers	: HTTP/1.1 200 OK, Server: nginx/1.10.3 (Ubuntu), Date: Sun, 17 Mar 2019 16:39:27 GMT, Content-Type: application/json, Content-Length: 232, Connection: keep-alive, Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Access-Control-Allow-Methods: GET, POST, PUT, DELETE, Access-Control-Allow-Origin: *, X-Ratelimit-Remaining: 98, , 
+[17-03-2019 05:39:25] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: Response Data 	: {
+  "address": "mqh49RvTAiJ61SorTZVtANfRA4B4viRH8B",
+  "total_received": 0,
+  "total_sent": 0,
+  "balance": 0,
+  "unconfirmed_balance": 12935642,
+  "final_balance": 12935642,
+  "n_tx": 0,
+  "unconfirmed_n_tx": 1,
+  "final_n_tx": 1
+}
+
+================================================================================================================================
+
+[17-03-2019 05:45:18] BlockCypher\Core\BlockCypherHttpConnection: INFO	: GET https://api.blockcypher.com/v1/btc/test3/addrs/mqh49RvTAiJ61SorTZVtANfRA4B4viRH8B/balance?token=
+[17-03-2019 05:45:19] BlockCypher\Core\BlockCypherHttpConnection: INFO	: Invalid or no certificate authority found - Retrying using bundled CA certs file
+[17-03-2019 05:45:20] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: Request Headers 	: GET /v1/btc/test3/addrs/mqh49RvTAiJ61SorTZVtANfRA4B4viRH8B/balance?token= HTTP/1.1, Host: api.blockcypher.com, Accept: */*, Content-Type: application/json, User-Agent: BlockCypherSDK/BlockCypher-PHP-SDK 1.5.0 (lang=PHP;v=5.5.34;bit=32;os=Windows_NT_6.2;machine=i586;openssl=1.0.1s;curl=7.47.1), , 
+[17-03-2019 05:45:20] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: No Request Payload
+--------------------------------------------------------------------------------------------------------------------------------
+
+[17-03-2019 05:45:20] BlockCypher\Core\BlockCypherHttpConnection: INFO	: Response Status 	: 200
+[17-03-2019 05:45:20] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: Response Headers	: HTTP/1.1 200 OK, Server: nginx/1.10.3 (Ubuntu), Date: Sun, 17 Mar 2019 16:45:22 GMT, Content-Type: application/json, Content-Length: 239, Connection: keep-alive, Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Access-Control-Allow-Methods: GET, POST, PUT, DELETE, Access-Control-Allow-Origin: *, X-Ratelimit-Remaining: 92, , 
+[17-03-2019 05:45:20] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: Response Data 	: {
+  "address": "mqh49RvTAiJ61SorTZVtANfRA4B4viRH8B",
+  "total_received": 12935642,
+  "total_sent": 0,
+  "balance": 12935642,
+  "unconfirmed_balance": 0,
+  "final_balance": 12935642,
+  "n_tx": 1,
+  "unconfirmed_n_tx": 0,
+  "final_n_tx": 1
+}
+
+================================================================================================================================
+
+[17-03-2019 05:45:25] BlockCypher\Core\BlockCypherHttpConnection: INFO	: GET https://api.blockcypher.com/v1/btc/test3/addrs/mqh49RvTAiJ61SorTZVtANfRA4B4viRH8B/balance?token=
+[17-03-2019 05:45:25] BlockCypher\Core\BlockCypherHttpConnection: INFO	: Invalid or no certificate authority found - Retrying using bundled CA certs file
+[17-03-2019 05:45:26] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: Request Headers 	: GET /v1/btc/test3/addrs/mqh49RvTAiJ61SorTZVtANfRA4B4viRH8B/balance?token= HTTP/1.1, Host: api.blockcypher.com, Accept: */*, Content-Type: application/json, User-Agent: BlockCypherSDK/BlockCypher-PHP-SDK 1.5.0 (lang=PHP;v=5.5.34;bit=32;os=Windows_NT_6.2;machine=i586;openssl=1.0.1s;curl=7.47.1), , 
+[17-03-2019 05:45:26] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: No Request Payload
+--------------------------------------------------------------------------------------------------------------------------------
+
+[17-03-2019 05:45:26] BlockCypher\Core\BlockCypherHttpConnection: INFO	: Response Status 	: 200
+[17-03-2019 05:45:26] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: Response Headers	: HTTP/1.1 200 OK, Server: nginx/1.10.3 (Ubuntu), Date: Sun, 17 Mar 2019 16:45:28 GMT, Content-Type: application/json, Content-Length: 239, Connection: keep-alive, Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Access-Control-Allow-Methods: GET, POST, PUT, DELETE, Access-Control-Allow-Origin: *, X-Ratelimit-Remaining: 91, , 
+[17-03-2019 05:45:26] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: Response Data 	: {
+  "address": "mqh49RvTAiJ61SorTZVtANfRA4B4viRH8B",
+  "total_received": 12935642,
+  "total_sent": 0,
+  "balance": 12935642,
+  "unconfirmed_balance": 0,
+  "final_balance": 12935642,
+  "n_tx": 1,
+  "unconfirmed_n_tx": 0,
+  "final_n_tx": 1
+}
+
+================================================================================================================================
+
+[17-03-2019 05:47:39] BlockCypher\Core\BlockCypherHttpConnection: INFO	: GET https://api.blockcypher.com/v1/btc/test3/addrs/mqh49RvTAiJ61SorTZVtANfRA4B4viRH8B/balance?token=
+[17-03-2019 05:47:39] BlockCypher\Core\BlockCypherHttpConnection: INFO	: Invalid or no certificate authority found - Retrying using bundled CA certs file
+[17-03-2019 05:47:40] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: Request Headers 	: GET /v1/btc/test3/addrs/mqh49RvTAiJ61SorTZVtANfRA4B4viRH8B/balance?token= HTTP/1.1, Host: api.blockcypher.com, Accept: */*, Content-Type: application/json, User-Agent: BlockCypherSDK/BlockCypher-PHP-SDK 1.5.0 (lang=PHP;v=5.5.34;bit=32;os=Windows_NT_6.2;machine=i586;openssl=1.0.1s;curl=7.47.1), , 
+[17-03-2019 05:47:40] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: No Request Payload
+--------------------------------------------------------------------------------------------------------------------------------
+
+[17-03-2019 05:47:40] BlockCypher\Core\BlockCypherHttpConnection: INFO	: Response Status 	: 200
+[17-03-2019 05:47:40] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: Response Headers	: HTTP/1.1 200 OK, Server: nginx/1.10.3 (Ubuntu), Date: Sun, 17 Mar 2019 16:47:42 GMT, Content-Type: application/json, Content-Length: 239, Connection: keep-alive, Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Access-Control-Allow-Methods: GET, POST, PUT, DELETE, Access-Control-Allow-Origin: *, X-Ratelimit-Remaining: 96, , 
+[17-03-2019 05:47:40] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: Response Data 	: {
+  "address": "mqh49RvTAiJ61SorTZVtANfRA4B4viRH8B",
+  "total_received": 12935642,
+  "total_sent": 0,
+  "balance": 12935642,
+  "unconfirmed_balance": 0,
+  "final_balance": 12935642,
+  "n_tx": 1,
+  "unconfirmed_n_tx": 0,
+  "final_n_tx": 1
+}
+
+================================================================================================================================
+
+[17-03-2019 06:09:44] BlockCypher\Core\BlockCypherHttpConnection: INFO	: GET https://api.blockcypher.com/v1/btc/test3/addrs/mzsyCjrnoCBA5ruhFfqUfDFnjF9wR5sNvk/balance?token=
+[17-03-2019 06:09:45] BlockCypher\Core\BlockCypherHttpConnection: INFO	: Invalid or no certificate authority found - Retrying using bundled CA certs file
+[17-03-2019 06:09:46] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: Request Headers 	: GET /v1/btc/test3/addrs/mzsyCjrnoCBA5ruhFfqUfDFnjF9wR5sNvk/balance?token= HTTP/1.1, Host: api.blockcypher.com, Accept: */*, Content-Type: application/json, User-Agent: BlockCypherSDK/BlockCypher-PHP-SDK 1.5.0 (lang=PHP;v=5.5.34;bit=32;os=Windows_NT_6.2;machine=i586;openssl=1.0.1s;curl=7.47.1), , 
+[17-03-2019 06:09:46] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: No Request Payload
+--------------------------------------------------------------------------------------------------------------------------------
+
+[17-03-2019 06:09:46] BlockCypher\Core\BlockCypherHttpConnection: INFO	: Response Status 	: 200
+[17-03-2019 06:09:46] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: Response Headers	: HTTP/1.1 200 OK, Server: nginx/1.10.3 (Ubuntu), Date: Sun, 17 Mar 2019 17:09:48 GMT, Content-Type: application/json, Content-Length: 239, Connection: keep-alive, Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Access-Control-Allow-Methods: GET, POST, PUT, DELETE, Access-Control-Allow-Origin: *, X-Ratelimit-Remaining: 99, , 
+[17-03-2019 06:09:46] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: Response Data 	: {
+  "address": "mzsyCjrnoCBA5ruhFfqUfDFnjF9wR5sNvk",
+  "total_received": 29203600,
+  "total_sent": 0,
+  "balance": 29203600,
+  "unconfirmed_balance": 0,
+  "final_balance": 29203600,
+  "n_tx": 2,
+  "unconfirmed_n_tx": 0,
+  "final_n_tx": 2
+}
+
+================================================================================================================================
+
+[17-03-2019 06:12:42] BlockCypher\Core\BlockCypherHttpConnection: INFO	: GET https://api.blockcypher.com/v1/btc/test3/addrs/mzsyCjrnoCBA5ruhFfqUfDFnjF9wR5sNvk/balance?token=
+[17-03-2019 06:12:43] BlockCypher\Core\BlockCypherHttpConnection: INFO	: Invalid or no certificate authority found - Retrying using bundled CA certs file
+[17-03-2019 06:12:44] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: Request Headers 	: GET /v1/btc/test3/addrs/mzsyCjrnoCBA5ruhFfqUfDFnjF9wR5sNvk/balance?token= HTTP/1.1, Host: api.blockcypher.com, Accept: */*, Content-Type: application/json, User-Agent: BlockCypherSDK/BlockCypher-PHP-SDK 1.5.0 (lang=PHP;v=5.5.34;bit=32;os=Windows_NT_6.2;machine=i586;openssl=1.0.1s;curl=7.47.1), , 
+[17-03-2019 06:12:44] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: No Request Payload
+--------------------------------------------------------------------------------------------------------------------------------
+
+[17-03-2019 06:12:44] BlockCypher\Core\BlockCypherHttpConnection: INFO	: Response Status 	: 200
+[17-03-2019 06:12:44] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: Response Headers	: HTTP/1.1 200 OK, Server: nginx/1.10.3 (Ubuntu), Date: Sun, 17 Mar 2019 17:12:45 GMT, Content-Type: application/json, Content-Length: 239, Connection: keep-alive, Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Access-Control-Allow-Methods: GET, POST, PUT, DELETE, Access-Control-Allow-Origin: *, X-Ratelimit-Remaining: 99, , 
+[17-03-2019 06:12:44] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: Response Data 	: {
+  "address": "mzsyCjrnoCBA5ruhFfqUfDFnjF9wR5sNvk",
+  "total_received": 29203600,
+  "total_sent": 0,
+  "balance": 29203600,
+  "unconfirmed_balance": 0,
+  "final_balance": 29203600,
+  "n_tx": 2,
+  "unconfirmed_n_tx": 0,
+  "final_n_tx": 2
+}
+
+================================================================================================================================
+
+[17-03-2019 06:12:46] BlockCypher\Core\BlockCypherHttpConnection: INFO	: GET https://api.blockcypher.com/v1/btc/test3/addrs/mzsyCjrnoCBA5ruhFfqUfDFnjF9wR5sNvk/balance?token=
+[17-03-2019 06:12:46] BlockCypher\Core\BlockCypherHttpConnection: INFO	: Invalid or no certificate authority found - Retrying using bundled CA certs file
+[17-03-2019 06:12:47] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: Request Headers 	: GET /v1/btc/test3/addrs/mzsyCjrnoCBA5ruhFfqUfDFnjF9wR5sNvk/balance?token= HTTP/1.1, Host: api.blockcypher.com, Accept: */*, Content-Type: application/json, User-Agent: BlockCypherSDK/BlockCypher-PHP-SDK 1.5.0 (lang=PHP;v=5.5.34;bit=32;os=Windows_NT_6.2;machine=i586;openssl=1.0.1s;curl=7.47.1), , 
+[17-03-2019 06:12:47] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: No Request Payload
+--------------------------------------------------------------------------------------------------------------------------------
+
+[17-03-2019 06:12:47] BlockCypher\Core\BlockCypherHttpConnection: INFO	: Response Status 	: 200
+[17-03-2019 06:12:47] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: Response Headers	: HTTP/1.1 200 OK, Server: nginx/1.10.3 (Ubuntu), Date: Sun, 17 Mar 2019 17:12:49 GMT, Content-Type: application/json, Content-Length: 239, Connection: keep-alive, Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Access-Control-Allow-Methods: GET, POST, PUT, DELETE, Access-Control-Allow-Origin: *, X-Ratelimit-Remaining: 99, , 
+[17-03-2019 06:12:47] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: Response Data 	: {
+  "address": "mzsyCjrnoCBA5ruhFfqUfDFnjF9wR5sNvk",
+  "total_received": 29203600,
+  "total_sent": 0,
+  "balance": 29203600,
+  "unconfirmed_balance": 0,
+  "final_balance": 29203600,
+  "n_tx": 2,
+  "unconfirmed_n_tx": 0,
+  "final_n_tx": 2
+}
+
+================================================================================================================================
+
+[17-03-2019 06:13:44] BlockCypher\Core\BlockCypherHttpConnection: INFO	: GET https://api.blockcypher.com/v1/btc/test3/addrs/mn9rCrGmTgzQ4ps6z6KYiiQQ3bHyLAnH8P/balance?token=
+[17-03-2019 06:13:44] BlockCypher\Core\BlockCypherHttpConnection: INFO	: Invalid or no certificate authority found - Retrying using bundled CA certs file
+[17-03-2019 06:13:47] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: Request Headers 	: GET /v1/btc/test3/addrs/mn9rCrGmTgzQ4ps6z6KYiiQQ3bHyLAnH8P/balance?token= HTTP/1.1, Host: api.blockcypher.com, Accept: */*, Content-Type: application/json, User-Agent: BlockCypherSDK/BlockCypher-PHP-SDK 1.5.0 (lang=PHP;v=5.5.34;bit=32;os=Windows_NT_6.2;machine=i586;openssl=1.0.1s;curl=7.47.1), , 
+[17-03-2019 06:13:47] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: No Request Payload
+--------------------------------------------------------------------------------------------------------------------------------
+
+[17-03-2019 06:13:47] BlockCypher\Core\BlockCypherHttpConnection: INFO	: Response Status 	: 200
+[17-03-2019 06:13:47] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: Response Headers	: HTTP/1.1 200 OK, Server: nginx/1.10.3 (Ubuntu), Date: Sun, 17 Mar 2019 17:13:49 GMT, Content-Type: application/json, Content-Length: 218, Connection: keep-alive, Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Access-Control-Allow-Methods: GET, POST, PUT, DELETE, Access-Control-Allow-Origin: *, X-Ratelimit-Remaining: 99, , 
+[17-03-2019 06:13:47] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: Response Data 	: {
+  "address": "mn9rCrGmTgzQ4ps6z6KYiiQQ3bHyLAnH8P",
+  "total_received": 0,
+  "total_sent": 0,
+  "balance": 0,
+  "unconfirmed_balance": 0,
+  "final_balance": 0,
+  "n_tx": 0,
+  "unconfirmed_n_tx": 0,
+  "final_n_tx": 0
+}
+
+================================================================================================================================
+
+[17-03-2019 06:13:47] BlockCypher\Core\BlockCypherHttpConnection: INFO	: GET https://api.blockcypher.com/v1/btc/test3/addrs/mn9rCrGmTgzQ4ps6z6KYiiQQ3bHyLAnH8P/balance?token=
+[17-03-2019 06:13:48] BlockCypher\Core\BlockCypherHttpConnection: INFO	: Invalid or no certificate authority found - Retrying using bundled CA certs file
+[17-03-2019 06:13:49] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: Request Headers 	: GET /v1/btc/test3/addrs/mn9rCrGmTgzQ4ps6z6KYiiQQ3bHyLAnH8P/balance?token= HTTP/1.1, Host: api.blockcypher.com, Accept: */*, Content-Type: application/json, User-Agent: BlockCypherSDK/BlockCypher-PHP-SDK 1.5.0 (lang=PHP;v=5.5.34;bit=32;os=Windows_NT_6.2;machine=i586;openssl=1.0.1s;curl=7.47.1), , 
+[17-03-2019 06:13:49] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: No Request Payload
+--------------------------------------------------------------------------------------------------------------------------------
+
+[17-03-2019 06:13:49] BlockCypher\Core\BlockCypherHttpConnection: INFO	: Response Status 	: 200
+[17-03-2019 06:13:49] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: Response Headers	: HTTP/1.1 200 OK, Server: nginx/1.10.3 (Ubuntu), Date: Sun, 17 Mar 2019 17:13:51 GMT, Content-Type: application/json, Content-Length: 218, Connection: keep-alive, Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Access-Control-Allow-Methods: GET, POST, PUT, DELETE, Access-Control-Allow-Origin: *, X-Ratelimit-Remaining: 97, , 
+[17-03-2019 06:13:49] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: Response Data 	: {
+  "address": "mn9rCrGmTgzQ4ps6z6KYiiQQ3bHyLAnH8P",
+  "total_received": 0,
+  "total_sent": 0,
+  "balance": 0,
+  "unconfirmed_balance": 0,
+  "final_balance": 0,
+  "n_tx": 0,
+  "unconfirmed_n_tx": 0,
+  "final_n_tx": 0
+}
+
+================================================================================================================================
+
+[17-03-2019 06:14:20] BlockCypher\Core\BlockCypherHttpConnection: INFO	: GET https://api.blockcypher.com/v1/btc/test3/addrs/mzsyCjrnoCBA5ruhFfqUfDFnjF9wR5sNvk/balance?token=
+[17-03-2019 06:14:21] BlockCypher\Core\BlockCypherHttpConnection: INFO	: Invalid or no certificate authority found - Retrying using bundled CA certs file
+[17-03-2019 06:14:22] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: Request Headers 	: GET /v1/btc/test3/addrs/mzsyCjrnoCBA5ruhFfqUfDFnjF9wR5sNvk/balance?token= HTTP/1.1, Host: api.blockcypher.com, Accept: */*, Content-Type: application/json, User-Agent: BlockCypherSDK/BlockCypher-PHP-SDK 1.5.0 (lang=PHP;v=5.5.34;bit=32;os=Windows_NT_6.2;machine=i586;openssl=1.0.1s;curl=7.47.1), , 
+[17-03-2019 06:14:22] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: No Request Payload
+--------------------------------------------------------------------------------------------------------------------------------
+
+[17-03-2019 06:14:22] BlockCypher\Core\BlockCypherHttpConnection: INFO	: Response Status 	: 200
+[17-03-2019 06:14:22] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: Response Headers	: HTTP/1.1 200 OK, Server: nginx/1.10.3 (Ubuntu), Date: Sun, 17 Mar 2019 17:14:24 GMT, Content-Type: application/json, Content-Length: 239, Connection: keep-alive, Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Access-Control-Allow-Methods: GET, POST, PUT, DELETE, Access-Control-Allow-Origin: *, X-Ratelimit-Remaining: 98, , 
+[17-03-2019 06:14:22] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: Response Data 	: {
+  "address": "mzsyCjrnoCBA5ruhFfqUfDFnjF9wR5sNvk",
+  "total_received": 29203600,
+  "total_sent": 0,
+  "balance": 29203600,
+  "unconfirmed_balance": 0,
+  "final_balance": 29203600,
+  "n_tx": 2,
+  "unconfirmed_n_tx": 0,
+  "final_n_tx": 2
+}
+
+================================================================================================================================
+
+[17-03-2019 06:15:09] BlockCypher\Core\BlockCypherHttpConnection: INFO	: GET https://api.blockcypher.com/v1/btc/test3/addrs/mzsyCjrnoCBA5ruhFfqUfDFnjF9wR5sNvk/balance?token=
+[17-03-2019 06:15:09] BlockCypher\Core\BlockCypherHttpConnection: INFO	: Invalid or no certificate authority found - Retrying using bundled CA certs file
+[17-03-2019 06:15:10] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: Request Headers 	: GET /v1/btc/test3/addrs/mzsyCjrnoCBA5ruhFfqUfDFnjF9wR5sNvk/balance?token= HTTP/1.1, Host: api.blockcypher.com, Accept: */*, Content-Type: application/json, User-Agent: BlockCypherSDK/BlockCypher-PHP-SDK 1.5.0 (lang=PHP;v=5.5.34;bit=32;os=Windows_NT_6.2;machine=i586;openssl=1.0.1s;curl=7.47.1), , 
+[17-03-2019 06:15:10] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: No Request Payload
+--------------------------------------------------------------------------------------------------------------------------------
+
+[17-03-2019 06:15:10] BlockCypher\Core\BlockCypherHttpConnection: INFO	: Response Status 	: 200
+[17-03-2019 06:15:10] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: Response Headers	: HTTP/1.1 200 OK, Server: nginx/1.10.3 (Ubuntu), Date: Sun, 17 Mar 2019 17:15:12 GMT, Content-Type: application/json, Content-Length: 239, Connection: keep-alive, Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Access-Control-Allow-Methods: GET, POST, PUT, DELETE, Access-Control-Allow-Origin: *, X-Ratelimit-Remaining: 95, , 
+[17-03-2019 06:15:10] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: Response Data 	: {
+  "address": "mzsyCjrnoCBA5ruhFfqUfDFnjF9wR5sNvk",
+  "total_received": 29203600,
+  "total_sent": 0,
+  "balance": 29203600,
+  "unconfirmed_balance": 0,
+  "final_balance": 29203600,
+  "n_tx": 2,
+  "unconfirmed_n_tx": 0,
+  "final_n_tx": 2
+}
+
+================================================================================================================================
+
+[17-03-2019 06:15:52] BlockCypher\Core\BlockCypherHttpConnection: INFO	: GET https://api.blockcypher.com/v1/btc/test3/addrs/mzsyCjrnoCBA5ruhFfqUfDFnjF9wR5sNvk/balance?token=
+[17-03-2019 06:15:52] BlockCypher\Core\BlockCypherHttpConnection: INFO	: Invalid or no certificate authority found - Retrying using bundled CA certs file
+[17-03-2019 06:15:53] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: Request Headers 	: GET /v1/btc/test3/addrs/mzsyCjrnoCBA5ruhFfqUfDFnjF9wR5sNvk/balance?token= HTTP/1.1, Host: api.blockcypher.com, Accept: */*, Content-Type: application/json, User-Agent: BlockCypherSDK/BlockCypher-PHP-SDK 1.5.0 (lang=PHP;v=5.5.34;bit=32;os=Windows_NT_6.2;machine=i586;openssl=1.0.1s;curl=7.47.1), , 
+[17-03-2019 06:15:53] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: No Request Payload
+--------------------------------------------------------------------------------------------------------------------------------
+
+[17-03-2019 06:15:53] BlockCypher\Core\BlockCypherHttpConnection: INFO	: Response Status 	: 200
+[17-03-2019 06:15:53] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: Response Headers	: HTTP/1.1 200 OK, Server: nginx/1.10.3 (Ubuntu), Date: Sun, 17 Mar 2019 17:15:55 GMT, Content-Type: application/json, Content-Length: 239, Connection: keep-alive, Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Access-Control-Allow-Methods: GET, POST, PUT, DELETE, Access-Control-Allow-Origin: *, X-Ratelimit-Remaining: 94, , 
+[17-03-2019 06:15:53] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: Response Data 	: {
+  "address": "mzsyCjrnoCBA5ruhFfqUfDFnjF9wR5sNvk",
+  "total_received": 29203600,
+  "total_sent": 0,
+  "balance": 29203600,
+  "unconfirmed_balance": 0,
+  "final_balance": 29203600,
+  "n_tx": 2,
+  "unconfirmed_n_tx": 0,
+  "final_n_tx": 2
+}
+
+================================================================================================================================
+
+[17-03-2019 06:16:04] BlockCypher\Core\BlockCypherHttpConnection: INFO	: GET https://api.blockcypher.com/v1/btc/test3/addrs/mzsyCjrnoCBA5ruhFfqUfDFnjF9wR5sNvk/balance?token=
+[17-03-2019 06:16:04] BlockCypher\Core\BlockCypherHttpConnection: INFO	: Invalid or no certificate authority found - Retrying using bundled CA certs file
+[17-03-2019 06:16:05] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: Request Headers 	: GET /v1/btc/test3/addrs/mzsyCjrnoCBA5ruhFfqUfDFnjF9wR5sNvk/balance?token= HTTP/1.1, Host: api.blockcypher.com, Accept: */*, Content-Type: application/json, User-Agent: BlockCypherSDK/BlockCypher-PHP-SDK 1.5.0 (lang=PHP;v=5.5.34;bit=32;os=Windows_NT_6.2;machine=i586;openssl=1.0.1s;curl=7.47.1), , 
+[17-03-2019 06:16:05] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: No Request Payload
+--------------------------------------------------------------------------------------------------------------------------------
+
+[17-03-2019 06:16:05] BlockCypher\Core\BlockCypherHttpConnection: INFO	: Response Status 	: 200
+[17-03-2019 06:16:05] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: Response Headers	: HTTP/1.1 200 OK, Server: nginx/1.10.3 (Ubuntu), Date: Sun, 17 Mar 2019 17:16:07 GMT, Content-Type: application/json, Content-Length: 239, Connection: keep-alive, Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Access-Control-Allow-Methods: GET, POST, PUT, DELETE, Access-Control-Allow-Origin: *, X-Ratelimit-Remaining: 93, , 
+[17-03-2019 06:16:05] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: Response Data 	: {
+  "address": "mzsyCjrnoCBA5ruhFfqUfDFnjF9wR5sNvk",
+  "total_received": 29203600,
+  "total_sent": 0,
+  "balance": 29203600,
+  "unconfirmed_balance": 0,
+  "final_balance": 29203600,
+  "n_tx": 2,
+  "unconfirmed_n_tx": 0,
+  "final_n_tx": 2
+}
+
+================================================================================================================================
+
+[17-03-2019 06:25:35] BlockCypher\Core\BlockCypherHttpConnection: INFO	: POST https://api.blockcypher.com/v1/btc/test3/txs/new?token=cd5222c524f341c3bb80fb185c19fbfe
+[17-03-2019 06:25:36] BlockCypher\Core\BlockCypherHttpConnection: INFO	: Invalid or no certificate authority found - Retrying using bundled CA certs file
+[17-03-2019 06:25:37] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: Request Headers 	: POST /v1/btc/test3/txs/new?token=cd5222c524f341c3bb80fb185c19fbfe HTTP/1.1, Host: api.blockcypher.com, Accept: */*, Content-Type: application/json, User-Agent: BlockCypherSDK/BlockCypher-PHP-SDK 1.5.0 (lang=PHP;v=5.5.34;bit=32;os=Windows_NT_6.2;machine=i586;openssl=1.0.1s;curl=7.47.1), BlockCypher-Request-Id: 17992155284353528185, Content-Length: 145, , 
+[17-03-2019 06:25:37] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: Request Data		: {"inputs":[{"addresses":["mn9rCrGmTgzQ4ps6z6KYiiQQ3bHyLAnH8P"]}],"outputs":[{"addresses":["mn9rCrGmTgzQ4ps6z6KYiiQQ3bHyLAnH8P"],"value":719712}]}
+--------------------------------------------------------------------------------------------------------------------------------
+
+[17-03-2019 06:25:37] BlockCypher\Core\BlockCypherHttpConnection: INFO	: Response Status 	: 400
+[17-03-2019 06:25:37] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: Response Headers	: HTTP/1.1 400 Bad Request, Server: nginx/1.10.3 (Ubuntu), Date: Sun, 17 Mar 2019 17:25:39 GMT, Content-Type: application/json, Content-Length: 1204, Connection: keep-alive, Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Access-Control-Allow-Methods: GET, POST, PUT, DELETE, Access-Control-Allow-Origin: *, X-Ratelimit-Remaining: 199, , 
+[17-03-2019 06:25:37] BlockCypher\Core\BlockCypherHttpConnection: ERROR	: Got Http response code 400 when accessing https://api.blockcypher.com/v1/btc/test3/txs/new?token=cd5222c524f341c3bb80fb185c19fbfe. {
+  "errors": [
+    {
+      "error": "Unable to find a transaction to spend for address mn9rCrGmTgzQ4ps6z6KYiiQQ3bHyLAnH8P."
+    },
+    {
+      "error": "Not enough funds in 0 inputs to pay for 1 outputs, missing -719712."
+    },
+    {
+      "error": "Not enough funds after fees in 0 inputs to pay for 1 outputs, missing -721412."
+    },
+    {
+      "error": "Error validating generated transaction: Transaction missing input or output."
+    }
+  ],
+  "tx": {
+    "block_height": -1,
+    "block_index": -1,
+    "hash": "38db6b7c8fe4c5c153a95e637c6e2ef2296ffce80773d21707a5684a9cca7826",
+    "addresses": [
+      "mn9rCrGmTgzQ4ps6z6KYiiQQ3bHyLAnH8P"
+    ],
+    "total": 719712,
+    "fees": 0,
+    "size": 44,
+    "preference": "low",
+    "relayed_by": "118.141.254.252",
+    "received": "2019-03-17T17:25:39.470841833Z",
+    "ver": 1,
+    "double_spend": false,
+    "vin_sz": 0,
+    "vout_sz": 1,
+    "confirmations": 0,
+    "inputs": [],
+    "outputs": [
+      {
+        "value": 719712,
+        "script": "76a91448cb0fd53ee765c55e61b64f24d937922de5ce2388ac",
+        "addresses": [
+          "mn9rCrGmTgzQ4ps6z6KYiiQQ3bHyLAnH8P"
+        ],
+        "script_type": "pay-to-pubkey-hash"
+      }
+    ]
+  }
+}
+[17-03-2019 06:25:37] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: 
+
+================================================================================================================================
+
+[17-03-2019 06:37:28] BlockCypher\Core\BlockCypherHttpConnection: INFO	: POST https://api.blockcypher.com/v1/btc/test3/txs/new?token=cd5222c524f341c3bb80fb185c19fbfe
+[17-03-2019 06:37:29] BlockCypher\Core\BlockCypherHttpConnection: INFO	: Invalid or no certificate authority found - Retrying using bundled CA certs file
+[17-03-2019 06:37:30] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: Request Headers 	: POST /v1/btc/test3/txs/new?token=cd5222c524f341c3bb80fb185c19fbfe HTTP/1.1, Host: api.blockcypher.com, Accept: */*, Content-Type: application/json, User-Agent: BlockCypherSDK/BlockCypher-PHP-SDK 1.5.0 (lang=PHP;v=5.5.34;bit=32;os=Windows_NT_6.2;machine=i586;openssl=1.0.1s;curl=7.47.1), BlockCypher-Request-Id: 17992155284424815183, Content-Length: 145, , 
+[17-03-2019 06:37:30] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: Request Data		: {"inputs":[{"addresses":["mn9rCrGmTgzQ4ps6z6KYiiQQ3bHyLAnH8P"]}],"outputs":[{"addresses":["mn9rCrGmTgzQ4ps6z6KYiiQQ3bHyLAnH8P"],"value":719712}]}
+--------------------------------------------------------------------------------------------------------------------------------
+
+[17-03-2019 06:37:30] BlockCypher\Core\BlockCypherHttpConnection: INFO	: Response Status 	: 400
+[17-03-2019 06:37:30] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: Response Headers	: HTTP/1.1 400 Bad Request, Server: nginx/1.10.3 (Ubuntu), Date: Sun, 17 Mar 2019 17:37:32 GMT, Content-Type: application/json, Content-Length: 1203, Connection: keep-alive, Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Access-Control-Allow-Methods: GET, POST, PUT, DELETE, Access-Control-Allow-Origin: *, X-Ratelimit-Remaining: 198, , 
+[17-03-2019 06:37:30] BlockCypher\Core\BlockCypherHttpConnection: ERROR	: Got Http response code 400 when accessing https://api.blockcypher.com/v1/btc/test3/txs/new?token=cd5222c524f341c3bb80fb185c19fbfe. {
+  "errors": [
+    {
+      "error": "Unable to find a transaction to spend for address mn9rCrGmTgzQ4ps6z6KYiiQQ3bHyLAnH8P."
+    },
+    {
+      "error": "Not enough funds in 0 inputs to pay for 1 outputs, missing -719712."
+    },
+    {
+      "error": "Not enough funds after fees in 0 inputs to pay for 1 outputs, missing -721412."
+    },
+    {
+      "error": "Error validating generated transaction: Transaction missing input or output."
+    }
+  ],
+  "tx": {
+    "block_height": -1,
+    "block_index": -1,
+    "hash": "38db6b7c8fe4c5c153a95e637c6e2ef2296ffce80773d21707a5684a9cca7826",
+    "addresses": [
+      "mn9rCrGmTgzQ4ps6z6KYiiQQ3bHyLAnH8P"
+    ],
+    "total": 719712,
+    "fees": 0,
+    "size": 44,
+    "preference": "low",
+    "relayed_by": "118.141.254.252",
+    "received": "2019-03-17T17:37:32.38261997Z",
+    "ver": 1,
+    "double_spend": false,
+    "vin_sz": 0,
+    "vout_sz": 1,
+    "confirmations": 0,
+    "inputs": [],
+    "outputs": [
+      {
+        "value": 719712,
+        "script": "76a91448cb0fd53ee765c55e61b64f24d937922de5ce2388ac",
+        "addresses": [
+          "mn9rCrGmTgzQ4ps6z6KYiiQQ3bHyLAnH8P"
+        ],
+        "script_type": "pay-to-pubkey-hash"
+      }
+    ]
+  }
+}
+[17-03-2019 06:37:30] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: 
+
+================================================================================================================================
+
+[17-03-2019 06:39:32] BlockCypher\Core\BlockCypherHttpConnection: INFO	: POST https://api.blockcypher.com/v1/btc/test3/txs/new?token=cd5222c524f341c3bb80fb185c19fbfe
+[17-03-2019 06:39:32] BlockCypher\Core\BlockCypherHttpConnection: INFO	: Invalid or no certificate authority found - Retrying using bundled CA certs file
+[17-03-2019 06:39:34] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: Request Headers 	: POST /v1/btc/test3/txs/new?token=cd5222c524f341c3bb80fb185c19fbfe HTTP/1.1, Host: api.blockcypher.com, Accept: */*, Content-Type: application/json, User-Agent: BlockCypherSDK/BlockCypher-PHP-SDK 1.5.0 (lang=PHP;v=5.5.34;bit=32;os=Windows_NT_6.2;machine=i586;openssl=1.0.1s;curl=7.47.1), BlockCypher-Request-Id: 1799215528443724177, Content-Length: 145, , 
+[17-03-2019 06:39:34] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: Request Data		: {"inputs":[{"addresses":["mn9rCrGmTgzQ4ps6z6KYiiQQ3bHyLAnH8P"]}],"outputs":[{"addresses":["mn9rCrGmTgzQ4ps6z6KYiiQQ3bHyLAnH8P"],"value":719712}]}
+--------------------------------------------------------------------------------------------------------------------------------
+
+[17-03-2019 06:39:34] BlockCypher\Core\BlockCypherHttpConnection: INFO	: Response Status 	: 400
+[17-03-2019 06:39:34] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: Response Headers	: HTTP/1.1 400 Bad Request, Server: nginx/1.10.3 (Ubuntu), Date: Sun, 17 Mar 2019 17:39:36 GMT, Content-Type: application/json, Content-Length: 1203, Connection: keep-alive, Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Access-Control-Allow-Methods: GET, POST, PUT, DELETE, Access-Control-Allow-Origin: *, X-Ratelimit-Remaining: 197, , 
+[17-03-2019 06:39:34] BlockCypher\Core\BlockCypherHttpConnection: ERROR	: Got Http response code 400 when accessing https://api.blockcypher.com/v1/btc/test3/txs/new?token=cd5222c524f341c3bb80fb185c19fbfe. {
+  "errors": [
+    {
+      "error": "Unable to find a transaction to spend for address mn9rCrGmTgzQ4ps6z6KYiiQQ3bHyLAnH8P."
+    },
+    {
+      "error": "Not enough funds in 0 inputs to pay for 1 outputs, missing -719712."
+    },
+    {
+      "error": "Not enough funds after fees in 0 inputs to pay for 1 outputs, missing -721412."
+    },
+    {
+      "error": "Error validating generated transaction: Transaction missing input or output."
+    }
+  ],
+  "tx": {
+    "block_height": -1,
+    "block_index": -1,
+    "hash": "38db6b7c8fe4c5c153a95e637c6e2ef2296ffce80773d21707a5684a9cca7826",
+    "addresses": [
+      "mn9rCrGmTgzQ4ps6z6KYiiQQ3bHyLAnH8P"
+    ],
+    "total": 719712,
+    "fees": 0,
+    "size": 44,
+    "preference": "low",
+    "relayed_by": "118.141.254.252",
+    "received": "2019-03-17T17:39:36.04743216Z",
+    "ver": 1,
+    "double_spend": false,
+    "vin_sz": 0,
+    "vout_sz": 1,
+    "confirmations": 0,
+    "inputs": [],
+    "outputs": [
+      {
+        "value": 719712,
+        "script": "76a91448cb0fd53ee765c55e61b64f24d937922de5ce2388ac",
+        "addresses": [
+          "mn9rCrGmTgzQ4ps6z6KYiiQQ3bHyLAnH8P"
+        ],
+        "script_type": "pay-to-pubkey-hash"
+      }
+    ]
+  }
+}
+[17-03-2019 06:39:34] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: 
+
+================================================================================================================================
+
+[17-03-2019 06:39:40] BlockCypher\Core\BlockCypherHttpConnection: INFO	: GET https://api.blockcypher.com/v1/btc/test3/addrs/mzsyCjrnoCBA5ruhFfqUfDFnjF9wR5sNvk/balance?token=
+[17-03-2019 06:39:41] BlockCypher\Core\BlockCypherHttpConnection: INFO	: Invalid or no certificate authority found - Retrying using bundled CA certs file
+[17-03-2019 06:39:42] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: Request Headers 	: GET /v1/btc/test3/addrs/mzsyCjrnoCBA5ruhFfqUfDFnjF9wR5sNvk/balance?token= HTTP/1.1, Host: api.blockcypher.com, Accept: */*, Content-Type: application/json, User-Agent: BlockCypherSDK/BlockCypher-PHP-SDK 1.5.0 (lang=PHP;v=5.5.34;bit=32;os=Windows_NT_6.2;machine=i586;openssl=1.0.1s;curl=7.47.1), , 
+[17-03-2019 06:39:42] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: No Request Payload
+--------------------------------------------------------------------------------------------------------------------------------
+
+[17-03-2019 06:39:42] BlockCypher\Core\BlockCypherHttpConnection: INFO	: Response Status 	: 200
+[17-03-2019 06:39:42] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: Response Headers	: HTTP/1.1 200 OK, Server: nginx/1.10.3 (Ubuntu), Date: Sun, 17 Mar 2019 17:39:44 GMT, Content-Type: application/json, Content-Length: 239, Connection: keep-alive, Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Access-Control-Allow-Methods: GET, POST, PUT, DELETE, Access-Control-Allow-Origin: *, X-Ratelimit-Remaining: 96, , 
+[17-03-2019 06:39:42] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: Response Data 	: {
+  "address": "mzsyCjrnoCBA5ruhFfqUfDFnjF9wR5sNvk",
+  "total_received": 29203600,
+  "total_sent": 0,
+  "balance": 29203600,
+  "unconfirmed_balance": 0,
+  "final_balance": 29203600,
+  "n_tx": 2,
+  "unconfirmed_n_tx": 0,
+  "final_n_tx": 2
+}
+
+================================================================================================================================
+
+[17-03-2019 06:45:24] BlockCypher\Core\BlockCypherHttpConnection: INFO	: POST https://api.blockcypher.com/v1/btc/test3/txs/new?token=cd5222c524f341c3bb80fb185c19fbfe
+[17-03-2019 06:45:24] BlockCypher\Core\BlockCypherHttpConnection: INFO	: Invalid or no certificate authority found - Retrying using bundled CA certs file
+[17-03-2019 06:45:26] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: Request Headers 	: POST /v1/btc/test3/txs/new?token=cd5222c524f341c3bb80fb185c19fbfe HTTP/1.1, Host: api.blockcypher.com, Accept: */*, Content-Type: application/json, User-Agent: BlockCypherSDK/BlockCypher-PHP-SDK 1.5.0 (lang=PHP;v=5.5.34;bit=32;os=Windows_NT_6.2;machine=i586;openssl=1.0.1s;curl=7.47.1), BlockCypher-Request-Id: 17992155284472426468, Content-Length: 145, , 
+[17-03-2019 06:45:26] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: Request Data		: {"inputs":[{"addresses":["mn9rCrGmTgzQ4ps6z6KYiiQQ3bHyLAnH8P"]}],"outputs":[{"addresses":["mn9rCrGmTgzQ4ps6z6KYiiQQ3bHyLAnH8P"],"value":719712}]}
+--------------------------------------------------------------------------------------------------------------------------------
+
+[17-03-2019 06:45:26] BlockCypher\Core\BlockCypherHttpConnection: INFO	: Response Status 	: 400
+[17-03-2019 06:45:26] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: Response Headers	: HTTP/1.1 400 Bad Request, Server: nginx/1.10.3 (Ubuntu), Date: Sun, 17 Mar 2019 17:45:28 GMT, Content-Type: application/json, Content-Length: 1204, Connection: keep-alive, Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Access-Control-Allow-Methods: GET, POST, PUT, DELETE, Access-Control-Allow-Origin: *, X-Ratelimit-Remaining: 199, , 
+[17-03-2019 06:45:26] BlockCypher\Core\BlockCypherHttpConnection: ERROR	: Got Http response code 400 when accessing https://api.blockcypher.com/v1/btc/test3/txs/new?token=cd5222c524f341c3bb80fb185c19fbfe. {
+  "errors": [
+    {
+      "error": "Unable to find a transaction to spend for address mn9rCrGmTgzQ4ps6z6KYiiQQ3bHyLAnH8P."
+    },
+    {
+      "error": "Not enough funds in 0 inputs to pay for 1 outputs, missing -719712."
+    },
+    {
+      "error": "Not enough funds after fees in 0 inputs to pay for 1 outputs, missing -721412."
+    },
+    {
+      "error": "Error validating generated transaction: Transaction missing input or output."
+    }
+  ],
+  "tx": {
+    "block_height": -1,
+    "block_index": -1,
+    "hash": "38db6b7c8fe4c5c153a95e637c6e2ef2296ffce80773d21707a5684a9cca7826",
+    "addresses": [
+      "mn9rCrGmTgzQ4ps6z6KYiiQQ3bHyLAnH8P"
+    ],
+    "total": 719712,
+    "fees": 0,
+    "size": 44,
+    "preference": "low",
+    "relayed_by": "118.141.254.252",
+    "received": "2019-03-17T17:45:28.013319786Z",
+    "ver": 1,
+    "double_spend": false,
+    "vin_sz": 0,
+    "vout_sz": 1,
+    "confirmations": 0,
+    "inputs": [],
+    "outputs": [
+      {
+        "value": 719712,
+        "script": "76a91448cb0fd53ee765c55e61b64f24d937922de5ce2388ac",
+        "addresses": [
+          "mn9rCrGmTgzQ4ps6z6KYiiQQ3bHyLAnH8P"
+        ],
+        "script_type": "pay-to-pubkey-hash"
+      }
+    ]
+  }
+}
+[17-03-2019 06:45:26] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: 
+
+================================================================================================================================
+
+[17-03-2019 06:45:32] BlockCypher\Core\BlockCypherHttpConnection: INFO	: POST https://api.blockcypher.com/v1/btc/test3/txs/new?token=cd5222c524f341c3bb80fb185c19fbfe
+[17-03-2019 06:45:32] BlockCypher\Core\BlockCypherHttpConnection: INFO	: Invalid or no certificate authority found - Retrying using bundled CA certs file
+[17-03-2019 06:45:33] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: Request Headers 	: POST /v1/btc/test3/txs/new?token=cd5222c524f341c3bb80fb185c19fbfe HTTP/1.1, Host: api.blockcypher.com, Accept: */*, Content-Type: application/json, User-Agent: BlockCypherSDK/BlockCypher-PHP-SDK 1.5.0 (lang=PHP;v=5.5.34;bit=32;os=Windows_NT_6.2;machine=i586;openssl=1.0.1s;curl=7.47.1), BlockCypher-Request-Id: 17992155284473119210, Content-Length: 145, , 
+[17-03-2019 06:45:33] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: Request Data		: {"inputs":[{"addresses":["mn9rCrGmTgzQ4ps6z6KYiiQQ3bHyLAnH8P"]}],"outputs":[{"addresses":["mn9rCrGmTgzQ4ps6z6KYiiQQ3bHyLAnH8P"],"value":719712}]}
+--------------------------------------------------------------------------------------------------------------------------------
+
+[17-03-2019 06:45:33] BlockCypher\Core\BlockCypherHttpConnection: INFO	: Response Status 	: 400
+[17-03-2019 06:45:33] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: Response Headers	: HTTP/1.1 400 Bad Request, Server: nginx/1.10.3 (Ubuntu), Date: Sun, 17 Mar 2019 17:45:35 GMT, Content-Type: application/json, Content-Length: 1204, Connection: keep-alive, Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Access-Control-Allow-Methods: GET, POST, PUT, DELETE, Access-Control-Allow-Origin: *, X-Ratelimit-Remaining: 199, , 
+[17-03-2019 06:45:33] BlockCypher\Core\BlockCypherHttpConnection: ERROR	: Got Http response code 400 when accessing https://api.blockcypher.com/v1/btc/test3/txs/new?token=cd5222c524f341c3bb80fb185c19fbfe. {
+  "errors": [
+    {
+      "error": "Unable to find a transaction to spend for address mn9rCrGmTgzQ4ps6z6KYiiQQ3bHyLAnH8P."
+    },
+    {
+      "error": "Not enough funds in 0 inputs to pay for 1 outputs, missing -719712."
+    },
+    {
+      "error": "Not enough funds after fees in 0 inputs to pay for 1 outputs, missing -721412."
+    },
+    {
+      "error": "Error validating generated transaction: Transaction missing input or output."
+    }
+  ],
+  "tx": {
+    "block_height": -1,
+    "block_index": -1,
+    "hash": "38db6b7c8fe4c5c153a95e637c6e2ef2296ffce80773d21707a5684a9cca7826",
+    "addresses": [
+      "mn9rCrGmTgzQ4ps6z6KYiiQQ3bHyLAnH8P"
+    ],
+    "total": 719712,
+    "fees": 0,
+    "size": 44,
+    "preference": "low",
+    "relayed_by": "118.141.254.252",
+    "received": "2019-03-17T17:45:35.739313494Z",
+    "ver": 1,
+    "double_spend": false,
+    "vin_sz": 0,
+    "vout_sz": 1,
+    "confirmations": 0,
+    "inputs": [],
+    "outputs": [
+      {
+        "value": 719712,
+        "script": "76a91448cb0fd53ee765c55e61b64f24d937922de5ce2388ac",
+        "addresses": [
+          "mn9rCrGmTgzQ4ps6z6KYiiQQ3bHyLAnH8P"
+        ],
+        "script_type": "pay-to-pubkey-hash"
+      }
+    ]
+  }
+}
+[17-03-2019 06:45:33] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: 
+
+================================================================================================================================
+
+[17-03-2019 06:54:54] BlockCypher\Core\BlockCypherHttpConnection: INFO	: POST https://api.blockcypher.com/v1/btc/test3/txs/new?token=cd5222c524f341c3bb80fb185c19fbfe
+[17-03-2019 06:54:55] BlockCypher\Core\BlockCypherHttpConnection: INFO	: Invalid or no certificate authority found - Retrying using bundled CA certs file
+[17-03-2019 06:54:56] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: Request Headers 	: POST /v1/btc/test3/txs/new?token=cd5222c524f341c3bb80fb185c19fbfe HTTP/1.1, Host: api.blockcypher.com, Accept: */*, Content-Type: application/json, User-Agent: BlockCypherSDK/BlockCypher-PHP-SDK 1.5.0 (lang=PHP;v=5.5.34;bit=32;os=Windows_NT_6.2;machine=i586;openssl=1.0.1s;curl=7.47.1), BlockCypher-Request-Id: 17992155284529432310, Content-Length: 145, , 
+[17-03-2019 06:54:56] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: Request Data		: {"inputs":[{"addresses":["mn9rCrGmTgzQ4ps6z6KYiiQQ3bHyLAnH8P"]}],"outputs":[{"addresses":["mn9rCrGmTgzQ4ps6z6KYiiQQ3bHyLAnH8P"],"value":719712}]}
+--------------------------------------------------------------------------------------------------------------------------------
+
+[17-03-2019 06:54:56] BlockCypher\Core\BlockCypherHttpConnection: INFO	: Response Status 	: 400
+[17-03-2019 06:54:56] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: Response Headers	: HTTP/1.1 400 Bad Request, Server: nginx/1.10.3 (Ubuntu), Date: Sun, 17 Mar 2019 17:54:58 GMT, Content-Type: application/json, Content-Length: 1204, Connection: keep-alive, Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Access-Control-Allow-Methods: GET, POST, PUT, DELETE, Access-Control-Allow-Origin: *, X-Ratelimit-Remaining: 198, , 
+[17-03-2019 06:54:56] BlockCypher\Core\BlockCypherHttpConnection: ERROR	: Got Http response code 400 when accessing https://api.blockcypher.com/v1/btc/test3/txs/new?token=cd5222c524f341c3bb80fb185c19fbfe. {
+  "errors": [
+    {
+      "error": "Unable to find a transaction to spend for address mn9rCrGmTgzQ4ps6z6KYiiQQ3bHyLAnH8P."
+    },
+    {
+      "error": "Not enough funds in 0 inputs to pay for 1 outputs, missing -719712."
+    },
+    {
+      "error": "Not enough funds after fees in 0 inputs to pay for 1 outputs, missing -721412."
+    },
+    {
+      "error": "Error validating generated transaction: Transaction missing input or output."
+    }
+  ],
+  "tx": {
+    "block_height": -1,
+    "block_index": -1,
+    "hash": "38db6b7c8fe4c5c153a95e637c6e2ef2296ffce80773d21707a5684a9cca7826",
+    "addresses": [
+      "mn9rCrGmTgzQ4ps6z6KYiiQQ3bHyLAnH8P"
+    ],
+    "total": 719712,
+    "fees": 0,
+    "size": 44,
+    "preference": "low",
+    "relayed_by": "118.141.254.252",
+    "received": "2019-03-17T17:54:58.367002983Z",
+    "ver": 1,
+    "double_spend": false,
+    "vin_sz": 0,
+    "vout_sz": 1,
+    "confirmations": 0,
+    "inputs": [],
+    "outputs": [
+      {
+        "value": 719712,
+        "script": "76a91448cb0fd53ee765c55e61b64f24d937922de5ce2388ac",
+        "addresses": [
+          "mn9rCrGmTgzQ4ps6z6KYiiQQ3bHyLAnH8P"
+        ],
+        "script_type": "pay-to-pubkey-hash"
+      }
+    ]
+  }
+}
+[17-03-2019 06:54:56] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: 
+
+================================================================================================================================
+
+[17-03-2019 06:58:32] BlockCypher\Core\BlockCypherHttpConnection: INFO	: POST https://api.blockcypher.com/v1/btc/test3/txs/new?token=cd5222c524f341c3bb80fb185c19fbfe
+[17-03-2019 06:58:33] BlockCypher\Core\BlockCypherHttpConnection: INFO	: Invalid or no certificate authority found - Retrying using bundled CA certs file
+[17-03-2019 06:58:34] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: Request Headers 	: POST /v1/btc/test3/txs/new?token=cd5222c524f341c3bb80fb185c19fbfe HTTP/1.1, Host: api.blockcypher.com, Accept: */*, Content-Type: application/json, User-Agent: BlockCypherSDK/BlockCypher-PHP-SDK 1.5.0 (lang=PHP;v=5.5.34;bit=32;os=Windows_NT_6.2;machine=i586;openssl=1.0.1s;curl=7.47.1), BlockCypher-Request-Id: 17992155284551261292, Content-Length: 145, , 
+[17-03-2019 06:58:34] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: Request Data		: {"inputs":[{"addresses":["mn9rCrGmTgzQ4ps6z6KYiiQQ3bHyLAnH8P"]}],"outputs":[{"addresses":["mn9rCrGmTgzQ4ps6z6KYiiQQ3bHyLAnH8P"],"value":719712}]}
+--------------------------------------------------------------------------------------------------------------------------------
+
+[17-03-2019 06:58:34] BlockCypher\Core\BlockCypherHttpConnection: INFO	: Response Status 	: 400
+[17-03-2019 06:58:34] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: Response Headers	: HTTP/1.1 400 Bad Request, Server: nginx/1.10.3 (Ubuntu), Date: Sun, 17 Mar 2019 17:58:36 GMT, Content-Type: application/json, Content-Length: 1204, Connection: keep-alive, Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Access-Control-Allow-Methods: GET, POST, PUT, DELETE, Access-Control-Allow-Origin: *, X-Ratelimit-Remaining: 195, , 
+[17-03-2019 06:58:34] BlockCypher\Core\BlockCypherHttpConnection: ERROR	: Got Http response code 400 when accessing https://api.blockcypher.com/v1/btc/test3/txs/new?token=cd5222c524f341c3bb80fb185c19fbfe. {
+  "errors": [
+    {
+      "error": "Unable to find a transaction to spend for address mn9rCrGmTgzQ4ps6z6KYiiQQ3bHyLAnH8P."
+    },
+    {
+      "error": "Not enough funds in 0 inputs to pay for 1 outputs, missing -719712."
+    },
+    {
+      "error": "Not enough funds after fees in 0 inputs to pay for 1 outputs, missing -721412."
+    },
+    {
+      "error": "Error validating generated transaction: Transaction missing input or output."
+    }
+  ],
+  "tx": {
+    "block_height": -1,
+    "block_index": -1,
+    "hash": "38db6b7c8fe4c5c153a95e637c6e2ef2296ffce80773d21707a5684a9cca7826",
+    "addresses": [
+      "mn9rCrGmTgzQ4ps6z6KYiiQQ3bHyLAnH8P"
+    ],
+    "total": 719712,
+    "fees": 0,
+    "size": 44,
+    "preference": "low",
+    "relayed_by": "118.141.254.252",
+    "received": "2019-03-17T17:58:36.498573424Z",
+    "ver": 1,
+    "double_spend": false,
+    "vin_sz": 0,
+    "vout_sz": 1,
+    "confirmations": 0,
+    "inputs": [],
+    "outputs": [
+      {
+        "value": 719712,
+        "script": "76a91448cb0fd53ee765c55e61b64f24d937922de5ce2388ac",
+        "addresses": [
+          "mn9rCrGmTgzQ4ps6z6KYiiQQ3bHyLAnH8P"
+        ],
+        "script_type": "pay-to-pubkey-hash"
+      }
+    ]
+  }
+}
+[17-03-2019 06:58:34] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: 
+
+================================================================================================================================
+
+[17-03-2019 07:56:53] BlockCypher\Core\BlockCypherHttpConnection: INFO	: GET https://api.blockcypher.com/v1/btc/test3/addrs/mzsyCjrnoCBA5ruhFfqUfDFnjF9wR5sNvk/balance?token=
+[17-03-2019 07:56:53] BlockCypher\Core\BlockCypherHttpConnection: INFO	: Invalid or no certificate authority found - Retrying using bundled CA certs file
+[17-03-2019 07:56:54] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: Request Headers 	: GET /v1/btc/test3/addrs/mzsyCjrnoCBA5ruhFfqUfDFnjF9wR5sNvk/balance?token= HTTP/1.1, Host: api.blockcypher.com, Accept: */*, Content-Type: application/json, User-Agent: BlockCypherSDK/BlockCypher-PHP-SDK 1.5.0 (lang=PHP;v=5.5.34;bit=32;os=Windows_NT_6.2;machine=i586;openssl=1.0.1s;curl=7.47.1), , 
+[17-03-2019 07:56:54] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: No Request Payload
+--------------------------------------------------------------------------------------------------------------------------------
+
+[17-03-2019 07:56:54] BlockCypher\Core\BlockCypherHttpConnection: INFO	: Response Status 	: 200
+[17-03-2019 07:56:54] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: Response Headers	: HTTP/1.1 200 OK, Server: nginx/1.10.3 (Ubuntu), Date: Sun, 17 Mar 2019 18:56:56 GMT, Content-Type: application/json, Content-Length: 239, Connection: keep-alive, Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Access-Control-Allow-Methods: GET, POST, PUT, DELETE, Access-Control-Allow-Origin: *, X-Ratelimit-Remaining: 99, , 
+[17-03-2019 07:56:54] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: Response Data 	: {
+  "address": "mzsyCjrnoCBA5ruhFfqUfDFnjF9wR5sNvk",
+  "total_received": 29203600,
+  "total_sent": 0,
+  "balance": 29203600,
+  "unconfirmed_balance": 0,
+  "final_balance": 29203600,
+  "n_tx": 2,
+  "unconfirmed_n_tx": 0,
+  "final_n_tx": 2
+}
+
+================================================================================================================================
+
+[17-03-2019 07:57:35] BlockCypher\Core\BlockCypherHttpConnection: INFO	: POST https://api.blockcypher.com/v1/btc/test3/txs/new?token=cd5222c524f341c3bb80fb185c19fbfe
+[17-03-2019 07:57:36] BlockCypher\Core\BlockCypherHttpConnection: INFO	: Invalid or no certificate authority found - Retrying using bundled CA certs file
+[17-03-2019 07:57:37] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: Request Headers 	: POST /v1/btc/test3/txs/new?token=cd5222c524f341c3bb80fb185c19fbfe HTTP/1.1, Host: api.blockcypher.com, Accept: */*, Content-Type: application/json, User-Agent: BlockCypherSDK/BlockCypher-PHP-SDK 1.5.0 (lang=PHP;v=5.5.34;bit=32;os=Windows_NT_6.2;machine=i586;openssl=1.0.1s;curl=7.47.1), BlockCypher-Request-Id: 17992155284905564224, Content-Length: 145, , 
+[17-03-2019 07:57:37] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: Request Data		: {"inputs":[{"addresses":["mzsyCjrnoCBA5ruhFfqUfDFnjF9wR5sNvk"]}],"outputs":[{"addresses":["mn9rCrGmTgzQ4ps6z6KYiiQQ3bHyLAnH8P"],"value":228123}]}
+--------------------------------------------------------------------------------------------------------------------------------
+
+[17-03-2019 07:57:37] BlockCypher\Core\BlockCypherHttpConnection: INFO	: Response Status 	: 201
+[17-03-2019 07:57:37] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: Response Headers	: HTTP/1.1 201 Created, Server: nginx/1.10.3 (Ubuntu), Date: Sun, 17 Mar 2019 18:57:39 GMT, Content-Type: application/json, Content-Length: 1490, Connection: keep-alive, Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Access-Control-Allow-Methods: GET, POST, PUT, DELETE, Access-Control-Allow-Origin: *, X-Ratelimit-Remaining: 199, , 
+[17-03-2019 07:57:37] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: Response Data 	: {
+  "tx": {
+    "block_height": -1,
+    "block_index": -1,
+    "hash": "9c8513386d62f442f7507428297b0be5f113f1214a77adaf807daa984df7db0a",
+    "addresses": [
+      "mzsyCjrnoCBA5ruhFfqUfDFnjF9wR5sNvk",
+      "mn9rCrGmTgzQ4ps6z6KYiiQQ3bHyLAnH8P"
+    ],
+    "total": 14906142,
+    "fees": 4700,
+    "size": 119,
+    "preference": "high",
+    "relayed_by": "118.141.254.252",
+    "received": "2019-03-17T18:57:39.258428112Z",
+    "ver": 1,
+    "double_spend": false,
+    "vin_sz": 1,
+    "vout_sz": 2,
+    "confirmations": 0,
+    "inputs": [
+      {
+        "prev_hash": "8ca861f1d682679b6b90e79ce5c60f2b09862ddd69d8616700697daf855ea9f8",
+        "output_index": 1,
+        "output_value": 14910842,
+        "sequence": 4294967295,
+        "addresses": [
+          "mzsyCjrnoCBA5ruhFfqUfDFnjF9wR5sNvk"
+        ],
+        "script_type": "pay-to-pubkey-hash",
+        "age": 1484801
+      }
+    ],
+    "outputs": [
+      {
+        "value": 228123,
+        "script": "76a91448cb0fd53ee765c55e61b64f24d937922de5ce2388ac",
+        "addresses": [
+          "mn9rCrGmTgzQ4ps6z6KYiiQQ3bHyLAnH8P"
+        ],
+        "script_type": "pay-to-pubkey-hash"
+      },
+      {
+        "value": 14678019,
+        "script": "76a914d463e22409916ad41067b67ce9a09b72571e08f388ac",
+        "addresses": [
+          "mzsyCjrnoCBA5ruhFfqUfDFnjF9wR5sNvk"
+        ],
+        "script_type": "pay-to-pubkey-hash"
+      }
+    ]
+  },
+  "tosign": [
+    "eee656e441822491549fc946797331ed2c162d5ebe1dd51ccac2708c95d1e248"
+  ]
+}
+
+================================================================================================================================
+
+[17-03-2019 07:57:37] BlockCypher\Validation\ModelAccessorValidator: DEBUG	: Missing Accessor: BlockCypher\Api\TX:setBlockIndex. You might be using older version of SDK. If not, create an issue at https://github.com/blockcypher/php-client/issues
+[17-03-2019 07:57:37] BlockCypher\Validation\ModelAccessorValidator: DEBUG	: Missing Accessor: BlockCypher\Api\TX:setBlockIndex. You might be using older version of SDK. If not, create an issue at https://github.com/blockcypher/php-client/issues
+[17-03-2019 08:05:53] BlockCypher\Core\BlockCypherHttpConnection: INFO	: POST https://api.blockcypher.com/v1/btc/test3/txs/new?token=cd5222c524f341c3bb80fb185c19fbfe
+[17-03-2019 08:05:53] BlockCypher\Core\BlockCypherHttpConnection: INFO	: Invalid or no certificate authority found - Retrying using bundled CA certs file
+[17-03-2019 08:05:54] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: Request Headers 	: POST /v1/btc/test3/txs/new?token=cd5222c524f341c3bb80fb185c19fbfe HTTP/1.1, Host: api.blockcypher.com, Accept: */*, Content-Type: application/json, User-Agent: BlockCypherSDK/BlockCypher-PHP-SDK 1.5.0 (lang=PHP;v=5.5.34;bit=32;os=Windows_NT_6.2;machine=i586;openssl=1.0.1s;curl=7.47.1), BlockCypher-Request-Id: 17992155284955322767, Content-Length: 145, , 
+[17-03-2019 08:05:54] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: Request Data		: {"inputs":[{"addresses":["mzsyCjrnoCBA5ruhFfqUfDFnjF9wR5sNvk"]}],"outputs":[{"addresses":["mn9rCrGmTgzQ4ps6z6KYiiQQ3bHyLAnH8P"],"value":228123}]}
+--------------------------------------------------------------------------------------------------------------------------------
+
+[17-03-2019 08:05:54] BlockCypher\Core\BlockCypherHttpConnection: INFO	: Response Status 	: 201
+[17-03-2019 08:05:54] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: Response Headers	: HTTP/1.1 201 Created, Server: nginx/1.10.3 (Ubuntu), Date: Sun, 17 Mar 2019 19:05:56 GMT, Content-Type: application/json, Content-Length: 1490, Connection: keep-alive, Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Access-Control-Allow-Methods: GET, POST, PUT, DELETE, Access-Control-Allow-Origin: *, X-Ratelimit-Remaining: 199, , 
+[17-03-2019 08:05:54] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: Response Data 	: {
+  "tx": {
+    "block_height": -1,
+    "block_index": -1,
+    "hash": "9c8513386d62f442f7507428297b0be5f113f1214a77adaf807daa984df7db0a",
+    "addresses": [
+      "mzsyCjrnoCBA5ruhFfqUfDFnjF9wR5sNvk",
+      "mn9rCrGmTgzQ4ps6z6KYiiQQ3bHyLAnH8P"
+    ],
+    "total": 14906142,
+    "fees": 4700,
+    "size": 119,
+    "preference": "high",
+    "relayed_by": "118.141.254.252",
+    "received": "2019-03-17T19:05:56.698035485Z",
+    "ver": 1,
+    "double_spend": false,
+    "vin_sz": 1,
+    "vout_sz": 2,
+    "confirmations": 0,
+    "inputs": [
+      {
+        "prev_hash": "8ca861f1d682679b6b90e79ce5c60f2b09862ddd69d8616700697daf855ea9f8",
+        "output_index": 1,
+        "output_value": 14910842,
+        "sequence": 4294967295,
+        "addresses": [
+          "mzsyCjrnoCBA5ruhFfqUfDFnjF9wR5sNvk"
+        ],
+        "script_type": "pay-to-pubkey-hash",
+        "age": 1484801
+      }
+    ],
+    "outputs": [
+      {
+        "value": 228123,
+        "script": "76a91448cb0fd53ee765c55e61b64f24d937922de5ce2388ac",
+        "addresses": [
+          "mn9rCrGmTgzQ4ps6z6KYiiQQ3bHyLAnH8P"
+        ],
+        "script_type": "pay-to-pubkey-hash"
+      },
+      {
+        "value": 14678019,
+        "script": "76a914d463e22409916ad41067b67ce9a09b72571e08f388ac",
+        "addresses": [
+          "mzsyCjrnoCBA5ruhFfqUfDFnjF9wR5sNvk"
+        ],
+        "script_type": "pay-to-pubkey-hash"
+      }
+    ]
+  },
+  "tosign": [
+    "eee656e441822491549fc946797331ed2c162d5ebe1dd51ccac2708c95d1e248"
+  ]
+}
+
+================================================================================================================================
+
+[17-03-2019 08:05:54] BlockCypher\Validation\ModelAccessorValidator: DEBUG	: Missing Accessor: BlockCypher\Api\TX:setBlockIndex. You might be using older version of SDK. If not, create an issue at https://github.com/blockcypher/php-client/issues
+[17-03-2019 08:05:54] BlockCypher\Validation\ModelAccessorValidator: DEBUG	: Missing Accessor: BlockCypher\Api\TX:setBlockIndex. You might be using older version of SDK. If not, create an issue at https://github.com/blockcypher/php-client/issues
+[17-03-2019 08:17:20] BlockCypher\Core\BlockCypherHttpConnection: INFO	: POST https://api.blockcypher.com/v1/btc/test3/txs/new?token=cd5222c524f341c3bb80fb185c19fbfe
+[17-03-2019 08:17:20] BlockCypher\Core\BlockCypherHttpConnection: INFO	: Invalid or no certificate authority found - Retrying using bundled CA certs file
+[17-03-2019 08:17:21] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: Request Headers 	: POST /v1/btc/test3/txs/new?token=cd5222c524f341c3bb80fb185c19fbfe HTTP/1.1, Host: api.blockcypher.com, Accept: */*, Content-Type: application/json, User-Agent: BlockCypherSDK/BlockCypher-PHP-SDK 1.5.0 (lang=PHP;v=5.5.34;bit=32;os=Windows_NT_6.2;machine=i586;openssl=1.0.1s;curl=7.47.1), BlockCypher-Request-Id: 17992155285023949342, Content-Length: 145, , 
+[17-03-2019 08:17:21] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: Request Data		: {"inputs":[{"addresses":["mzsyCjrnoCBA5ruhFfqUfDFnjF9wR5sNvk"]}],"outputs":[{"addresses":["mn9rCrGmTgzQ4ps6z6KYiiQQ3bHyLAnH8P"],"value":228123}]}
+--------------------------------------------------------------------------------------------------------------------------------
+
+[17-03-2019 08:17:21] BlockCypher\Core\BlockCypherHttpConnection: INFO	: Response Status 	: 201
+[17-03-2019 08:17:21] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: Response Headers	: HTTP/1.1 201 Created, Server: nginx/1.10.3 (Ubuntu), Date: Sun, 17 Mar 2019 19:17:23 GMT, Content-Type: application/json, Content-Length: 1490, Connection: keep-alive, Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Access-Control-Allow-Methods: GET, POST, PUT, DELETE, Access-Control-Allow-Origin: *, X-Ratelimit-Remaining: 199, , 
+[17-03-2019 08:17:21] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: Response Data 	: {
+  "tx": {
+    "block_height": -1,
+    "block_index": -1,
+    "hash": "9c8513386d62f442f7507428297b0be5f113f1214a77adaf807daa984df7db0a",
+    "addresses": [
+      "mn9rCrGmTgzQ4ps6z6KYiiQQ3bHyLAnH8P",
+      "mzsyCjrnoCBA5ruhFfqUfDFnjF9wR5sNvk"
+    ],
+    "total": 14906142,
+    "fees": 4700,
+    "size": 119,
+    "preference": "high",
+    "relayed_by": "118.141.254.252",
+    "received": "2019-03-17T19:17:23.492785256Z",
+    "ver": 1,
+    "double_spend": false,
+    "vin_sz": 1,
+    "vout_sz": 2,
+    "confirmations": 0,
+    "inputs": [
+      {
+        "prev_hash": "8ca861f1d682679b6b90e79ce5c60f2b09862ddd69d8616700697daf855ea9f8",
+        "output_index": 1,
+        "output_value": 14910842,
+        "sequence": 4294967295,
+        "addresses": [
+          "mzsyCjrnoCBA5ruhFfqUfDFnjF9wR5sNvk"
+        ],
+        "script_type": "pay-to-pubkey-hash",
+        "age": 1484801
+      }
+    ],
+    "outputs": [
+      {
+        "value": 228123,
+        "script": "76a91448cb0fd53ee765c55e61b64f24d937922de5ce2388ac",
+        "addresses": [
+          "mn9rCrGmTgzQ4ps6z6KYiiQQ3bHyLAnH8P"
+        ],
+        "script_type": "pay-to-pubkey-hash"
+      },
+      {
+        "value": 14678019,
+        "script": "76a914d463e22409916ad41067b67ce9a09b72571e08f388ac",
+        "addresses": [
+          "mzsyCjrnoCBA5ruhFfqUfDFnjF9wR5sNvk"
+        ],
+        "script_type": "pay-to-pubkey-hash"
+      }
+    ]
+  },
+  "tosign": [
+    "eee656e441822491549fc946797331ed2c162d5ebe1dd51ccac2708c95d1e248"
+  ]
+}
+
+================================================================================================================================
+
+[17-03-2019 08:17:21] BlockCypher\Validation\ModelAccessorValidator: DEBUG	: Missing Accessor: BlockCypher\Api\TX:setBlockIndex. You might be using older version of SDK. If not, create an issue at https://github.com/blockcypher/php-client/issues
+[17-03-2019 08:17:21] BlockCypher\Validation\ModelAccessorValidator: DEBUG	: Missing Accessor: BlockCypher\Api\TX:setBlockIndex. You might be using older version of SDK. If not, create an issue at https://github.com/blockcypher/php-client/issues
+[17-03-2019 08:17:30] BlockCypher\Core\BlockCypherHttpConnection: INFO	: POST https://api.blockcypher.com/v1/btc/test3/txs/new?token=cd5222c524f341c3bb80fb185c19fbfe
+[17-03-2019 08:17:30] BlockCypher\Core\BlockCypherHttpConnection: INFO	: Invalid or no certificate authority found - Retrying using bundled CA certs file
+[17-03-2019 08:17:31] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: Request Headers 	: POST /v1/btc/test3/txs/new?token=cd5222c524f341c3bb80fb185c19fbfe HTTP/1.1, Host: api.blockcypher.com, Accept: */*, Content-Type: application/json, User-Agent: BlockCypherSDK/BlockCypher-PHP-SDK 1.5.0 (lang=PHP;v=5.5.34;bit=32;os=Windows_NT_6.2;machine=i586;openssl=1.0.1s;curl=7.47.1), BlockCypher-Request-Id: 17992155285025035676, Content-Length: 145, , 
+[17-03-2019 08:17:31] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: Request Data		: {"inputs":[{"addresses":["mzsyCjrnoCBA5ruhFfqUfDFnjF9wR5sNvk"]}],"outputs":[{"addresses":["mn9rCrGmTgzQ4ps6z6KYiiQQ3bHyLAnH8P"],"value":719712}]}
+--------------------------------------------------------------------------------------------------------------------------------
+
+[17-03-2019 08:17:31] BlockCypher\Core\BlockCypherHttpConnection: INFO	: Response Status 	: 201
+[17-03-2019 08:17:31] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: Response Headers	: HTTP/1.1 201 Created, Server: nginx/1.10.3 (Ubuntu), Date: Sun, 17 Mar 2019 19:17:33 GMT, Content-Type: application/json, Content-Length: 1490, Connection: keep-alive, Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Access-Control-Allow-Methods: GET, POST, PUT, DELETE, Access-Control-Allow-Origin: *, X-Ratelimit-Remaining: 199, , 
+[17-03-2019 08:17:31] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: Response Data 	: {
+  "tx": {
+    "block_height": -1,
+    "block_index": -1,
+    "hash": "440f38b7b48e3888804d3619774c1b27241b2a4e46babff14c2caa7e4490e578",
+    "addresses": [
+      "mzsyCjrnoCBA5ruhFfqUfDFnjF9wR5sNvk",
+      "mn9rCrGmTgzQ4ps6z6KYiiQQ3bHyLAnH8P"
+    ],
+    "total": 14906142,
+    "fees": 4700,
+    "size": 119,
+    "preference": "high",
+    "relayed_by": "118.141.254.252",
+    "received": "2019-03-17T19:17:33.862997345Z",
+    "ver": 1,
+    "double_spend": false,
+    "vin_sz": 1,
+    "vout_sz": 2,
+    "confirmations": 0,
+    "inputs": [
+      {
+        "prev_hash": "8ca861f1d682679b6b90e79ce5c60f2b09862ddd69d8616700697daf855ea9f8",
+        "output_index": 1,
+        "output_value": 14910842,
+        "sequence": 4294967295,
+        "addresses": [
+          "mzsyCjrnoCBA5ruhFfqUfDFnjF9wR5sNvk"
+        ],
+        "script_type": "pay-to-pubkey-hash",
+        "age": 1484801
+      }
+    ],
+    "outputs": [
+      {
+        "value": 719712,
+        "script": "76a91448cb0fd53ee765c55e61b64f24d937922de5ce2388ac",
+        "addresses": [
+          "mn9rCrGmTgzQ4ps6z6KYiiQQ3bHyLAnH8P"
+        ],
+        "script_type": "pay-to-pubkey-hash"
+      },
+      {
+        "value": 14186430,
+        "script": "76a914d463e22409916ad41067b67ce9a09b72571e08f388ac",
+        "addresses": [
+          "mzsyCjrnoCBA5ruhFfqUfDFnjF9wR5sNvk"
+        ],
+        "script_type": "pay-to-pubkey-hash"
+      }
+    ]
+  },
+  "tosign": [
+    "aa3930b74b92980c150ea7e6f0162e5b9912c480dec2ab61addb710ac80ddb9d"
+  ]
+}
+
+================================================================================================================================
+
+[17-03-2019 08:17:31] BlockCypher\Validation\ModelAccessorValidator: DEBUG	: Missing Accessor: BlockCypher\Api\TX:setBlockIndex. You might be using older version of SDK. If not, create an issue at https://github.com/blockcypher/php-client/issues
+[17-03-2019 08:17:31] BlockCypher\Validation\ModelAccessorValidator: DEBUG	: Missing Accessor: BlockCypher\Api\TX:setBlockIndex. You might be using older version of SDK. If not, create an issue at https://github.com/blockcypher/php-client/issues
+[17-03-2019 08:22:56] BlockCypher\Core\BlockCypherHttpConnection: INFO	: POST https://api.blockcypher.com/v1/btc/test3/txs/new?token=cd5222c524f341c3bb80fb185c19fbfe
+[17-03-2019 08:22:56] BlockCypher\Core\BlockCypherHttpConnection: INFO	: Invalid or no certificate authority found - Retrying using bundled CA certs file
+[17-03-2019 08:22:57] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: Request Headers 	: POST /v1/btc/test3/txs/new?token=cd5222c524f341c3bb80fb185c19fbfe HTTP/1.1, Host: api.blockcypher.com, Accept: */*, Content-Type: application/json, User-Agent: BlockCypherSDK/BlockCypher-PHP-SDK 1.5.0 (lang=PHP;v=5.5.34;bit=32;os=Windows_NT_6.2;machine=i586;openssl=1.0.1s;curl=7.47.1), BlockCypher-Request-Id: 17992155285057619501, Content-Length: 145, , 
+[17-03-2019 08:22:57] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: Request Data		: {"inputs":[{"addresses":["mzsyCjrnoCBA5ruhFfqUfDFnjF9wR5sNvk"]}],"outputs":[{"addresses":["mn9rCrGmTgzQ4ps6z6KYiiQQ3bHyLAnH8P"],"value":719712}]}
+--------------------------------------------------------------------------------------------------------------------------------
+
+[17-03-2019 08:22:57] BlockCypher\Core\BlockCypherHttpConnection: INFO	: Response Status 	: 201
+[17-03-2019 08:22:57] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: Response Headers	: HTTP/1.1 201 Created, Server: nginx/1.10.3 (Ubuntu), Date: Sun, 17 Mar 2019 19:22:59 GMT, Content-Type: application/json, Content-Length: 1490, Connection: keep-alive, Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Access-Control-Allow-Methods: GET, POST, PUT, DELETE, Access-Control-Allow-Origin: *, X-Ratelimit-Remaining: 198, , 
+[17-03-2019 08:22:57] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: Response Data 	: {
+  "tx": {
+    "block_height": -1,
+    "block_index": -1,
+    "hash": "440f38b7b48e3888804d3619774c1b27241b2a4e46babff14c2caa7e4490e578",
+    "addresses": [
+      "mzsyCjrnoCBA5ruhFfqUfDFnjF9wR5sNvk",
+      "mn9rCrGmTgzQ4ps6z6KYiiQQ3bHyLAnH8P"
+    ],
+    "total": 14906142,
+    "fees": 4700,
+    "size": 119,
+    "preference": "high",
+    "relayed_by": "118.141.254.252",
+    "received": "2019-03-17T19:22:59.729282323Z",
+    "ver": 1,
+    "double_spend": false,
+    "vin_sz": 1,
+    "vout_sz": 2,
+    "confirmations": 0,
+    "inputs": [
+      {
+        "prev_hash": "8ca861f1d682679b6b90e79ce5c60f2b09862ddd69d8616700697daf855ea9f8",
+        "output_index": 1,
+        "output_value": 14910842,
+        "sequence": 4294967295,
+        "addresses": [
+          "mzsyCjrnoCBA5ruhFfqUfDFnjF9wR5sNvk"
+        ],
+        "script_type": "pay-to-pubkey-hash",
+        "age": 1484801
+      }
+    ],
+    "outputs": [
+      {
+        "value": 719712,
+        "script": "76a91448cb0fd53ee765c55e61b64f24d937922de5ce2388ac",
+        "addresses": [
+          "mn9rCrGmTgzQ4ps6z6KYiiQQ3bHyLAnH8P"
+        ],
+        "script_type": "pay-to-pubkey-hash"
+      },
+      {
+        "value": 14186430,
+        "script": "76a914d463e22409916ad41067b67ce9a09b72571e08f388ac",
+        "addresses": [
+          "mzsyCjrnoCBA5ruhFfqUfDFnjF9wR5sNvk"
+        ],
+        "script_type": "pay-to-pubkey-hash"
+      }
+    ]
+  },
+  "tosign": [
+    "aa3930b74b92980c150ea7e6f0162e5b9912c480dec2ab61addb710ac80ddb9d"
+  ]
+}
+
+================================================================================================================================
+
+[17-03-2019 08:22:57] BlockCypher\Validation\ModelAccessorValidator: DEBUG	: Missing Accessor: BlockCypher\Api\TX:setBlockIndex. You might be using older version of SDK. If not, create an issue at https://github.com/blockcypher/php-client/issues
+[17-03-2019 08:22:57] BlockCypher\Validation\ModelAccessorValidator: DEBUG	: Missing Accessor: BlockCypher\Api\TX:setBlockIndex. You might be using older version of SDK. If not, create an issue at https://github.com/blockcypher/php-client/issues
+[17-03-2019 08:36:01] BlockCypher\Core\BlockCypherHttpConnection: INFO	: GET https://api.blockcypher.com/v1/btc/test3/addrs/mo95AAiFRouU2qWUFHhCvTFHvRWupRkVGW/balance?token=
+[17-03-2019 08:36:02] BlockCypher\Core\BlockCypherHttpConnection: INFO	: Invalid or no certificate authority found - Retrying using bundled CA certs file
+[17-03-2019 08:36:03] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: Request Headers 	: GET /v1/btc/test3/addrs/mo95AAiFRouU2qWUFHhCvTFHvRWupRkVGW/balance?token= HTTP/1.1, Host: api.blockcypher.com, Accept: */*, Content-Type: application/json, User-Agent: BlockCypherSDK/BlockCypher-PHP-SDK 1.5.0 (lang=PHP;v=5.5.34;bit=32;os=Windows_NT_6.2;machine=i586;openssl=1.0.1s;curl=7.47.1), , 
+[17-03-2019 08:36:03] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: No Request Payload
+--------------------------------------------------------------------------------------------------------------------------------
+
+[17-03-2019 08:36:03] BlockCypher\Core\BlockCypherHttpConnection: INFO	: Response Status 	: 200
+[17-03-2019 08:36:03] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: Response Headers	: HTTP/1.1 200 OK, Server: nginx/1.10.3 (Ubuntu), Date: Sun, 17 Mar 2019 19:36:05 GMT, Content-Type: application/json, Content-Length: 218, Connection: keep-alive, Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Access-Control-Allow-Methods: GET, POST, PUT, DELETE, Access-Control-Allow-Origin: *, X-Ratelimit-Remaining: 99, , 
+[17-03-2019 08:36:03] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: Response Data 	: {
+  "address": "mo95AAiFRouU2qWUFHhCvTFHvRWupRkVGW",
+  "total_received": 0,
+  "total_sent": 0,
+  "balance": 0,
+  "unconfirmed_balance": 0,
+  "final_balance": 0,
+  "n_tx": 0,
+  "unconfirmed_n_tx": 0,
+  "final_n_tx": 0
+}
+
+================================================================================================================================
+
+[17-03-2019 08:36:18] BlockCypher\Core\BlockCypherHttpConnection: INFO	: POST https://api.blockcypher.com/v1/btc/test3/txs/new?token=cd5222c524f341c3bb80fb185c19fbfe
+[17-03-2019 08:36:19] BlockCypher\Core\BlockCypherHttpConnection: INFO	: Invalid or no certificate authority found - Retrying using bundled CA certs file
+[17-03-2019 08:36:20] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: Request Headers 	: POST /v1/btc/test3/txs/new?token=cd5222c524f341c3bb80fb185c19fbfe HTTP/1.1, Host: api.blockcypher.com, Accept: */*, Content-Type: application/json, User-Agent: BlockCypherSDK/BlockCypher-PHP-SDK 1.5.0 (lang=PHP;v=5.5.34;bit=32;os=Windows_NT_6.2;machine=i586;openssl=1.0.1s;curl=7.47.1), BlockCypher-Request-Id: 17992155285137861668, Content-Length: 145, , 
+[17-03-2019 08:36:20] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: Request Data		: {"inputs":[{"addresses":["mo95AAiFRouU2qWUFHhCvTFHvRWupRkVGW"]}],"outputs":[{"addresses":["mn9rCrGmTgzQ4ps6z6KYiiQQ3bHyLAnH8P"],"value":228123}]}
+--------------------------------------------------------------------------------------------------------------------------------
+
+[17-03-2019 08:36:20] BlockCypher\Core\BlockCypherHttpConnection: INFO	: Response Status 	: 400
+[17-03-2019 08:36:20] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: Response Headers	: HTTP/1.1 400 Bad Request, Server: nginx/1.10.3 (Ubuntu), Date: Sun, 17 Mar 2019 19:36:22 GMT, Content-Type: application/json, Content-Length: 1204, Connection: keep-alive, Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Access-Control-Allow-Methods: GET, POST, PUT, DELETE, Access-Control-Allow-Origin: *, X-Ratelimit-Remaining: 197, , 
+[17-03-2019 08:36:20] BlockCypher\Core\BlockCypherHttpConnection: ERROR	: Got Http response code 400 when accessing https://api.blockcypher.com/v1/btc/test3/txs/new?token=cd5222c524f341c3bb80fb185c19fbfe. {
+  "errors": [
+    {
+      "error": "Unable to find a transaction to spend for address mo95AAiFRouU2qWUFHhCvTFHvRWupRkVGW."
+    },
+    {
+      "error": "Not enough funds in 0 inputs to pay for 1 outputs, missing -228123."
+    },
+    {
+      "error": "Not enough funds after fees in 0 inputs to pay for 1 outputs, missing -229823."
+    },
+    {
+      "error": "Error validating generated transaction: Transaction missing input or output."
+    }
+  ],
+  "tx": {
+    "block_height": -1,
+    "block_index": -1,
+    "hash": "bce5f492fcfc024e30af39d2804dc0b51ac6ac959df15edd48c4e2f42b688432",
+    "addresses": [
+      "mn9rCrGmTgzQ4ps6z6KYiiQQ3bHyLAnH8P"
+    ],
+    "total": 228123,
+    "fees": 0,
+    "size": 44,
+    "preference": "low",
+    "relayed_by": "118.141.254.252",
+    "received": "2019-03-17T19:36:22.335761586Z",
+    "ver": 1,
+    "double_spend": false,
+    "vin_sz": 0,
+    "vout_sz": 1,
+    "confirmations": 0,
+    "inputs": [],
+    "outputs": [
+      {
+        "value": 228123,
+        "script": "76a91448cb0fd53ee765c55e61b64f24d937922de5ce2388ac",
+        "addresses": [
+          "mn9rCrGmTgzQ4ps6z6KYiiQQ3bHyLAnH8P"
+        ],
+        "script_type": "pay-to-pubkey-hash"
+      }
+    ]
+  }
+}
+[17-03-2019 08:36:20] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: 
+
+================================================================================================================================
+
+[17-03-2019 08:38:56] BlockCypher\Core\BlockCypherHttpConnection: INFO	: POST https://api.blockcypher.com/v1/btc/test3/txs/new?token=cd5222c524f341c3bb80fb185c19fbfe
+[17-03-2019 08:38:56] BlockCypher\Core\BlockCypherHttpConnection: INFO	: Invalid or no certificate authority found - Retrying using bundled CA certs file
+[17-03-2019 08:38:57] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: Request Headers 	: POST /v1/btc/test3/txs/new?token=cd5222c524f341c3bb80fb185c19fbfe HTTP/1.1, Host: api.blockcypher.com, Accept: */*, Content-Type: application/json, User-Agent: BlockCypherSDK/BlockCypher-PHP-SDK 1.5.0 (lang=PHP;v=5.5.34;bit=32;os=Windows_NT_6.2;machine=i586;openssl=1.0.1s;curl=7.47.1), BlockCypher-Request-Id: 17992155285153630783, Content-Length: 145, , 
+[17-03-2019 08:38:57] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: Request Data		: {"inputs":[{"addresses":["mo95AAiFRouU2qWUFHhCvTFHvRWupRkVGW"]}],"outputs":[{"addresses":["mn9rCrGmTgzQ4ps6z6KYiiQQ3bHyLAnH8P"],"value":228123}]}
+--------------------------------------------------------------------------------------------------------------------------------
+
+[17-03-2019 08:38:57] BlockCypher\Core\BlockCypherHttpConnection: INFO	: Response Status 	: 400
+[17-03-2019 08:38:57] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: Response Headers	: HTTP/1.1 400 Bad Request, Server: nginx/1.10.3 (Ubuntu), Date: Sun, 17 Mar 2019 19:38:59 GMT, Content-Type: application/json, Content-Length: 1204, Connection: keep-alive, Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Access-Control-Allow-Methods: GET, POST, PUT, DELETE, Access-Control-Allow-Origin: *, X-Ratelimit-Remaining: 199, , 
+[17-03-2019 08:38:57] BlockCypher\Core\BlockCypherHttpConnection: ERROR	: Got Http response code 400 when accessing https://api.blockcypher.com/v1/btc/test3/txs/new?token=cd5222c524f341c3bb80fb185c19fbfe. {
+  "errors": [
+    {
+      "error": "Unable to find a transaction to spend for address mo95AAiFRouU2qWUFHhCvTFHvRWupRkVGW."
+    },
+    {
+      "error": "Not enough funds in 0 inputs to pay for 1 outputs, missing -228123."
+    },
+    {
+      "error": "Not enough funds after fees in 0 inputs to pay for 1 outputs, missing -229823."
+    },
+    {
+      "error": "Error validating generated transaction: Transaction missing input or output."
+    }
+  ],
+  "tx": {
+    "block_height": -1,
+    "block_index": -1,
+    "hash": "bce5f492fcfc024e30af39d2804dc0b51ac6ac959df15edd48c4e2f42b688432",
+    "addresses": [
+      "mn9rCrGmTgzQ4ps6z6KYiiQQ3bHyLAnH8P"
+    ],
+    "total": 228123,
+    "fees": 0,
+    "size": 44,
+    "preference": "low",
+    "relayed_by": "118.141.254.252",
+    "received": "2019-03-17T19:38:59.970672627Z",
+    "ver": 1,
+    "double_spend": false,
+    "vin_sz": 0,
+    "vout_sz": 1,
+    "confirmations": 0,
+    "inputs": [],
+    "outputs": [
+      {
+        "value": 228123,
+        "script": "76a91448cb0fd53ee765c55e61b64f24d937922de5ce2388ac",
+        "addresses": [
+          "mn9rCrGmTgzQ4ps6z6KYiiQQ3bHyLAnH8P"
+        ],
+        "script_type": "pay-to-pubkey-hash"
+      }
+    ]
+  }
+}
+[17-03-2019 08:38:57] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: 
+
+================================================================================================================================
+
+[17-03-2019 08:39:11] BlockCypher\Core\BlockCypherHttpConnection: INFO	: POST https://api.blockcypher.com/v1/btc/test3/txs/new?token=cd5222c524f341c3bb80fb185c19fbfe
+[17-03-2019 08:39:11] BlockCypher\Core\BlockCypherHttpConnection: INFO	: Invalid or no certificate authority found - Retrying using bundled CA certs file
+[17-03-2019 08:39:12] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: Request Headers 	: POST /v1/btc/test3/txs/new?token=cd5222c524f341c3bb80fb185c19fbfe HTTP/1.1, Host: api.blockcypher.com, Accept: */*, Content-Type: application/json, User-Agent: BlockCypherSDK/BlockCypher-PHP-SDK 1.5.0 (lang=PHP;v=5.5.34;bit=32;os=Windows_NT_6.2;machine=i586;openssl=1.0.1s;curl=7.47.1), BlockCypher-Request-Id: 17992155285155161982, Content-Length: 145, , 
+[17-03-2019 08:39:12] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: Request Data		: {"inputs":[{"addresses":["mo95AAiFRouU2qWUFHhCvTFHvRWupRkVGW"]}],"outputs":[{"addresses":["mn9rCrGmTgzQ4ps6z6KYiiQQ3bHyLAnH8P"],"value":719712}]}
+--------------------------------------------------------------------------------------------------------------------------------
+
+[17-03-2019 08:39:12] BlockCypher\Core\BlockCypherHttpConnection: INFO	: Response Status 	: 400
+[17-03-2019 08:39:12] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: Response Headers	: HTTP/1.1 400 Bad Request, Server: nginx/1.10.3 (Ubuntu), Date: Sun, 17 Mar 2019 19:39:14 GMT, Content-Type: application/json, Content-Length: 1204, Connection: keep-alive, Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Access-Control-Allow-Methods: GET, POST, PUT, DELETE, Access-Control-Allow-Origin: *, X-Ratelimit-Remaining: 198, , 
+[17-03-2019 08:39:12] BlockCypher\Core\BlockCypherHttpConnection: ERROR	: Got Http response code 400 when accessing https://api.blockcypher.com/v1/btc/test3/txs/new?token=cd5222c524f341c3bb80fb185c19fbfe. {
+  "errors": [
+    {
+      "error": "Unable to find a transaction to spend for address mo95AAiFRouU2qWUFHhCvTFHvRWupRkVGW."
+    },
+    {
+      "error": "Not enough funds in 0 inputs to pay for 1 outputs, missing -719712."
+    },
+    {
+      "error": "Not enough funds after fees in 0 inputs to pay for 1 outputs, missing -721412."
+    },
+    {
+      "error": "Error validating generated transaction: Transaction missing input or output."
+    }
+  ],
+  "tx": {
+    "block_height": -1,
+    "block_index": -1,
+    "hash": "38db6b7c8fe4c5c153a95e637c6e2ef2296ffce80773d21707a5684a9cca7826",
+    "addresses": [
+      "mn9rCrGmTgzQ4ps6z6KYiiQQ3bHyLAnH8P"
+    ],
+    "total": 719712,
+    "fees": 0,
+    "size": 44,
+    "preference": "low",
+    "relayed_by": "118.141.254.252",
+    "received": "2019-03-17T19:39:14.884267453Z",
+    "ver": 1,
+    "double_spend": false,
+    "vin_sz": 0,
+    "vout_sz": 1,
+    "confirmations": 0,
+    "inputs": [],
+    "outputs": [
+      {
+        "value": 719712,
+        "script": "76a91448cb0fd53ee765c55e61b64f24d937922de5ce2388ac",
+        "addresses": [
+          "mn9rCrGmTgzQ4ps6z6KYiiQQ3bHyLAnH8P"
+        ],
+        "script_type": "pay-to-pubkey-hash"
+      }
+    ]
+  }
+}
+[17-03-2019 08:39:12] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: 
+
+================================================================================================================================
+
+[17-03-2019 08:39:56] BlockCypher\Core\BlockCypherHttpConnection: INFO	: GET https://api.blockcypher.com/v1/btc/test3/addrs/mo95AAiFRouU2qWUFHhCvTFHvRWupRkVGW/balance?token=
+[17-03-2019 08:39:56] BlockCypher\Core\BlockCypherHttpConnection: INFO	: Invalid or no certificate authority found - Retrying using bundled CA certs file
+[17-03-2019 08:39:57] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: Request Headers 	: GET /v1/btc/test3/addrs/mo95AAiFRouU2qWUFHhCvTFHvRWupRkVGW/balance?token= HTTP/1.1, Host: api.blockcypher.com, Accept: */*, Content-Type: application/json, User-Agent: BlockCypherSDK/BlockCypher-PHP-SDK 1.5.0 (lang=PHP;v=5.5.34;bit=32;os=Windows_NT_6.2;machine=i586;openssl=1.0.1s;curl=7.47.1), , 
+[17-03-2019 08:39:57] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: No Request Payload
+--------------------------------------------------------------------------------------------------------------------------------
+
+[17-03-2019 08:39:57] BlockCypher\Core\BlockCypherHttpConnection: INFO	: Response Status 	: 200
+[17-03-2019 08:39:57] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: Response Headers	: HTTP/1.1 200 OK, Server: nginx/1.10.3 (Ubuntu), Date: Sun, 17 Mar 2019 19:39:59 GMT, Content-Type: application/json, Content-Length: 218, Connection: keep-alive, Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Access-Control-Allow-Methods: GET, POST, PUT, DELETE, Access-Control-Allow-Origin: *, X-Ratelimit-Remaining: 99, , 
+[17-03-2019 08:39:57] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: Response Data 	: {
+  "address": "mo95AAiFRouU2qWUFHhCvTFHvRWupRkVGW",
+  "total_received": 0,
+  "total_sent": 0,
+  "balance": 0,
+  "unconfirmed_balance": 0,
+  "final_balance": 0,
+  "n_tx": 0,
+  "unconfirmed_n_tx": 0,
+  "final_n_tx": 0
+}
+
+================================================================================================================================
+
+[17-03-2019 08:45:18] BlockCypher\Core\BlockCypherHttpConnection: INFO	: POST https://api.blockcypher.com/v1/btc/test3/txs/new?token=cd5222c524f341c3bb80fb185c19fbfe
+[17-03-2019 08:45:19] BlockCypher\Core\BlockCypherHttpConnection: INFO	: Invalid or no certificate authority found - Retrying using bundled CA certs file
+[17-03-2019 08:45:20] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: Request Headers 	: POST /v1/btc/test3/txs/new?token=cd5222c524f341c3bb80fb185c19fbfe HTTP/1.1, Host: api.blockcypher.com, Accept: */*, Content-Type: application/json, User-Agent: BlockCypherSDK/BlockCypher-PHP-SDK 1.5.0 (lang=PHP;v=5.5.34;bit=32;os=Windows_NT_6.2;machine=i586;openssl=1.0.1s;curl=7.47.1), BlockCypher-Request-Id: 17992155285191832588, Content-Length: 145, , 
+[17-03-2019 08:45:20] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: Request Data		: {"inputs":[{"addresses":["mo95AAiFRouU2qWUFHhCvTFHvRWupRkVGW"]}],"outputs":[{"addresses":["mn9rCrGmTgzQ4ps6z6KYiiQQ3bHyLAnH8P"],"value":228123}]}
+--------------------------------------------------------------------------------------------------------------------------------
+
+[17-03-2019 08:45:20] BlockCypher\Core\BlockCypherHttpConnection: INFO	: Response Status 	: 400
+[17-03-2019 08:45:20] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: Response Headers	: HTTP/1.1 400 Bad Request, Server: nginx/1.10.3 (Ubuntu), Date: Sun, 17 Mar 2019 19:45:22 GMT, Content-Type: application/json, Content-Length: 1204, Connection: keep-alive, Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Access-Control-Allow-Methods: GET, POST, PUT, DELETE, Access-Control-Allow-Origin: *, X-Ratelimit-Remaining: 194, , 
+[17-03-2019 08:45:20] BlockCypher\Core\BlockCypherHttpConnection: ERROR	: Got Http response code 400 when accessing https://api.blockcypher.com/v1/btc/test3/txs/new?token=cd5222c524f341c3bb80fb185c19fbfe. {
+  "errors": [
+    {
+      "error": "Unable to find a transaction to spend for address mo95AAiFRouU2qWUFHhCvTFHvRWupRkVGW."
+    },
+    {
+      "error": "Not enough funds in 0 inputs to pay for 1 outputs, missing -228123."
+    },
+    {
+      "error": "Not enough funds after fees in 0 inputs to pay for 1 outputs, missing -229823."
+    },
+    {
+      "error": "Error validating generated transaction: Transaction missing input or output."
+    }
+  ],
+  "tx": {
+    "block_height": -1,
+    "block_index": -1,
+    "hash": "bce5f492fcfc024e30af39d2804dc0b51ac6ac959df15edd48c4e2f42b688432",
+    "addresses": [
+      "mn9rCrGmTgzQ4ps6z6KYiiQQ3bHyLAnH8P"
+    ],
+    "total": 228123,
+    "fees": 0,
+    "size": 44,
+    "preference": "low",
+    "relayed_by": "118.141.254.252",
+    "received": "2019-03-17T19:45:22.543996191Z",
+    "ver": 1,
+    "double_spend": false,
+    "vin_sz": 0,
+    "vout_sz": 1,
+    "confirmations": 0,
+    "inputs": [],
+    "outputs": [
+      {
+        "value": 228123,
+        "script": "76a91448cb0fd53ee765c55e61b64f24d937922de5ce2388ac",
+        "addresses": [
+          "mn9rCrGmTgzQ4ps6z6KYiiQQ3bHyLAnH8P"
+        ],
+        "script_type": "pay-to-pubkey-hash"
+      }
+    ]
+  }
+}
+[17-03-2019 08:45:20] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: 
+
+================================================================================================================================
+
+[17-03-2019 08:45:28] BlockCypher\Core\BlockCypherHttpConnection: INFO	: GET https://api.blockcypher.com/v1/btc/test3/addrs/mo95AAiFRouU2qWUFHhCvTFHvRWupRkVGW/balance?token=
+[17-03-2019 08:45:28] BlockCypher\Core\BlockCypherHttpConnection: INFO	: Invalid or no certificate authority found - Retrying using bundled CA certs file
+[17-03-2019 08:45:30] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: Request Headers 	: GET /v1/btc/test3/addrs/mo95AAiFRouU2qWUFHhCvTFHvRWupRkVGW/balance?token= HTTP/1.1, Host: api.blockcypher.com, Accept: */*, Content-Type: application/json, User-Agent: BlockCypherSDK/BlockCypher-PHP-SDK 1.5.0 (lang=PHP;v=5.5.34;bit=32;os=Windows_NT_6.2;machine=i586;openssl=1.0.1s;curl=7.47.1), , 
+[17-03-2019 08:45:30] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: No Request Payload
+--------------------------------------------------------------------------------------------------------------------------------
+
+[17-03-2019 08:45:30] BlockCypher\Core\BlockCypherHttpConnection: INFO	: Response Status 	: 200
+[17-03-2019 08:45:30] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: Response Headers	: HTTP/1.1 200 OK, Server: nginx/1.10.3 (Ubuntu), Date: Sun, 17 Mar 2019 19:45:32 GMT, Content-Type: application/json, Content-Length: 218, Connection: keep-alive, Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Access-Control-Allow-Methods: GET, POST, PUT, DELETE, Access-Control-Allow-Origin: *, X-Ratelimit-Remaining: 99, , 
+[17-03-2019 08:45:30] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: Response Data 	: {
+  "address": "mo95AAiFRouU2qWUFHhCvTFHvRWupRkVGW",
+  "total_received": 0,
+  "total_sent": 0,
+  "balance": 0,
+  "unconfirmed_balance": 0,
+  "final_balance": 0,
+  "n_tx": 0,
+  "unconfirmed_n_tx": 0,
+  "final_n_tx": 0
+}
+
+================================================================================================================================
+
+[17-03-2019 08:53:33] BlockCypher\Core\BlockCypherHttpConnection: INFO	: GET https://api.blockcypher.com/v1/btc/test3/addrs/mo95AAiFRouU2qWUFHhCvTFHvRWupRkVGW/balance?token=
+[17-03-2019 08:53:33] BlockCypher\Core\BlockCypherHttpConnection: INFO	: Invalid or no certificate authority found - Retrying using bundled CA certs file
+[17-03-2019 08:53:35] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: Request Headers 	: GET /v1/btc/test3/addrs/mo95AAiFRouU2qWUFHhCvTFHvRWupRkVGW/balance?token= HTTP/1.1, Host: api.blockcypher.com, Accept: */*, Content-Type: application/json, User-Agent: BlockCypherSDK/BlockCypher-PHP-SDK 1.5.0 (lang=PHP;v=5.5.34;bit=32;os=Windows_NT_6.2;machine=i586;openssl=1.0.1s;curl=7.47.1), , 
+[17-03-2019 08:53:35] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: No Request Payload
+--------------------------------------------------------------------------------------------------------------------------------
+
+[17-03-2019 08:53:35] BlockCypher\Core\BlockCypherHttpConnection: INFO	: Response Status 	: 200
+[17-03-2019 08:53:35] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: Response Headers	: HTTP/1.1 200 OK, Server: nginx/1.10.3 (Ubuntu), Date: Sun, 17 Mar 2019 19:53:37 GMT, Content-Type: application/json, Content-Length: 218, Connection: keep-alive, Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Access-Control-Allow-Methods: GET, POST, PUT, DELETE, Access-Control-Allow-Origin: *, X-Ratelimit-Remaining: 99, , 
+[17-03-2019 08:53:35] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: Response Data 	: {
+  "address": "mo95AAiFRouU2qWUFHhCvTFHvRWupRkVGW",
+  "total_received": 0,
+  "total_sent": 0,
+  "balance": 0,
+  "unconfirmed_balance": 0,
+  "final_balance": 0,
+  "n_tx": 0,
+  "unconfirmed_n_tx": 0,
+  "final_n_tx": 0
+}
+
+================================================================================================================================
+
+[17-03-2019 08:53:45] BlockCypher\Core\BlockCypherHttpConnection: INFO	: GET https://api.blockcypher.com/v1/btc/test3/addrs/mo95AAiFRouU2qWUFHhCvTFHvRWupRkVGW/balance?token=
+[17-03-2019 08:53:46] BlockCypher\Core\BlockCypherHttpConnection: INFO	: Invalid or no certificate authority found - Retrying using bundled CA certs file
+[17-03-2019 08:53:47] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: Request Headers 	: GET /v1/btc/test3/addrs/mo95AAiFRouU2qWUFHhCvTFHvRWupRkVGW/balance?token= HTTP/1.1, Host: api.blockcypher.com, Accept: */*, Content-Type: application/json, User-Agent: BlockCypherSDK/BlockCypher-PHP-SDK 1.5.0 (lang=PHP;v=5.5.34;bit=32;os=Windows_NT_6.2;machine=i586;openssl=1.0.1s;curl=7.47.1), , 
+[17-03-2019 08:53:47] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: No Request Payload
+--------------------------------------------------------------------------------------------------------------------------------
+
+[17-03-2019 08:53:47] BlockCypher\Core\BlockCypherHttpConnection: INFO	: Response Status 	: 200
+[17-03-2019 08:53:47] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: Response Headers	: HTTP/1.1 200 OK, Server: nginx/1.10.3 (Ubuntu), Date: Sun, 17 Mar 2019 19:53:49 GMT, Content-Type: application/json, Content-Length: 218, Connection: keep-alive, Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Access-Control-Allow-Methods: GET, POST, PUT, DELETE, Access-Control-Allow-Origin: *, X-Ratelimit-Remaining: 98, , 
+[17-03-2019 08:53:47] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: Response Data 	: {
+  "address": "mo95AAiFRouU2qWUFHhCvTFHvRWupRkVGW",
+  "total_received": 0,
+  "total_sent": 0,
+  "balance": 0,
+  "unconfirmed_balance": 0,
+  "final_balance": 0,
+  "n_tx": 0,
+  "unconfirmed_n_tx": 0,
+  "final_n_tx": 0
+}
+
+================================================================================================================================
+
+[17-03-2019 08:59:05] BlockCypher\Core\BlockCypherHttpConnection: INFO	: POST https://api.blockcypher.com/v1/btc/test3/txs/new?token=cd5222c524f341c3bb80fb185c19fbfe
+[17-03-2019 08:59:05] BlockCypher\Core\BlockCypherHttpConnection: INFO	: Invalid or no certificate authority found - Retrying using bundled CA certs file
+[17-03-2019 08:59:06] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: Request Headers 	: POST /v1/btc/test3/txs/new?token=cd5222c524f341c3bb80fb185c19fbfe HTTP/1.1, Host: api.blockcypher.com, Accept: */*, Content-Type: application/json, User-Agent: BlockCypherSDK/BlockCypher-PHP-SDK 1.5.0 (lang=PHP;v=5.5.34;bit=32;os=Windows_NT_6.2;machine=i586;openssl=1.0.1s;curl=7.47.1), BlockCypher-Request-Id: 17992155285274456712, Content-Length: 145, , 
+[17-03-2019 08:59:06] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: Request Data		: {"inputs":[{"addresses":["mzsyCjrnoCBA5ruhFfqUfDFnjF9wR5sNvk"]}],"outputs":[{"addresses":["mn9rCrGmTgzQ4ps6z6KYiiQQ3bHyLAnH8P"],"value":228123}]}
+--------------------------------------------------------------------------------------------------------------------------------
+
+[17-03-2019 08:59:06] BlockCypher\Core\BlockCypherHttpConnection: INFO	: Response Status 	: 201
+[17-03-2019 08:59:06] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: Response Headers	: HTTP/1.1 201 Created, Server: nginx/1.10.3 (Ubuntu), Date: Sun, 17 Mar 2019 19:59:08 GMT, Content-Type: application/json, Content-Length: 1490, Connection: keep-alive, Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Access-Control-Allow-Methods: GET, POST, PUT, DELETE, Access-Control-Allow-Origin: *, X-Ratelimit-Remaining: 192, , 
+[17-03-2019 08:59:06] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: Response Data 	: {
+  "tx": {
+    "block_height": -1,
+    "block_index": -1,
+    "hash": "9c8513386d62f442f7507428297b0be5f113f1214a77adaf807daa984df7db0a",
+    "addresses": [
+      "mzsyCjrnoCBA5ruhFfqUfDFnjF9wR5sNvk",
+      "mn9rCrGmTgzQ4ps6z6KYiiQQ3bHyLAnH8P"
+    ],
+    "total": 14906142,
+    "fees": 4700,
+    "size": 119,
+    "preference": "high",
+    "relayed_by": "118.141.254.252",
+    "received": "2019-03-17T19:59:08.486176296Z",
+    "ver": 1,
+    "double_spend": false,
+    "vin_sz": 1,
+    "vout_sz": 2,
+    "confirmations": 0,
+    "inputs": [
+      {
+        "prev_hash": "8ca861f1d682679b6b90e79ce5c60f2b09862ddd69d8616700697daf855ea9f8",
+        "output_index": 1,
+        "output_value": 14910842,
+        "sequence": 4294967295,
+        "addresses": [
+          "mzsyCjrnoCBA5ruhFfqUfDFnjF9wR5sNvk"
+        ],
+        "script_type": "pay-to-pubkey-hash",
+        "age": 1484801
+      }
+    ],
+    "outputs": [
+      {
+        "value": 228123,
+        "script": "76a91448cb0fd53ee765c55e61b64f24d937922de5ce2388ac",
+        "addresses": [
+          "mn9rCrGmTgzQ4ps6z6KYiiQQ3bHyLAnH8P"
+        ],
+        "script_type": "pay-to-pubkey-hash"
+      },
+      {
+        "value": 14678019,
+        "script": "76a914d463e22409916ad41067b67ce9a09b72571e08f388ac",
+        "addresses": [
+          "mzsyCjrnoCBA5ruhFfqUfDFnjF9wR5sNvk"
+        ],
+        "script_type": "pay-to-pubkey-hash"
+      }
+    ]
+  },
+  "tosign": [
+    "eee656e441822491549fc946797331ed2c162d5ebe1dd51ccac2708c95d1e248"
+  ]
+}
+
+================================================================================================================================
+
+[17-03-2019 08:59:06] BlockCypher\Validation\ModelAccessorValidator: DEBUG	: Missing Accessor: BlockCypher\Api\TX:setBlockIndex. You might be using older version of SDK. If not, create an issue at https://github.com/blockcypher/php-client/issues
+[17-03-2019 08:59:06] BlockCypher\Validation\ModelAccessorValidator: DEBUG	: Missing Accessor: BlockCypher\Api\TX:setBlockIndex. You might be using older version of SDK. If not, create an issue at https://github.com/blockcypher/php-client/issues
+[08-04-2019 07:22:01] BlockCypher\Core\BlockCypherHttpConnection: INFO	: POST https://api.blockcypher.com/v1/btc/test3/txs/new?token=cd5222c524f341c3bb80fb185c19fbfe
+[08-04-2019 07:22:01] BlockCypher\Core\BlockCypherHttpConnection: INFO	: Invalid or no certificate authority found - Retrying using bundled CA certs file
+[08-04-2019 07:22:02] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: Request Headers 	: POST /v1/btc/test3/txs/new?token=cd5222c524f341c3bb80fb185c19fbfe HTTP/1.1, Host: api.blockcypher.com, Accept: */*, Content-Type: application/json, User-Agent: BlockCypherSDK/BlockCypher-PHP-SDK 1.5.0 (lang=PHP;v=5.5.34;bit=32;os=Windows_NT_6.2;machine=i586;openssl=1.0.1s;curl=7.47.1), BlockCypher-Request-Id: 16020155470092035780, Content-Length: 145, , 
+[08-04-2019 07:22:02] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: Request Data		: {"inputs":[{"addresses":["mzsyCjrnoCBA5ruhFfqUfDFnjF9wR5sNvk"]}],"outputs":[{"addresses":["mn9rCrGmTgzQ4ps6z6KYiiQQ3bHyLAnH8P"],"value":719712}]}
+--------------------------------------------------------------------------------------------------------------------------------
+
+[08-04-2019 07:22:02] BlockCypher\Core\BlockCypherHttpConnection: INFO	: Response Status 	: 201
+[08-04-2019 07:22:02] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: Response Headers	: HTTP/1.1 201 Created, Server: nginx/1.10.3 (Ubuntu), Date: Mon, 08 Apr 2019 05:22:04 GMT, Content-Type: application/json, Content-Length: 1491, Connection: keep-alive, Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Access-Control-Allow-Methods: GET, POST, PUT, DELETE, Access-Control-Allow-Origin: *, X-Ratelimit-Remaining: 199, , 
+[08-04-2019 07:22:02] BlockCypher\Core\BlockCypherHttpConnection: DEBUG	: Response Data 	: {
+  "tx": {
+    "block_height": -1,
+    "block_index": -1,
+    "hash": "ca6f60e1f961bba61a18276cf1ad9bf0c1dd1c95206e49335f436d4ddff8843a",
+    "addresses": [
+      "mzsyCjrnoCBA5ruhFfqUfDFnjF9wR5sNvk",
+      "mn9rCrGmTgzQ4ps6z6KYiiQQ3bHyLAnH8P"
+    ],
+    "total": 14876742,
+    "fees": 34100,
+    "size": 119,
+    "preference": "high",
+    "relayed_by": "175.159.198.228",
+    "received": "2019-04-08T05:22:04.086705557Z",
+    "ver": 1,
+    "double_spend": false,
+    "vin_sz": 1,
+    "vout_sz": 2,
+    "confirmations": 0,
+    "inputs": [
+      {
+        "prev_hash": "8ca861f1d682679b6b90e79ce5c60f2b09862ddd69d8616700697daf855ea9f8",
+        "output_index": 1,
+        "output_value": 14910842,
+        "sequence": 4294967295,
+        "addresses": [
+          "mzsyCjrnoCBA5ruhFfqUfDFnjF9wR5sNvk"
+        ],
+        "script_type": "pay-to-pubkey-hash",
+        "age": 1484801
+      }
+    ],
+    "outputs": [
+      {
+        "value": 719712,
+        "script": "76a91448cb0fd53ee765c55e61b64f24d937922de5ce2388ac",
+        "addresses": [
+          "mn9rCrGmTgzQ4ps6z6KYiiQQ3bHyLAnH8P"
+        ],
+        "script_type": "pay-to-pubkey-hash"
+      },
+      {
+        "value": 14157030,
+        "script": "76a914d463e22409916ad41067b67ce9a09b72571e08f388ac",
+        "addresses": [
+          "mzsyCjrnoCBA5ruhFfqUfDFnjF9wR5sNvk"
+        ],
+        "script_type": "pay-to-pubkey-hash"
+      }
+    ]
+  },
+  "tosign": [
+    "5dfaa7b7ef0293833f36e728ca94ac7ef17248d2c3197f90c157db52463ba10d"
+  ]
+}
+
+================================================================================================================================
+
+[08-04-2019 07:22:02] BlockCypher\Validation\ModelAccessorValidator: DEBUG	: Missing Accessor: BlockCypher\Api\TX:setBlockIndex. You might be using older version of SDK. If not, create an issue at https://github.com/blockcypher/php-client/issues
+[08-04-2019 07:22:02] BlockCypher\Validation\ModelAccessorValidator: DEBUG	: Missing Accessor: BlockCypher\Api\TX:setBlockIndex. You might be using older version of SDK. If not, create an issue at https://github.com/blockcypher/php-client/issues

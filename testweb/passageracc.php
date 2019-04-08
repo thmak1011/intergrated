@@ -1,5 +1,6 @@
-<?php include ('server.php') ?>
-<?php include ('api.php') ?>
+<?php include ('server.php'); ?>
+<?php require_once("api.php") ?>
+
 
 <?php if(!isset($_COOKIE['login']) || !isset($_COOKIE['type'])) {
         header('location: index.php');
@@ -120,9 +121,9 @@
                     <div class="col-lg-8 d-none d-xl-block">
                         <nav class="mainmenu alignright">
                             <ul>
-                                <li class="active"><a href="request.php">Start a Request</a></li>
+                                
 
-                                <li><a href="passageracc.php">Account Setting</a></li>
+                                <li class="active"><a href="request.php">Start a Request</a></li>
 
                                 <li><a href="changepw.php">Change Password</a></li>
 
@@ -276,9 +277,9 @@
                         echo "<button type = \"submit\" name = \"set_wallet\"> Set your BitCoin wallet </button>";
                         echo "</form>";
                       }else{
-                        $wallet = new Wallet;
-                        $wallet->setMasterAddr($wallet_addr);
-                        echo $wallet->getMasterBalance();
+                        $wallet = new MyWallet($wallet_addr);
+                        //$wallet->setMasterAddr($wallet_addr);
+                        echo $wallet->getMasterAddrBalance()*0.0003;
                       }?>
                       </div>
                     </div>
@@ -294,7 +295,7 @@
     
     
 
-    
+  
 
     
 

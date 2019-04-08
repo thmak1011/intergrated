@@ -1,6 +1,0 @@
-{
-    "require": {
-        "bitwasp/bitcoin": "0.0.7.1",
-        "blockcypher/php-client": "1.5.0"
-    }
-}

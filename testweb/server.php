@@ -1,4 +1,5 @@
 <?php session_start();?>
+<?php require_once("api.php") ?>
 
 <?php
 // initializing variables
@@ -28,7 +29,7 @@ if (isset($_POST['reg_user'])) {
   $cclass = $_POST['cclass'];
   $cmodel = mysqli_real_escape_string($db, $_POST['cmodel']);
   $cplate = mysqli_real_escape_string($db, $_POST['cplate']);
-  $image = $_FILES['fileToUpload']['tmp_name'];
+  $image = $_FILES['fileToUpload']['name'];
 
 
   // form validation: ensure that the form is correctly filled ...
@@ -109,8 +110,11 @@ if (isset($_POST['reg_user'])) {
                 $query = "INSERT INTO user (Username, Fullname, Phone_No, Email, Password, Type) 
   			                  VALUES('$username', '$fullname', '$phone', '$email', '$hashpsw', '$type');";
                 mysqli_query($db, $query); 
-                $query = "INSERT INTO driver (Username, Car_class, Car_model, Car_plate_No, Image) 
-  			                  VALUES('$username', '$cclass', '$cmodel', '$cplate', '$image');";
+                //$imagetmp = addslashes(file_get_contents($_FILES['fileToUpload']['tmp_name']));
+                $folder="/xampp/htdocs/images/";
+                move_uploaded_file($image = $_FILES['fileToUpload']['tmp_name'], "$folder".$image = $_FILES['fileToUpload']['name']);
+                $query = "INSERT INTO driver (Username, Car_class, Car_model, Car_plate_No, ImagePath, Image) 
+  			                  VALUES('$username', '$cclass', '$cmodel', '$cplate', '$folder', '$image');";
               	mysqli_query($db, $query);
 	  
                     setcookie('login', $username);
@@ -137,10 +141,24 @@ if (isset($_POST['validate'])){
   } 
 }
 
+// if submitted check response
+
 if (isset($_POST['login_user'])) {
+  sleep(2); 
   $username = mysqli_real_escape_string($db, $_POST['uname']);
   $password = mysqli_real_escape_string($db, $_POST['psw']);
+  $response = null;
 
+  /*if ($_POST["g-recaptcha-response"]) {
+    $response = $reCaptcha->verifyResponse(
+        $_SERVER["REMOTE_ADDR"],
+        $_POST["g-recaptcha-response"]
+    );
+  }
+  if (!($response != null && $response->success)) {
+    array_push($errors, "ReCAPTCHA identification fails");
+  }*/
+  
   if (empty($username)) {
   	array_push($errors, "Username is required");
   }
@@ -595,7 +613,7 @@ if (isset($_POST['dispute'])){
     $dispute = $results->fetch_object()->Dispute_value;
     $_SESSION['RID'] = $RID;
     $_SESSION['dispute'] = $dispute;
-    header('location: payment.php');
+    header('location: paydispute.php');
   }
 
   if (isset($_POST['pay_dispute'])){
@@ -607,8 +625,8 @@ if (isset($_POST['dispute'])){
   if (!$results) {
     echo "Error: %s\n". mysqli_error($db);
   exit();}
-  $wallet_addr = $results->fetch_object()->Wallet_addr;
-  if (is_null($wallet_addr)){
+  $driver_addr = $results->fetch_object()->Wallet_addr;
+  if (is_null($driver_addr)){
     header('location: passageracc.php');
   }
   $query = "SELECT * FROM request WHERE Request_ID = $RID";
@@ -623,9 +641,9 @@ if (isset($_POST['dispute'])){
     echo "Error: %s\n". mysqli_error($db);
   exit();}
   $passager_addr = $results->fetch_object()->Wallet_addr;
-  $passager_wallet = new Wallet;
-  $driver_wallet = new Wallet;
-  $driver_wallet->sendPayment($passager_addr, $key, $dispute);
+  //$passager_wallet = new MyWallet($passager_addr);
+  $driver_wallet = new MyWallet($driver_addr);
+  $driver_wallet->sendPayment($passager_addr, $key, $dispute*3,212);
   $query = "UPDATE request SET Dispute = 0 WHERE Request_ID = '$RID'";
     $results = mysqli_query($db, $query);
     if (!$results) {
@@ -871,8 +889,8 @@ if(isset($_POST['payment'])){
   if (!$results) {
     echo "Error: %s\n". mysqli_error($db);
   exit();}
-  $wallet_addr = $results->fetch_object()->Wallet_addr;
-  if (is_null($wallet_addr)){
+  $passager_addr = $results->fetch_object()->Wallet_addr;
+  if (is_null($passager_addr)){
     header('location: passageracc.php');
   }
   $query = "SELECT * FROM request WHERE Request_ID = $RID";
@@ -887,10 +905,10 @@ if(isset($_POST['payment'])){
     echo "Error: %s\n". mysqli_error($db);
   exit();}
   $driver_addr = $results->fetch_object()->Wallet_addr;
-  $passager_wallet = new Wallet;
-  $driver_wallet = new Wallet;
-  $total = $fee + $tips;
-  $passager_wallet->sendPayment($driver_addr, $key, $total);
+  $passager_wallet = new MyWallet($passager_addr);
+  //$driver_wallet = new MyWallet($driver_addr);
+  $total = ($fee + $tips)*3213;
+  $record = $passager_wallet->sendPayment($driver_addr, $key, $total);
   $query = "UPDATE request SET Paid = 1, Tips = '$tips' WHERE Request_ID = '$RID'";
     $results = mysqli_query($db, $query);
     if (!$results) {

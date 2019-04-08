@@ -1,4 +1,5 @@
 <?php include ('server.php') ?>
+<?php require_once("api.php") ?>
 
 <?php if(!isset($_COOKIE['login']) || !isset($_COOKIE['type'])) {
         header('location: index.php');
@@ -23,8 +24,10 @@
       $phone = $result->fetch_object()->Phone_No;
       $result = mysqli_query($db, $query);
       $username = $result->fetch_object()->Username;
+      $result = mysqli_query($db, $query);
+      $wallet_addr = $result->fetch_object()->Wallet_addr;
 
-      $query2 = "SELECT Car_class, Car_plate_No, Car_model FROM user, driver WHERE user.Username = driver.Username";
+      $query2 = "SELECT Car_class, Car_plate_No, Car_model, ImagePath, Image FROM driver WHERE Username = '$username'";
       $driver = mysqli_query($db, $query2);
       if (!$driver) {
         echo "Error: %s\n". mysqli_error($db);
@@ -35,8 +38,10 @@
       $model = $driver->fetch_object()->Car_model;
       $driver = mysqli_query($db, $query2);
       $plate = $driver->fetch_object()->Car_plate_No;
-
-
+      $driver = mysqli_query($db, $query2);
+      $image_name = $driver->fetch_object()->Image;
+      $driver = mysqli_query($db, $query2);
+      $image_path = $driver->fetch_object()->ImagePath;
   }
 ?>
 <!DOCTYPE html>
@@ -118,8 +123,6 @@
                     <div class="col-lg-8 d-none d-xl-block">
                         <nav class="mainmenu alignright">
                             <ul>
-                                <li><a href="driveracc.php">Account Setting</a></li>
-
                                 <li><a href="changepw.php">Change Password</a></li>
 
 								                <li><a href="logout.php">LOG OUT</a></li>
@@ -164,6 +167,7 @@
                   <td>
                     <div class="content">
                       <div class="txt">
+                        <?php echo "img src=".$image_path."/".$image_name." width=100 height=100"?>
                         Full Name:
                       </div>
                     </div>
@@ -288,9 +292,9 @@
                         echo "<button type = \"submit\" name = \"set_wallet\"> Set your BitCoin wallet </button>";
                         echo "</form>";
                       }else{
-                        $wallet = new Wallet;
-                        $wallet->setMasterAddr($wallet_addr);
-                        echo $wallet->getMasterBalance();
+                        $wallet = new MyWallet($wallet_addr);
+                        //$wallet->setMasterAddr($wallet_addr);
+                        echo $wallet->getMasterAddrBalance()*0.0003;
                       }?>
                       </div>
                     </div>

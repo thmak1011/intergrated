@@ -1,4 +1,17 @@
 ﻿<?php include ('server.php') ?>
+<?php 
+
+// grab recaptcha library
+require_once "recaptchalib.php"; 
+// your secret key
+$secret = "6LcePAATAAAAABjXaTsy7gwcbnbaF5XgJKwjSNwT";
+ 
+// empty response
+$response = null;
+ 
+// check secret key
+$reCaptcha = new ReCaptcha($secret);
+?>
 <?php if(isset($_COOKIE['login']) && isset($_COOKIE['type'])) {
 		header('location: '.$_COOKIE['type'].'homepage.php');
 }?>
@@ -103,6 +116,8 @@
 
                                             <label for="psw"><b  class="form-text">Password</b></label>
                                             <input type="password" placeholder="Enter Password" name="psw" required>
+                                            
+                                            <div class="g-recaptcha" data-sitekey="6LeZzZwUAAAAAA5fB7u9mTlEul22Je5cEcB2bqq2"></div>
 
                                             <button class="submit-btn" type="submit" name = "login_user" style="border-radius: 4px;">Log in</button>
                                             <label>
@@ -131,6 +146,7 @@
         </div>
         <!--== Header Bottom End ==-->
     </header>
+    <script src='https://www.google.com/recaptcha/api.js'></script>
 	<?php include('errors.php'); ?>
     <!--== Header Area End ==-->
 
@@ -141,69 +157,15 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-5">
-                        <div class="book-a-car">
-                            <form action="index.php">
-
-                                <!--== Pick Up Date ==-->
-                                <div class="pick-up-date book-item">
-                                    <h4>PICK-UP DATE:</h4>
-                                    <input id="startDate" placeholder="Pick Up Date" />
-
-                                </div>
-                                <!--== Pick Up Location ==-->
-
-                                <!--== Car Choose ==-->
-                                <div class="choose-car-type book-item">
-                                    <h4>CHOOSE CAR TYPE:</h4>
-                                    <select class="custom-select">
-                                      <option selected>Select</option>
-                                      <option value="1">BMW</option>
-                                      <option value="2">Audi</option>
-                                      <option value="3">Lexus</option>
-                                    </select>
-                                </div>
-                                <!--== Car Choose ==-->
-
-                                <div class="book-button text-center">
-                                    <button class="book-now-btn" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Book Now</button>
-									<div id="id01" class="modal">
-									<form method = "post" class="modal-content  animate" action="index.php">
-								
-                                        <div class="container">
-                                            <label for="uname"><b  class="form-text">Username</b></label>
-                                            <input type="text" placeholder="Enter Username" name="uname" required>
-
-                                            <label for="psw"><b  class="form-text">Password</b></label>
-                                            <input type="password" placeholder="Enter Password" name="psw" required>
-
-                                            <button class="submit-btn" type="submit" name = "login_user" style="border-radius: 4px;">Log in</button>
-                                            <label>
-                                                <input type="checkbox" checked="checked" name="remember"> Remember me
-                                            </label>
-                                        </div>
-
-                                        <div class="container" style="background-color:#393D44">
-                                            <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-
-
-                                            <span class="psw">
-                                                 <a  class="form-link" href="register.php" >Sign Up?</a>
-                                                <a class="form-link" href="" >Forgot password?</a>
-										 </span>
-                                        </div>
-                                    </form>
-									</div>
-                                </div>
-                            </form>
-                        </div>
+                        
                     </div>
 
                     <div class="col-lg-7 text-right">
                         <div class="display-table">
                             <div class="display-table-cell">
                                 <div class="slider-right-text">
-                                    <h1>BOOK A CAR TODAY!</h1>
-                                    <p>FOR AS LOW AS $10 A DAY PLUS 15% DISCOUNT <br> FOR OUR RETURNING CUSTOMERS</p>
+                                    <h1>HAVE A RIDE TODAY!</h1>
+                                    <p>PolyUber is a ridesharing service for fast, reliable rides in minutes. <br> With PolyUber, you just tap to request a ride. <br> Login and request your ride now!</p>
                                 </div>
                             </div>
                         </div>
