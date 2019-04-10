@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- 主機: 127.0.0.1
--- 產生時間： 2019-04-08 10:33:26
+-- 產生時間： 2019-04-10 13:43:14
 -- 伺服器版本: 10.1.13-MariaDB
 -- PHP 版本： 5.5.34
 
@@ -42,8 +42,8 @@ CREATE TABLE `driver` (
 --
 
 INSERT INTO `driver` (`Username`, `Car_class`, `Car_plate_No`, `ImagePath`, `Image`, `Car_model`) VALUES
-('aristotle', '4-Passenger Vehicles', 'D1230', '', 'D:xampp	mpphp37DC.tmp', 'BMW'),
-('plato', '4-Passenger Vehicles', 'CX1526', 'D:/xampp/htdocs/images/', 'Plato.jpg', 'BMW');
+('aristotle', '4-Passenger Vehicles', 'D1230', 'images/Aristotle.jpg', 'Aristotle.jpg', 'BMW'),
+('plato', '7-Passenger Vehicles', 'CX5629', 'images/Plato.jpg', 'Plato.jpg', 'ADW');
 
 -- --------------------------------------------------------
 
@@ -94,8 +94,9 @@ CREATE TABLE `request` (
 --
 
 INSERT INTO `request` (`Request_ID`, `Request_time`, `Pickup_time`, `Complete_time`, `PassagerName`, `DriverName`, `Start_location`, `Destination`, `Suggested_Fee`, `Final_Fee`, `Tips`, `Acceptance`, `Completance`, `Paid`, `Dispute`, `Dispute_value`) VALUES
-(18, '2019-03-11 06:45:41', '2019-02-18 19:30:00', '2019-03-11 09:40:07', 'socrates', 'aristotle', 'é¦™æ¸¯æŽƒæ¡¿åŸ”æ¨‚æ™¯è‡ºDè™Ÿ', 'V city, 83 Tuen Mun Heung Sze Wui Rd, Tuen Mun, é¦™æ¸¯', 227.66, 224, 0, 1, 1, 0, 0, 24),
-(19, '2019-03-11 10:56:43', '2019-02-18 19:30:00', '2019-03-11 10:57:08', 'socrates', 'aristotle', 'Suite 1305, Exchange Square Block 1 And 2, 8 Connaught Pl, Central, é¦™æ¸¯', 'é¦™æ¸¯ä¹é¾å¡˜åŠæ©‹é“6è™Ÿ', 69.28, 71, 0, 1, 1, 0, 0, NULL);
+(18, '2019-03-11 06:45:41', '2019-02-18 19:30:00', '2019-03-11 09:40:07', 'socrates', 'aristotle', 'é¦™æ¸¯æŽƒæ¡¿åŸ”æ¨‚æ™¯è‡ºDè™Ÿ', 'V city, 83 Tuen Mun Heung Sze Wui Rd, Tuen Mun, é¦™æ¸¯', 227.66, 224, 0, 1, 1, 1, 0, 24),
+(19, '2019-03-11 10:56:43', '2019-02-18 19:30:00', '2019-03-11 10:57:08', 'socrates', 'aristotle', 'Suite 1305, Exchange Square Block 1 And 2, 8 Connaught Pl, Central, é¦™æ¸¯', 'é¦™æ¸¯ä¹é¾å¡˜åŠæ©‹é“6è™Ÿ', 69.28, 71, 0, 1, 1, 1, 0, NULL),
+(20, '2019-04-10 11:26:36', '2019-02-18 19:30:00', '2019-04-10 11:38:59', 'socrates', 'aristotle', 'é¦™æ¸¯éŠ…é‘¼ç£é›»æ°£é“118è™Ÿ', 'é¦™æ¸¯æ—ºè§’æ—ºè§’äºžçš†è€è¡—65è™ŸG16A-Cèˆ– (æ–°ä¹‹åŸŽåœ°ä¸‹)', 91.47, 90.5, 1, 1, 1, 1, 0, NULL);
 
 -- --------------------------------------------------------
 
@@ -110,17 +111,18 @@ CREATE TABLE `user` (
   `Phone_No` int(8) NOT NULL,
   `Password` varchar(45) NOT NULL,
   `Type` varchar(45) NOT NULL,
-  `Wallet_addr` text
+  `Wallet_addr` text,
+  `vercode` double DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- 資料表的匯出資料 `user`
 --
 
-INSERT INTO `user` (`Username`, `Fullname`, `Email`, `Phone_No`, `Password`, `Type`, `Wallet_addr`) VALUES
-('aristotle', 'Aristotle Ethinz', 'testingelementalpha@gmail.com', 89472831, 'e8511d36e7a7fdb42c2ac44333260e56', 'driver', 'mn9rCrGmTgzQ4ps6z6KYiiQQ3bHyLAnH8P'),
-('plato', 'Plato Pluto', 'testingelementbeta@gmail.com', 38294712, '056bdb24c6743824202ee45910a09a0d', 'driver', NULL),
-('socrates', 'Socrates Philo', 'testingelementzero@gmail.com', 79726392, 'e06dab3dfe2888c46dc31f0ffce9c530', 'passager', 'mzsyCjrnoCBA5ruhFfqUfDFnjF9wR5sNvk');
+INSERT INTO `user` (`Username`, `Fullname`, `Email`, `Phone_No`, `Password`, `Type`, `Wallet_addr`, `vercode`) VALUES
+('aristotle', 'Aristotle Ethinz', 'testingelementalpha@gmail.com', 89472831, 'e8511d36e7a7fdb42c2ac44333260e56', 'driver', 'mn9rCrGmTgzQ4ps6z6KYiiQQ3bHyLAnH8P', 71),
+('plato', 'Plato Pluto', 'testingelementbeta@gmail.com', 12345678, '056bdb24c6743824202ee45910a09a0d', 'driver', NULL, NULL),
+('socrates', 'Socrates Philo', 'testingelementzero@gmail.com', 79726392, 'e06dab3dfe2888c46dc31f0ffce9c530', 'passager', 'mzsyCjrnoCBA5ruhFfqUfDFnjF9wR5sNvk', 8761.08);
 
 --
 -- 已匯出資料表的索引
@@ -164,7 +166,7 @@ ALTER TABLE `user`
 -- 使用資料表 AUTO_INCREMENT `request`
 --
 ALTER TABLE `request`
-  MODIFY `Request_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `Request_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 --
 -- 已匯出資料表的限制(Constraint)
 --

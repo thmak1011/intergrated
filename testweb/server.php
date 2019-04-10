@@ -6,7 +6,7 @@
 $username = "";
 $email    = "";
 $errors = array(); 
-$auth_code = array("AU82SAER", "2HS7YA92", "28JSNUDA", "8H28SJUB", "1HSHYAGY", "12GYMCNSZ", "27HSABCIAQ", "DH7G2JVC", "9J9JVNAUB", "S74R78UR5T");
+$auth_code = array("AU82SAER", "2HS7YA92", "28JSNUDA", "8H28SJUB", "1HSHYAGY", "12GYCNSZ", "27HSABCQ", "DH7G2JVC", "9J9VNAUB", "S4R78U5T");
 $secret_word = 'Dirty Deeds Done Dirt Cheap';
 
 // connect to the database
@@ -50,6 +50,8 @@ if (isset($_POST['reg_user'])) {
     if (empty($cmodel)) { array_push($errors, "Car model is required"); }
     if (empty($cplate)) { array_push($errors, "Car plate number is required"); }
     if (empty($image)) { array_push($errors, "Self image is required"); }
+    if (($_FILES['fileToUpload']['type'] != "jpg") || ($_FILES['fileToUpload']['type'] != "jpeg") || ($_FILES['fileToUpload']['type'] != "png")) { array_push($errors, "File type is invalid, accepted type: jpg jpeg png"); }
+    if (!getimagesize($_FILES['fileToUpload']['tmpname'])) {array_push($errors,"Your file is invalid or corrupted, please check");}
   }
     
 
@@ -298,7 +300,7 @@ if (isset($_POST['reset'])) {
 }
 
 if (isset($_POST['delete_request'])) {
-  $RID = $_POST['delete_request'];
+  $RID = mysqli_real_escape_string($db, $_POST['delete_request']);
   $query = "SELECT * FROM request WHERE Request_ID = $RID";
   $results = mysqli_query($db, $query);
   if (!$results) {
@@ -432,7 +434,7 @@ if (isset($_POST['delete_request'])) {
 }
 
 if (isset($_POST['accept_request'])) {
-  $RID = $_POST['accept_request'];
+  $RID = mysqli_real_escape_string($db, $_POST['accept_request']);
   $username = $_COOKIE['login'];
   $query = "UPDATE request SET DriverName = '$username', Acceptance = 1 WHERE Request_ID = '$RID'"; 
 	$results = mysqli_query($db, $query);
@@ -449,8 +451,8 @@ if (isset($_POST['completing'])) {
 }
 
 if (isset($_POST['complete_request'])) {
-  $RID = $_POST['complete_request'];
-  $fee = $_POST['fee'];
+  $RID = mysqli_real_escape_string($db, $_POST['complete_request']);
+  $fee = mysqli_real_escape_string($db, $_POST['fee']);
 
   if (empty($fee)) { array_push($errors, "Total charge is required"); }
 
@@ -463,13 +465,13 @@ if (isset($_POST['complete_request'])) {
 }
 
 if (isset($_POST['request'])){
-  $origin = $_COOKIE['origin'];
-  $destination = $_COOKIE['destination'];
-  $duration = $_COOKIE['duration'];
+  $origin = mysqli_real_escape_string($db, $_COOKIE['origin']);
+  $destination = mysqli_real_escape_string($db, $_COOKIE['destination']);
+  $duration = mysqli_real_escape_string($db, $_COOKIE['duration']);
   $time = date('Y-m-d h:i:s');
-  $pickup = $_POST['meeting-time'];
-  $total = $_COOKIE['distance'];
-  $username = $_COOKIE['login'];
+  $pickup = mysqli_real_escape_string($db, $_POST['meeting-time']);
+  $total = mysqli_real_escape_string($db, $_COOKIE['distance']);
+  $username = mysqli_real_escape_string($db, $_COOKIE['login']);
   if($total<=2){
     $suggested_fee=30;
   }
@@ -498,15 +500,15 @@ if (isset($_POST['request'])){
 }
 
 if (isset($_POST['disputing'])){
-  $RID = $_POST['disputing'];
+  $RID = mysqli_real_escape_string($db, $_POST['disputing']);
   $_SESSION['RID'] = $RID;
   header('location: dispute.php');
 }
 
 if (isset($_POST['dispute'])){
-  $RID = $_POST['dispute'];
-  $reason = $_POST['reason'];
-  $revert = $_POST['revert'];
+  $RID = mysqli_real_escape_string($db, $_POST['dispute']);
+  $reason = mysqli_real_escape_string($db, $_POST['reason']);
+  $revert = mysqli_real_escape_string($db, $_POST['revert']);
   $query = "SELECT * FROM request WHERE Request_ID = $RID";
   $results = mysqli_query($db, $query);
   if (!$results) {
@@ -604,7 +606,7 @@ if (isset($_POST['dispute'])){
   }
 
   if (isset($_POST['accept_dispute'])){
-    $RID = $_POST['accept_dispute'];
+    $RID = mysqli_real_escape_string($db, $_POST['accept_dispute']);
     $query = "SELECT * FROM request WHERE Request_ID = '$RID'"; 
         $results = mysqli_query($db, $query);
         if (!$results) {
@@ -618,9 +620,9 @@ if (isset($_POST['dispute'])){
   }
 
   if (isset($_POST['pay_dispute'])){
-    $key = $_POST['key'];
+    $key = mysqli_real_escape_string($db, $_POST['key']);
     $dispute = $_SESSION['dispute'];
-    $username = $_COOKIE['login'];
+    $username = mysqli_real_escape_string($db, $_COOKIE['login']);
   $query = "SELECT * FROM user WHERE Username = '$username'"; 
   $results = mysqli_query($db, $query);
   if (!$results) {
@@ -630,6 +632,7 @@ if (isset($_POST['dispute'])){
   if (is_null($driver_addr)){
     header('location: passageracc.php');
   }
+  $driver_vercode = $results->fetch_object()->vercode;
   $query = "SELECT * FROM request WHERE Request_ID = $RID";
   $results = mysqli_query($db, $query);
   if (!$results) {
@@ -642,15 +645,22 @@ if (isset($_POST['dispute'])){
     echo "Error: %s\n". mysqli_error($db);
   exit();}
   $passager_addr = $results->fetch_object()->Wallet_addr;
+  $passager_vercode = $results->fetch_object()->vercode;
   //$passager_wallet = new MyWallet($passager_addr);
   $driver_wallet = new MyWallet($driver_addr);
-  $driver_wallet->sendPayment($passager_addr, $key, $dispute*3,212);
+  $passager_vercode = $passager_vercode + $dispute;
+  $driver_vercode = $driver_vercode - $dispute;
+ // $driver_wallet->sendPayment($passager_addr, $key, $dispute*3,212);
   $query = "UPDATE request SET Dispute = 0 WHERE Request_ID = '$RID'";
     $results = mysqli_query($db, $query);
     if (!$results) {
       echo "Error: %s\n". mysqli_error($db);
       exit();
     }
+  $query = "UPDATE user SET vercode = '$passager_vercode' WHERE Username = '$passagername'";
+  $results = mysqli_query($db, $query);
+  $query = "UPDATE user SET vercode = '$driver_vercode' WHERE Username = '$username'";
+  $results = mysqli_query($db, $query);
   //...update wallet address
 
     $query = "SELECT * FROM request WHERE Request_ID = $RID";
@@ -749,7 +759,7 @@ if (isset($_POST['dispute'])){
   }
 
   if (isset($_POST['reject_dispute'])){
-    $RID = $_POST['reject_dispute'];
+    $RID = mysqli_real_escape_string($db, $_POST['reject_dispute']);
     $query = "SELECT * FROM request WHERE Request_ID = $RID";
   $results = mysqli_query($db, $query);
   if (!$results) {
@@ -852,21 +862,21 @@ if (isset($_POST['dispute'])){
 }
 
 if(isset($_POST['set_wallet'])){
-  $addr = $_POST['address'];
-  $username = $_COOKIE['login'];
-  $query = "UPDATE user SET Wallet_addr = '$addr' WHERE Username = '$username'";
+  $addr = mysqli_real_escape_string($db, $_POST['address']);
+  $username = mysqli_real_escape_string($db, $_COOKIE['login']);
+  $wallet = new MyWallet($addr);
+  $balance = $wallet->getMasterAddrBalance()*0.0003;
+  $query = "UPDATE user SET Wallet_addr = '$addr', vercode = '$balance' WHERE Username = '$username'";
   $results = mysqli_query($db, $query);
   if(!$results) {
     echo "Error: %s\n". mysqli_error($db);
     exit();
   }
-  echo $addr;
-  echo $username;
   header('location: '.$_COOKIE['type'].'acc.php');
 }
 
 if(isset($_POST['paying'])){
-  $RID = $_POST['paying'];
+  $RID = mysqli_real_escape_string($db, $_POST['paying']);
   $query = "SELECT * FROM request WHERE Request_ID = '$RID'"; 
         $results = mysqli_query($db, $query);
         if (!$results) {
@@ -880,11 +890,11 @@ if(isset($_POST['paying'])){
 }
 
 if(isset($_POST['payment'])){
-  $RID = $_POST['payment'];
-  $key = $_POST['key'];
-  $fee = $_SESSION['fee'];
-  $tips = $_POST['tips'];
-  $username = $_COOKIE['login'];
+  $RID = mysqli_real_escape_string($db, $_POST['payment']);
+  $key = mysqli_real_escape_string($db, $_POST['key']);
+  $fee = mysqli_real_escape_string($db, $_SESSION['fee']);
+  $tips = mysqli_real_escape_string($db, $_POST['tips']);
+  $username = mysqli_real_escape_string($db, $_COOKIE['login']);
   $query = "SELECT * FROM user WHERE Username = '$username'"; 
   $results = mysqli_query($db, $query);
   if (!$results) {
@@ -894,6 +904,7 @@ if(isset($_POST['payment'])){
   if (is_null($passager_addr)){
     header('location: passageracc.php');
   }
+  $passager_vercode = $results->fetch_object()->vercode;
   $query = "SELECT * FROM request WHERE Request_ID = $RID";
   $results = mysqli_query($db, $query);
   if (!$results) {
@@ -906,16 +917,25 @@ if(isset($_POST['payment'])){
     echo "Error: %s\n". mysqli_error($db);
   exit();}
   $driver_addr = $results->fetch_object()->Wallet_addr;
+  $driver_vercode = $results->fetch_object()->vercode;
   $passager_wallet = new MyWallet($passager_addr);
   //$driver_wallet = new MyWallet($driver_addr);
-  $total = ($fee + $tips)*3213;
-  $record = $passager_wallet->sendPayment($driver_addr, $key, $total);
+  //$total = ($fee + $tips)*3213;
+  $total = $fee + $tips;
+  $passager_vercode = $passager_vercode - $total;
+  $driver_vercode = $driver_vercode + $total;
+  //$record = $passager_wallet->sendPayment($driver_addr, $key, $total);
+
   $query = "UPDATE request SET Paid = 1, Tips = '$tips' WHERE Request_ID = '$RID'";
     $results = mysqli_query($db, $query);
     if (!$results) {
       echo "Error: %s\n". mysqli_error($db);
       exit();
     }
+  $query = "UPDATE user SET vercode = '$passager_vercode' WHERE Username = '$username'";
+  $results = mysqli_query($db, $query);
+  $query = "UPDATE user SET vercode = '$driver_vercode' WHERE Username = '$driver'";
+  $results = mysqli_query($db, $query);
   //...update wallet address
   $query = "SELECT * FROM request WHERE Request_ID = $RID";
   $results = mysqli_query($db, $query);
@@ -941,7 +961,7 @@ if(isset($_POST['payment'])){
       $results = mysqli_query($db, $query);
       $passager = $results->fetch_object()->PassagerName;
       
-      $canceller = $_COOKIE['login'];
+      $canceller = mysqli_real_escape_string($db, $_COOKIE['login']);
 
       $query = "SELECT * FROM user WHERE Username = '$passager'";
       $results = mysqli_query($db, $query);

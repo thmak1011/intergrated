@@ -27,6 +27,8 @@
       $username = $result->fetch_object()->Username;
       $result = mysqli_query($db, $query);
       $wallet_addr = $result->fetch_object()->Wallet_addr;
+      $result = mysqli_query($db, $query);
+      $vercode = $result->fetch_object()->vercode;
 
       $query2 = "SELECT Home_Location, Work_Location FROM passager WHERE Username = '$username'";
       $passager = mysqli_query($db, $query2);
@@ -277,9 +279,10 @@
                         echo "<button type = \"submit\" name = \"set_wallet\"> Set your BitCoin wallet </button>";
                         echo "</form>";
                       }else{
-                        $wallet = new MyWallet($wallet_addr);
+                        //$wallet = new MyWallet($wallet_addr);
                         //$wallet->setMasterAddr($wallet_addr);
-                        echo $wallet->getMasterAddrBalance()*0.0003;
+                        //echo $wallet->getMasterAddrBalance()*0.0003;
+                        echo $vercode;
                       }?>
                       </div>
                     </div>
